@@ -1,0 +1,65 @@
+@import "../../../sass/variables";
+
+.pagination {
+  margin-top: 60px;
+  .page-item {
+    margin-right: 8px;
+    background: $dark_two;
+    padding: 1px 1px 1px 1px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+
+    .page-link {
+      padding: 0;
+      margin: 0;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      border: none;
+      background: none;
+
+      span {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 100%;
+        width: 47px;
+        height: 47px;
+        background: $dark_two;
+        border-radius: 4px;
+        border: 1px solid $dark_two;
+        color: $text_primary;
+      }
+    }
+
+    &:hover {
+      background: $brand_gradient;
+      -webkit-transform: scale(1.1,1.1);
+      -moz-transform: scale(1.1,1.1);
+      -ms-transform: scale(1.1,1.1);
+      -o-transform: scale(1.1,1.1);
+      transform: scale(1.1,1.1);
+      .page-link {
+        background: $dark_two;
+        span {
+          text-transform: uppercase;
+          background: $brand_gradient;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          color: #F5F7FA;
+        }
+      }
+    }
+  }
+}

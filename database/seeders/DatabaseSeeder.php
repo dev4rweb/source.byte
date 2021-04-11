@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\AboutPage;
 use App\Models\DetailNewsPage;
+use App\Models\GamesPage;
 use App\Models\MainCarousel;
 use App\Models\OurTeam;
 use App\Models\SecondCarousel;
@@ -251,6 +252,35 @@ class DatabaseSeeder extends Seeder
             'name' => 'Jose Healy',
             'pos' => 'UI/UX designer',
             'photo' => '/images/8.png'
+        ]);
+
+
+        GamesPage::factory(10)->create([
+            'title' => 'Bocce VR Simulator',
+            'content' => 'In an unforgiving world where no sin is ever forgotten, Harkyn, a convicted criminal, is given a chance for redemption. Just when rulers of the world get close to finding a way to banish all evil from humans, an army of the long-ago defeated god attacks the human realm. Released from prison, Harkyn and his mentor, Kaslo, set out on a mission to stop the war.
+In his journey, Harkyn will forge strong alliances and face even stronger enemies. He will learn the true power of the Rhogar Lords – commanders of god’s army. He will even bring the battle to the Rhogar, travelling to the heart of the demonic dimension. Will the god manage to enslave humans again? Is mankind really able to banish evil? Will Harkyn’s sins ever be forgiven?',
+            'mainImage' => '/images/games1.png'
+        ]);
+
+        GamesPage::factory(10)->create([
+            'title' => 'Time for quest',
+            'content' => 'In an unforgiving world where no sin is ever forgotten, Harkyn, a convicted criminal, is given a chance for redemption. Just when rulers of the world get close to finding a way to banish all evil from humans, an army of the long-ago defeated god attacks the human realm. Released from prison, Harkyn and his mentor, Kaslo, set out on a mission to stop the war.
+In his journey, Harkyn will forge strong alliances and face even stronger enemies. He will learn the true power of the Rhogar Lords – commanders of god’s army. He will even bring the battle to the Rhogar, travelling to the heart of the demonic dimension. Will the god manage to enslave humans again? Is mankind really able to banish evil? Will Harkyn’s sins ever be forgiven?',
+            'mainImage' => '/images/games2.png'
+        ]);
+
+        GamesPage::factory(10)->create([
+            'title' => 'Long name for demonstation two-line variant of title',
+            'content' => 'In an unforgiving world where no sin is ever forgotten, Harkyn, a convicted criminal, is given a chance for redemption. Just when rulers of the world get close to finding a way to banish all evil from humans, an army of the long-ago defeated god attacks the human realm. Released from prison, Harkyn and his mentor, Kaslo, set out on a mission to stop the war.
+In his journey, Harkyn will forge strong alliances and face even stronger enemies. He will learn the true power of the Rhogar Lords – commanders of god’s army. He will even bring the battle to the Rhogar, travelling to the heart of the demonic dimension. Will the god manage to enslave humans again? Is mankind really able to banish evil? Will Harkyn’s sins ever be forgiven?',
+            'mainImage' => '/images/games3.png'
+        ]);
+
+        GamesPage::factory(10)->create([
+            'title' => 'Royal resque',
+            'content' => 'In an unforgiving world where no sin is ever forgotten, Harkyn, a convicted criminal, is given a chance for redemption. Just when rulers of the world get close to finding a way to banish all evil from humans, an army of the long-ago defeated god attacks the human realm. Released from prison, Harkyn and his mentor, Kaslo, set out on a mission to stop the war.
+In his journey, Harkyn will forge strong alliances and face even stronger enemies. He will learn the true power of the Rhogar Lords – commanders of god’s army. He will even bring the battle to the Rhogar, travelling to the heart of the demonic dimension. Will the god manage to enslave humans again? Is mankind really able to banish evil? Will Harkyn’s sins ever be forgiven?',
+            'mainImage' => '/images/games4.png'
         ]);
     }
 }

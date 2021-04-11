@@ -1,0 +1,47 @@
+@import "../../../sass/variables";
+
+.input-group>.form-control{
+  background-color: $bg_color;
+  height: 64px;
+  border: 2px solid $dark_one;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  color: $text_three;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+
+  &:hover{
+    color: $color_L;
+  }
+
+  &:focus{
+    border-image: $brand_gradient 1;
+    outline: 0;
+    box-shadow: $neon_shadow;
+  }
+}
+
+.btn-primary{
+  color: $text_primary;
+  background-color: $brand_blue;
+  border-color: $brand_blue;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 24px;
+  line-height: 100%;
+  max-width: 180px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i{
+    margin-right: 10px;
+  }
+}

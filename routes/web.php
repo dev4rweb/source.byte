@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\DetailNewsPageController;
+use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\MainCarouselController;
@@ -43,3 +44,5 @@ Route::get('//socials/getSplit', [SocialsController::class, 'getSpit'])->name('s
 Route::get('/about', [AboutPageController::class, 'index'])->name('about.index');
 
 Route::get('/ourTeam', [OurTeamController::class, 'index'])->name('ourTeam.index');
+
+Route::get('/games', [GamesPageController::class, 'index'])->name('games.index');

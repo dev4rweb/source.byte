@@ -1,0 +1,1032 @@
+a {
+  text-decoration: none; }
+
+h1 {
+  text-shadow: 0px 4px 24px rgba(59, 157, 255, 0.3), 0px -4px 24px rgba(230, 23, 255, 0.3); }
+
+ul.img-marked {
+  list-style-image: url("assets/icons/ul-marked.png"); }
+
+.wrapper {
+  max-width: 896px;
+  margin: 0 auto; }
+
+/* Define mixin with one arguments */
+.icMapPin {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/map-pin.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icMapPin:hover, .icMapPin:active {
+    background: url("assets/icons/svg/map-pin-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icSquare {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/square.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icSquare:hover, .icSquare:active {
+    background: url("assets/icons/svg/square-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icCheckSquare {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/check-square.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icCheckSquare:hover, .icCheckSquare:active {
+    background: url("assets/icons/svg/check-square-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icPlay {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/play.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icPlay:hover, .icPlay:active {
+    background: url("assets/icons/svg/play-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icSearch {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/search.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icSearch:hover, .icSearch:active {
+    background: url("assets/icons/svg/search-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icPhone {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/phone.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icPhone:hover, .icPhone:active {
+    background: url("assets/icons/svg/phone-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icMail {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/mail.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icMail:hover, .icMail:active {
+    background: url("assets/icons/svg/mail-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icEye {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/eye.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icEye:hover, .icEye:active {
+    background: url("assets/icons/svg/eye-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icArrowRight {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/arrow-right.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icArrowRight:hover, .icArrowRight:active {
+    background: url("assets/icons/svg/arrow-right-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icArrowLeft {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/arrow-left.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icArrowLeft:hover, .icArrowLeft:active {
+    background: url("assets/icons/svg/arrow-left-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icArrowRightCircle {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/arrow-right-circle.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icArrowRightCircle:hover, .icArrowRightCircle:active {
+    background: url("assets/icons/svg/arrow-right-circle-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icArrowLeftCircle {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/arrow-left-circle.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icArrowLeftCircle:hover, .icArrowLeftCircle:active {
+    background: url("assets/icons/svg/arrow-left-circle-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronsRight {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevrons-right.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronsRight:hover, .icChevronsRight:active {
+    background: url("assets/icons/svg/chevrons-right-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronsDown {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevrons-down.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronsDown:hover, .icChevronsDown:active {
+    background: url("assets/icons/svg/chevrons-down-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronsUp {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevrons-up.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronsUp:hover, .icChevronsUp:active {
+    background: url("assets/icons/svg/chevrons-up-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronsLeft {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevrons-left.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronsLeft:hover, .icChevronsLeft:active {
+    background: url("assets/icons/svg/chevrons-left-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronRight {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevron-right.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronRight:hover, .icChevronRight:active {
+    background: url("assets/icons/svg/chevron-right-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronDown {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevron-down.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronDown:hover, .icChevronDown:active {
+    background: url("assets/icons/svg/chevron-down-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronUp {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevron-up.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronUp:hover, .icChevronUp:active {
+    background: url("assets/icons/svg/chevron-up-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icChevronLeft {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/chevron-left.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icChevronLeft:hover, .icChevronLeft:active {
+    background: url("assets/icons/svg/chevron-left-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icDiscord {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/discord.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icDiscord:hover, .icDiscord:active {
+    background: url("assets/icons/svg/discord-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icTelegram {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/telegram.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icTelegram:hover, .icTelegram:active {
+    background: url("assets/icons/svg/telegram-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icWhatsapp {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/whatsapp.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icWhatsapp:hover, .icWhatsapp:active {
+    background: url("assets/icons/svg/whatsapp-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icViber {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/viber.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icViber:hover, .icViber:active {
+    background: url("assets/icons/svg/viber-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icSteam {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/steam.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icSteam:hover, .icSteam:active {
+    background: url("assets/icons/svg/steam-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icVk {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/vk.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icVk:hover, .icVk:active {
+    background: url("assets/icons/svg/vk-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icInstagram {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/instagram.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icInstagram:hover, .icInstagram:active {
+    background: url("assets/icons/svg/instagram-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icTwitter {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/twitter.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icTwitter:hover, .icTwitter:active {
+    background: url("assets/icons/svg/twitter-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icYoutube {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/youtube.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icYoutube:hover, .icYoutube:active {
+    background: url("assets/icons/svg/youtube-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icFacebook {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/facebook.svg") no-repeat center center;
+  background-size: 16px;
+  width: 16px;
+  height: 16px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icFacebook:hover, .icFacebook:active {
+    background: url("assets/icons/svg/facebook-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icDiscord24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/discord.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icDiscord24:hover, .icDiscord24:active {
+    background: url("assets/icons/svg/discord-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icTelegram24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/telegram.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icTelegram24:hover, .icTelegram24:active {
+    background: url("assets/icons/svg/telegram-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icWhatsapp24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/whatsapp.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icWhatsapp24:hover, .icWhatsapp24:active {
+    background: url("assets/icons/svg/whatsapp-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icViber24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/viber.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icViber24:hover, .icViber24:active {
+    background: url("assets/icons/svg/viber-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icSteam24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/steam.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icSteam24:hover, .icSteam24:active {
+    background: url("assets/icons/svg/steam-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icVk24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/vk.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icVk24:hover, .icVk24:active {
+    background: url("assets/icons/svg/vk-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icInstagram24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/instagram.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icInstagram24:hover, .icInstagram24:active {
+    background: url("assets/icons/svg/instagram-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icTwitter24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/twitter.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icTwitter24:hover, .icTwitter24:active {
+    background: url("assets/icons/svg/twitter-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icYoutube24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/youtube.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icYoutube24:hover, .icYoutube24:active {
+    background: url("assets/icons/svg/youtube-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.icFacebook24 {
+  display: inline-block;
+  content: '';
+  background: url("assets/icons/svg/facebook.svg") no-repeat center center;
+  background-size: 24px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s; }
+  .icFacebook24:hover, .icFacebook24:active {
+    background: url("assets/icons/svg/facebook-hover.svg") no-repeat center center;
+    cursor: pointer;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2); }
+
+.gameCard {
+  margin-bottom: 30px;
+  background-color: #14191F;
+  border: none;
+  position: relative; }
+  .gameCard img {
+    padding-bottom: 90px; }
+  .gameCard .card-body {
+    padding: 0 30px;
+    display: flex;
+    height: 90px;
+    position: absolute;
+    bottom: 0;
+    background-color: #14191F;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    transition-timing-function: ease-in;
+    overflow-wrap: break-word; }
+    .gameCard .card-body h5 {
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 135%;
+      height: 80px;
+      display: flex;
+      align-items: center; }
+    .gameCard .card-body p, .gameCard .card-body a {
+      opacity: 0;
+      overflow: hidden; }
+    .gameCard .card-body p {
+      height: 0;
+      display: none; }
+    .gameCard .card-body a {
+      display: none;
+      height: 0; }
+  .gameCard:hover {
+    cursor: pointer; }
+    .gameCard:hover .card-body {
+      height: 270px;
+      padding-bottom: 20px; }
+      .gameCard:hover .card-body p, .gameCard:hover .card-body a {
+        opacity: 1;
+        display: block;
+        height: auto; }
+      .gameCard:hover .card-body p {
+        visibility: visible;
+        height: auto; }
+      .gameCard:hover .card-body a {
+        display: inline-flex;
+        width: 126px; }
+
+@media only screen and (min-width: 768px) {
+  .gameCard {
+    margin-bottom: 0; } }
+
+/*# sourceMappingURL=GamesCard.css.map */

@@ -1,0 +1,76 @@
+@import "../../../sass/variables";
+
+.gameCard{
+  margin-bottom: 30px;
+  background-color: $dark_two;
+  border: none;
+  position: relative;
+  img{
+    padding-bottom: 90px;
+  }
+  .card-body{
+    padding: 0 30px;
+    display: flex;
+    height: 90px;
+    position: absolute;
+    bottom: 0;
+    background-color: $dark_two;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+    transition-timing-function: ease-in;
+    overflow-wrap: break-word;
+
+    h5{
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 135%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    p, a{
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    p{
+      height: 0;
+      display: none;
+    }
+
+    a{
+      display: none;
+      height: 0;
+    }
+  }
+  &:hover{
+    cursor: pointer;
+    .card-body{
+      height: 270px;
+      padding-bottom: 20px;
+      p, a{
+        opacity: 1;
+        display: block;
+        height: auto;
+      }
+      p {
+        visibility: visible;
+        height: auto;
+      }
+      a{
+        display: inline-flex;
+        width: 126px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .gameCard {
+    margin-bottom: 0;
+  }
+}

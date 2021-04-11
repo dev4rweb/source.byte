@@ -1,0 +1,27 @@
+@import "../../../sass/variables";
+
+.form-select{
+  background-color: $bg_color;
+  height: 64px;
+  border: 2px solid $dark_one;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  color: $text_three;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+
+  &:hover{
+    color: $color_L;
+    cursor: pointer;
+  }
+}
+
+.form-select:focus {
+  border-image: $brand_gradient 1;
+  outline: 0;
+  box-shadow: $neon_shadow;
+}
