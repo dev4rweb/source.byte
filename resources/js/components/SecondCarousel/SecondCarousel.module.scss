@@ -1,0 +1,106 @@
+@import "../../../sass/variables";
+
+.carousel {
+    .carouselIndicators {
+        margin: 0;
+        bottom: -10px;
+        justify-content: space-between;
+
+        button {
+            height: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            width: 100%;
+
+        }
+    }
+
+    .secondCart {
+        img {
+            max-height: 440px;
+            max-width: 780px;
+        }
+
+        .content {
+            //background-color: $dark_two;
+            background-color: $dark_one;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 30px;
+
+            h3 {
+                text-align: center;
+                padding-top: 20px;
+            }
+
+            p {
+                margin-top: 0;
+                margin-bottom: 20px;
+                color: $text_two;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .carousel {
+        .secondCart {
+            display: flex;
+            padding: 20px;
+            align-items: center;
+
+            img {
+                width: 50% !important;
+                max-height: 440px;
+            }
+
+            .content {
+                width: 50%;
+                max-height: 400px;
+                padding: 20px 20px;
+                justify-content: center;
+
+                h3, p {
+                    width: 100%;
+                    text-align: left;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .carousel {
+        .carouselIndicators {
+
+        }
+
+        .secondCart, .carouselIndicators {
+            /*padding-left: 10vw;
+            padding-right: 10vw;*/
+            img {
+                margin-top: 0;
+                width: 60% !important;
+                height: 440px;
+            }
+
+            .content {
+                width: 40%;
+                height: 340px;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .carousel {
+        .secondCart {
+            padding: 20px 0 20px 0;
+        }
+    }
+}

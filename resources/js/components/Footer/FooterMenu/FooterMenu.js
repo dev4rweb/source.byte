@@ -8,9 +8,12 @@ const FooterMenu = () => {
     const isActive = (pageName) => {
         switch (pageName) {
             case 'home':
-                return window.location.href.length < 25 ?  s.active : '';
+                const isLocal = window.location.href.includes('source-byte');
+                const urlLength = isLocal ? 23 : 32;
+                // console.log('length', window.location.href.includes('source-byte'));
+                return window.location.href.length < urlLength ?  s.activeTab : '';
             default:
-                return window.location.href.includes(pageName) ? s.active : '';
+                return window.location.href.includes(pageName) ? s.activeTab : '';
         }
 
     };

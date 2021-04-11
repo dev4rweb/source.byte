@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\MainCarouselController;
+use App\Http\Controllers\SecondCarouselController;
 use App\Http\Controllers\SocialsController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +29,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/', [HomePageController::class, 'index'])->name('home.index');
 
 Route::get('/mainCarousel', [MainCarouselController::class, 'index'])->name('mainCarousel.index');
+
+Route::get('/secondCarousel', [SecondCarouselController::class, 'index'])->name('secondCarousel.index');
 
 Route::get('/socials', [SocialsController::class, 'index'])->name('socials.index');

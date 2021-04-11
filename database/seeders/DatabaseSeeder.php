@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\MainCarousel;
+use App\Models\SecondCarousel;
 use App\Models\Socials;
 use Illuminate\Database\Seeder;
 
@@ -104,6 +105,32 @@ class DatabaseSeeder extends Seeder
 //            'image' => env('APP_URL') . '/images/home-main-image.png',
 //            'image' => 'http://dev4rweb.zzz.com.ua/images/home-main-image.png',
             'btnText' => 'Visit a site',
+            'btnUrl' => '/'
+        ]);
+
+        SecondCarousel::factory()->create([
+            'title' => 'Source Byte',
+            'content' => 'It was a nice calm day, but from here out of nowhere Princess is kidnapped from the Kingdom, you get a secret mission to save her! Challenge yourself in several quests …',
+//            'image'=> base_path('images/simulator.png'),
+//        'image' => 'http://dev4rweb.zzz.com.ua/images/simulator.png',
+            'image' => '/images/simulator.png',
+            'btnText' => 'View more',
+            'btnUrl' => '/'
+        ]);
+
+        SecondCarousel::factory()->create([
+            'title' => 'Source From',
+            'content' => 'It was a nice calm day, but from here out of nowhere Princess is kidnapped from the Kingdom, you get a secret mission to save her! Challenge yourself in several quests …',
+            'image' => '/images/interactive-two.png',
+            'btnText' => 'View more',
+            'btnUrl' => '/'
+        ]);
+
+        SecondCarousel::factory()->create([
+            'title' => 'Time For Quest',
+            'content' => 'Let\'s go for unforgettable journey! Experience amazing moments in the Time For Quest universe! Sail the sea! Fight the biggest beasts in the world! Gain new skills!',
+            'image' => '/images/interactive-three.png',
+            'btnText' => 'View more',
             'btnUrl' => '/'
         ]);
     }

@@ -15,11 +15,11 @@ class CreateMainCarouselsTable extends Migration
     {
         Schema::create('main_carousels', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content');
-            $table->text('image');
-            $table->string('btnText');
-            $table->string('btnUrl');
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
+            $table->text('image')->nullable();
+            $table->string('btnText')->nullable();
+            $table->string('btnUrl')->nullable();
             $table->timestamps();
         });
     }
