@@ -1,0 +1,27 @@
+@import "../../../sass/variables";
+
+
+.cardWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+    .cardWrapper {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .cardWrapper {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    .cardWrapper {
+        justify-content: space-between;
+    }
+}

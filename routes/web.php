@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\MainCarouselController;
@@ -31,5 +32,7 @@ Route::get('/', [HomePageController::class, 'index'])->name('home.index');
 Route::get('/mainCarousel', [MainCarouselController::class, 'index'])->name('mainCarousel.index');
 
 Route::get('/secondCarousel', [SecondCarouselController::class, 'index'])->name('secondCarousel.index');
+
+Route::get('/detailNewsPage/getThreeLast', [DetailNewsPageController::class, 'getThreeLastPosts'])->name('detailNews.getThreeLastPosts');
 
 Route::get('/socials', [SocialsController::class, 'index'])->name('socials.index');
