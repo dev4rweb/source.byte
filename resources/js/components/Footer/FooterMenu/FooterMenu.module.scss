@@ -1,0 +1,44 @@
+@import "../../../../sass/variables";
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+
+    a {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 100%;
+        color: $text_primary;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+
+        &:hover, &:active, &.active {
+            background: $brand_gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: $text_primary;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .menu {
+        width: 72%;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .menu {
+        width: 50%;
+    }
+}

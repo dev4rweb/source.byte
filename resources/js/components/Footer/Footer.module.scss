@@ -1,0 +1,231 @@
+@import "../../../sass/variables";
+
+.footer {
+  overflow-x: hidden;
+  .topRow {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 5px 5px 5px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 75px;
+        margin-right: 10px;
+      }
+
+      h4 {
+        /*font-family: 'Oswald', sans-serif;*/
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 120%;
+        /* or 22px */
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+
+        span {
+          font-family: 'Oswald', sans-serif;
+          font-weight: 300;
+          line-height: 21px;
+          color: $text_two;
+        }
+      }
+    }
+
+    .menuContact {
+      width: 100%;
+
+      .contacts {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        a {
+          display: flex;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          color: $text_primary;
+          -webkit-transition: all .3s;
+          -moz-transition: all .3s;
+          -ms-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s;
+          margin-bottom: 10px;
+
+          i {
+            margin-right: 12px;
+          }
+
+          &:hover {
+            -webkit-transform: scale(1.2, 1.2);
+            -moz-transform: scale(1.2, 1.2);
+            -ms-transform: scale(1.2, 1.2);
+            -o-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);
+            background: $brand_gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: $text_primary;
+          }
+        }
+
+        .phone {
+          i {
+            background: url('/images/phone-footer.svg') no-repeat center center;
+          }
+
+          &:hover {
+            i {
+              background: url('/images/phone-hover.svg') no-repeat center center;
+            }
+          }
+        }
+
+        .email {
+          i {
+            background: url('/images/mail-footer.svg') no-repeat center center;
+          }
+
+          &:hover {
+            i {
+              background: url('/images/mail-hover.svg') no-repeat center center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .middleRow{
+    margin-top: 20px;
+    p{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 175%;
+      color: $text_two;
+      margin-bottom: 0;
+    }
+  }
+
+  hr{
+    margin: 1.5rem 0;
+  }
+  .bottomRow {
+    ul{
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      li {
+        display: flex;
+        width: 80px;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+        opacity: .4;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        -ms-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        padding: 0;
+
+        &:hover{
+          opacity: 1;
+          cursor: pointer;
+          -webkit-transform: scale(1.2, 1.2);
+          -moz-transform: scale(1.2, 1.2);
+          -ms-transform: scale(1.2, 1.2);
+          -o-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    .topRow {
+      justify-content: space-between;
+
+      .menuContact {
+        width: 70%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .footer{
+    .topRow{
+      .menuContact{
+        width: 52%;
+      }
+    }
+    .bottomRow{
+      ul{
+        li{
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .footer{
+    .topRow{
+      align-items: center;
+      .menuContact{
+        width: 72%;
+        display: flex;
+        justify-content: space-between;
+        .contacts{
+          width: 50%;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      }
+    }
+    .middleRow{
+      display: flex;
+      justify-content: space-between;
+      .right{
+        p{
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px){
+  .footer{
+    .topRow{
+      .menuContact{
+        width: 82%;
+        .contacts{
+
+          a{
+            margin-bottom: 0;
+          }
+          .phone{
+            margin-right: 30px;
+          }
+        }
+      }
+    }
+  }
+}
