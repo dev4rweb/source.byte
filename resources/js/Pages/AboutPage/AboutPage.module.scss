@@ -1,0 +1,70 @@
+@import "../../../sass/variables";
+
+.miniWrapper {
+    width: 100%;
+    max-width: 890px;
+    margin: 0 auto;
+
+    h2 {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    p{
+        color: $text_two;
+    }
+}
+
+.card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 1rem;
+    margin-top: 70px;
+    img {
+        width: 100%;
+        max-width: 665px;
+        max-height: 354px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 400px;
+        h2{
+            text-align: left;
+            margin-bottom: 22px;
+        }
+        p{
+            color: $text_two;
+        }
+    }
+}
+
+.reverse{
+}
+
+.team{
+    margin-top: 70px;
+    margin-bottom: 116px;
+    h2{
+        margin-bottom: 30px;
+    }
+
+}
+
+@media only screen and (min-width: 992px){
+    .card {
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 60px;
+    }
+
+    .reverse {
+        img{
+            order: 1;
+        }
+    }
+}

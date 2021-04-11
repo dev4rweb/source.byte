@@ -8,12 +8,12 @@ const FooterMenu = () => {
     const isActive = (pageName) => {
         switch (pageName) {
             case 'home':
-                const isLocal = window.location.href.includes('source-byte');
-                const urlLength = isLocal ? 23 : 32;
+                const isHost = window.location.href.includes('source-byte');
+                const urlLength = isHost ? 32 : 23;
                 // console.log('length', window.location.href.includes('source-byte'));
-                return window.location.href.length < urlLength ?  s.activeTab : '';
+                return window.location.href.length < urlLength ?  s.active : '';
             default:
-                return window.location.href.includes(pageName) ? s.activeTab : '';
+                return window.location.href.includes(pageName) ? s.active : '';
         }
 
     };
@@ -23,9 +23,10 @@ const FooterMenu = () => {
             <li>
                 <InertiaLink className={isActive('home')} href={route("home.index").url()}>Home</InertiaLink>
             </li>
-{/*            <li>
+            <li>
                 <InertiaLink  className={isActive('about')} href={route("about.index").url()}>About</InertiaLink>
             </li>
+{/*
             <li>
                 <InertiaLink  className={isActive('games')} href={route("games.index").url()}>Games</InertiaLink>
             </li>

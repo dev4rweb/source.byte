@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
@@ -37,3 +38,5 @@ Route::get('/detailNewsPage/getThreeLast', [DetailNewsPageController::class, 'ge
 
 Route::get('/socials', [SocialsController::class, 'index'])->name('socials.index');
 Route::get('//socials/getSplit', [SocialsController::class, 'getSpit'])->name('socials.getSplit');
+
+Route::get('/about', [AboutPageController::class, 'index'])->name('about.index');

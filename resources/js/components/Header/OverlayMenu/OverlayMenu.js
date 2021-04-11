@@ -32,14 +32,14 @@ const OverlayMenu = ({toggleNavHandler, isOpen}) => {
     const isActive = (pageName) => {
         switch (pageName) {
             case 'home':
-                const isLocal = window.location.href.includes('source-byte');
-                const urlLength = isLocal ? 23 : 32;
-                console.log('isSocial', window.location.href.includes('source-byte'));
-                console.log('length', window.location.href.length);
-                console.log('isLess', window.location.href.length < urlLength);
-                return window.location.href.length < urlLength ?  s.activeTab : '';
+                const isHost = window.location.href.includes('source-byte');
+                const urlLength = isHost ? 31 : 23;
+                // console.log('isSocial', window.location.href.includes('source-byte'));
+                // console.log('length', window.location.href.length);
+                // console.log('isLess', window.location.href.length < urlLength);
+                return window.location.href.length < urlLength ?  s.active : '';
             default:
-                return window.location.href.includes(pageName) ? s.activeTab : '';
+                return window.location.href.includes(pageName) ? s.active : '';
         }
 
     };
@@ -63,9 +63,10 @@ const OverlayMenu = ({toggleNavHandler, isOpen}) => {
                 <li onClick={()=> toggleNavHandler()}>
                     <InertiaLink className={isActive('home')} href={route("home.index").url()}>Home</InertiaLink>
                 </li>
-              {/*  <li onClick={()=> toggleNavHandler()}>
+                <li onClick={()=> toggleNavHandler()}>
                     <InertiaLink  className={isActive('about')} href={route("about.index").url()}>About</InertiaLink>
                 </li>
+              {/*
                 <li onClick={()=> toggleNavHandler()}>
                     <InertiaLink  className={isActive('games')} href={route("games.index").url()}>Games</InertiaLink>
                 </li>

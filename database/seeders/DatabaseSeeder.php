@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AboutPage;
 use App\Models\DetailNewsPage;
 use App\Models\MainCarousel;
 use App\Models\SecondCarousel;
@@ -194,6 +195,20 @@ class DatabaseSeeder extends Seeder
             'image' => '/images/img-news.png',
             'imageAlt' => 'The Indian girls, with hair like flowing black manes, and dressed only in a shift and short petticoat, stared dully from under the square-cut fringes on',
             'contentFour' => 'The Italian drivers saluted him from the foot-plate with raised hand, while the negro brakesmen sat carelessly on the brakes, looking straight forward, with the rims of their big hats flapping in the wind. In return Giorgio would give a slight sideways jerk of the head, without unfolding his arms.',
+        ]);
+
+        AboutPage::factory()->create([
+            'title' => 'Our studio',
+            'description' => 'Got a game? Need a publisher? What are you waiting for?',
+            'mainImage' => '/images/bg-submit.png',
+            'subTitle' => 'Developing imaginative new worlds',
+            'content' => 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word and the Little Blind Text',
+            'cardOneTitle' => 'Best Value in Entertainment',
+            'cardOneText' => 'She had a last view back on the skyline of her hometown Bookmarksgrove, the headline of village.',
+            'cardOneImage' => '/images/about-one.png',
+            'cardTwoTitle' => 'Available on Multiple Platforms',
+            'cardTwoText' => 'She had a last view back on the skyline of her hometown Bookmarksgrove, the headline of village.',
+            'cardTwoImage' => '/images/about-two.png',
         ]);
     }
 }

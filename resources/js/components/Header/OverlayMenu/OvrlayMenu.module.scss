@@ -63,7 +63,7 @@
                 -ms-transition: all .3s;
                 -o-transition: all .3s;
                 transition: all .3s;
-                &:hover, &:active, &.activeTab {
+                &:hover, &:active, &.active {
                     background: $brand_gradient;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
