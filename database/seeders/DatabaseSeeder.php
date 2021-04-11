@@ -6,6 +6,7 @@ use App\Models\AboutPage;
 use App\Models\DetailNewsPage;
 use App\Models\GamesPage;
 use App\Models\MainCarousel;
+use App\Models\NewsPage;
 use App\Models\OurTeam;
 use App\Models\SecondCarousel;
 use App\Models\Socials;
@@ -281,6 +282,12 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'content' => 'In an unforgiving world where no sin is ever forgotten, Harkyn, a convicted criminal, is given a chance for redemption. Just when rulers of the world get close to finding a way to banish all evil from humans, an army of the long-ago defeated god attacks the human realm. Released from prison, Harkyn and his mentor, Kaslo, set out on a mission to stop the war.
 In his journey, Harkyn will forge strong alliances and face even stronger enemies. He will learn the true power of the Rhogar Lords – commanders of god’s army. He will even bring the battle to the Rhogar, travelling to the heart of the demonic dimension. Will the god manage to enslave humans again? Is mankind really able to banish evil? Will Harkyn’s sins ever be forgiven?',
             'mainImage' => '/images/games4.png'
+        ]);
+
+        NewsPage::factory()->create([
+            'title' => 'News Page',
+            'content' => 'News Content',
+            'image' => 'https://st.depositphotos.com/1011976/2987/i/600/depositphotos_29872557-stock-photo-old-bridge-over-the-river.jpg'
         ]);
     }
 }

@@ -29,11 +29,11 @@ const FooterMenu = () => {
             <li>
                 <InertiaLink  className={isActive('games')} href={route("games.index").url()}>Games</InertiaLink>
             </li>
-{/*
-
             <li>
                 <InertiaLink  className={isActive('news')} href={route("news.index").url()}>News</InertiaLink>
             </li>
+{/*
+
             <li>
                 <InertiaLink  className={isActive('jobs')} href={route("jobs.index").url()}>Jobs</InertiaLink>
             </li>

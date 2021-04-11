@@ -6,6 +6,7 @@ use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\MainCarouselController;
+use App\Http\Controllers\NewsPageController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\SecondCarouselController;
 use App\Http\Controllers\SocialsController;
@@ -46,3 +47,5 @@ Route::get('/about', [AboutPageController::class, 'index'])->name('about.index')
 Route::get('/ourTeam', [OurTeamController::class, 'index'])->name('ourTeam.index');
 
 Route::get('/games', [GamesPageController::class, 'index'])->name('games.index');
+
+Route::get('/news', [NewsPageController::class, 'index'])->name('news.index');

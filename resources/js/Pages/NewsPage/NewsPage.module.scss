@@ -1,0 +1,36 @@
+
+.newsPage {
+}
+
+.cardWrapper {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginationWrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+
+@media only screen and (min-width: 992px){
+    .cardWrapper {
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .cardWrapper {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .cardWrapper {
+        grid-template-columns: auto auto auto;
+        justify-content: space-between;
+    }
+}
