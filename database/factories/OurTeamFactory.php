@@ -1,0 +1,30 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\OurTeam;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class OurTeamFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = OurTeam::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => 'Terri Tomlinson',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/1.png'
+        ];
+    }
+}

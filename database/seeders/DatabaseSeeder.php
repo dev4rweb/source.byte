@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\AboutPage;
 use App\Models\DetailNewsPage;
 use App\Models\MainCarousel;
+use App\Models\OurTeam;
 use App\Models\SecondCarousel;
 use App\Models\Socials;
 use Illuminate\Database\Seeder;
@@ -105,7 +106,7 @@ class DatabaseSeeder extends Seeder
             'content' => 'Got a game? Need a publisher? What are you waiting for?',
             'image' => '/images/home-main-image.png',
 //            'image' => env('APP_URL') . '/images/home-main-image.png',
-//            'image' => 'http://dev4rweb.zzz.com.ua/images/home-main-image.png',
+//            'image' => '/images/home-main-image.png',
             'btnText' => 'Visit a site',
             'btnUrl' => '/'
         ]);
@@ -114,7 +115,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Source Byte',
             'content' => 'It was a nice calm day, but from here out of nowhere Princess is kidnapped from the Kingdom, you get a secret mission to save her! Challenge yourself in several quests …',
 //            'image'=> base_path('images/simulator.png'),
-//        'image' => 'http://dev4rweb.zzz.com.ua/images/simulator.png',
+//        'image' => '/images/simulator.png',
             'image' => '/images/simulator.png',
             'btnText' => 'View more',
             'btnUrl' => '/'
@@ -209,6 +210,47 @@ class DatabaseSeeder extends Seeder
             'cardTwoTitle' => 'Available on Multiple Platforms',
             'cardTwoText' => 'She had a last view back on the skyline of her hometown Bookmarksgrove, the headline of village.',
             'cardTwoImage' => '/images/about-two.png',
+        ]);
+
+        OurTeam::factory()->create([
+            'name' => 'Terri Tomlinson',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/1.png'
+        ]);
+        OurTeam::factory()->create([
+            'name' => 'Beck Fritz',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/2.png'
+        ]);
+        OurTeam::factory()->create([
+            'name' => 'Suzannah Quintana',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/3.png'
+        ]);
+        OurTeam::factory()->create([
+            'name' => 'Ariya West',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/4.png'
+        ]);
+        OurTeam::factory()->create([
+            'name' => 'Pollyanna Doherty',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/5.png'
+        ]);
+        OurTeam::factory()->create([
+            'name' => 'Nasir Salter',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/6.png'
+        ]);
+        OurTeam::factory()->create([
+            'name' => 'Kaden Mcdonnell',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/7.png'
+        ]);
+        OurTeam::factory()->create([
+            'name' => 'Jose Healy',
+            'pos' => 'UI/UX designer',
+            'photo' => '/images/8.png'
         ]);
     }
 }

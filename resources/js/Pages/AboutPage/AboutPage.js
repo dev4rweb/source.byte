@@ -4,6 +4,7 @@ import Layout from "../../components/Layout/Layout";
 import aboutOne from '../../../assets/img/png/about-one.png';
 import aboutTwo from '../../../assets/img/png/about-two.png';
 import MainBlock from "../../components/MainBlock/MainBlock";
+import TeamBoxes from "../../components/TeamBoxes/TeamBoxes";
 
 const AboutPage = ({aboutPage}) => {
     const title = aboutPage ? aboutPage[0].title : 'title';
@@ -45,7 +46,7 @@ const AboutPage = ({aboutPage}) => {
 
                 <section className={s.team}>
                     <h2>Our team</h2>
-                    {/*<TeamBoxes/>*/}
+                    <TeamBoxes/>
                 </section>
 
             </article>

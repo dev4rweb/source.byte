@@ -5,6 +5,7 @@ use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\MainCarouselController;
+use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\SecondCarouselController;
 use App\Http\Controllers\SocialsController;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,5 @@ Route::get('/socials', [SocialsController::class, 'index'])->name('socials.index
 Route::get('//socials/getSplit', [SocialsController::class, 'getSpit'])->name('socials.getSplit');
 
 Route::get('/about', [AboutPageController::class, 'index'])->name('about.index');
+
+Route::get('/ourTeam', [OurTeamController::class, 'index'])->name('ourTeam.index');
