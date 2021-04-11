@@ -1,0 +1,41 @@
+@import "../../../sass/variables";
+
+.btnPrimary {
+  outline: none;
+  border: 2px solid $bg_color;
+  background: $brand_gradient;
+  padding: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 215px;
+  color: $text_primary;
+  font-weight: bold;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+    text-align: center;
+
+  &:hover, &:active {
+    background: none;
+    border: 2px solid;
+    border-image: $brand_gradient 1;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: $brand_gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $text_primary;
+  }
+}
+
+@media only screen and (min-width: 768px){
+  .btnPrimary{
+    padding: 16px;
+  }
+}

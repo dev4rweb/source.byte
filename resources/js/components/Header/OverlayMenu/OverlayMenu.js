@@ -32,9 +32,10 @@ const OverlayMenu = ({toggleNavHandler, isOpen}) => {
     const isActive = (pageName) => {
         switch (pageName) {
             case 'home':
-                return window.location.href.length < 25 ?  s.active : '';
+                console.log('length', window.location.href.length);
+                return window.location.href.length < 31 ?  s.activeTab : '';
             default:
-                return window.location.href.includes(pageName) ? s.active : '';
+                return window.location.href.includes(pageName) ? s.activeTab : '';
         }
 
     };

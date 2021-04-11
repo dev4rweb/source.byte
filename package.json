@@ -12,11 +12,11 @@
     "devDependencies": {
         "@babel/preset-react": "^7.13.13",
         "axios": "^0.21",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^5.0.0-beta3",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "popper.js": "^1.12",
+        "popper.js": "^1.16.1",
         "postcss": "^8.1.14",
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
@@ -27,6 +27,7 @@
     "dependencies": {
         "@inertiajs/inertia": "^0.8.6",
         "@inertiajs/inertia-react": "^0.5.11",
+        "@popperjs/core": "^2.9.2",
         "react-select": "^3.1.1",
         "ziggy-js": "^0.9.4"
     }

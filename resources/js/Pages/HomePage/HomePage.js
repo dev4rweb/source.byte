@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './HomePage.module.scss';
 import Layout from "../../components/Layout/Layout";
+import Carousel from "../../components/Carousel/Carousel";
 
 const HomePage = () => {
     // console.log('HomePage - ', homePage.length);
@@ -9,7 +10,7 @@ const HomePage = () => {
     return (
         <Layout>
             <article className={s.mainSection}>
-                <h1>HomePage</h1>
+                <Carousel/>
             </article>
         </Layout>
     );

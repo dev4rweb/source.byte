@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\MainCarousel;
 use App\Models\Socials;
 use Illuminate\Database\Seeder;
 
@@ -94,6 +95,16 @@ class DatabaseSeeder extends Seeder
             'category' => 'write',
             'name' => 'viber',
             'url' => 'https://www.youtube.com/channel/UCpZT8eq-Q4DJ6mxAikI1v5w',
+        ]);
+
+        MainCarousel::factory(5)->create([
+            'title' => 'Source Byte',
+            'content' => 'Got a game? Need a publisher? What are you waiting for?',
+            'image' => '/images/home-main-image.png',
+//            'image' => env('APP_URL') . '/images/home-main-image.png',
+//            'image' => 'http://dev4rweb.zzz.com.ua/images/home-main-image.png',
+            'btnText' => 'Visit a site',
+            'btnUrl' => '/'
         ]);
     }
 }

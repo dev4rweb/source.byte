@@ -78,24 +78,24 @@
 
         .phone {
           i {
-            background: url('/images/phone-footer.svg') no-repeat center center;
+            background: url('../../../assets/icons/svg/phone-footer.svg') no-repeat center center;
           }
 
           &:hover {
             i {
-              background: url('/images/phone-hover.svg') no-repeat center center;
+              background: url('../../../assets/icons/svg/phone-hover.svg') no-repeat center center;
             }
           }
         }
 
         .email {
           i {
-            background: url('/images/mail-footer.svg') no-repeat center center;
+            background: url('../../../assets/icons/svg/mail-footer.svg') no-repeat center center;
           }
 
           &:hover {
             i {
-              background: url('/images/mail-hover.svg') no-repeat center center;
+              background: url('../../../assets/icons/svg/mail-hover.svg') no-repeat center center;
             }
           }
         }

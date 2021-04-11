@@ -1,0 +1,17 @@
+@import "../../../sass/variables";
+
+.carousel-indicators {
+    button {
+        background: $color_L !important;
+        height: 2px;
+        border: none;
+        outline: none;
+    }
+
+    button.active {
+        background: $brand_gradient !important;
+        height: 2px;
+        border: none;
+        outline: none;
+    }
+}
