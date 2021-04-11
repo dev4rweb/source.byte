@@ -1,0 +1,56 @@
+@import "../../../sass/variables";
+
+.accordion-item{
+  border: 1px solid $text_two;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+
+  .accordion-button{
+    color: $text_primary;
+      background-color: $bg_color;
+
+    &:not(.collapsed) {
+      color: $text_primary;
+      background-color: $bg_color;
+    }
+
+    &:after {
+      background-image: url('../../../assets/icons/svg/chevron-down.svg');
+    }
+
+    &:focus{
+      z-index: 3;
+      border-image: $brand_gradient 1;
+      outline: 0;
+      box-shadow: $neon_shadow;
+    }
+  }
+
+  .accordion-body{
+      background-color: $bg_color;
+    h3{
+      margin-top: 29px;
+      margin-bottom: 17px;
+    }
+
+    p{
+      color: $text_two;
+    }
+
+    ul {
+      padding-left: 16px;
+
+      li{
+        margin-bottom: 13px;
+        color: $text_two;
+      }
+    }
+
+    .btn-wrapper{
+      margin-top: 34px;
+      margin-bottom: 20px;
+    }
+  }
+}

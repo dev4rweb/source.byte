@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\AboutPage;
 use App\Models\DetailNewsPage;
 use App\Models\GamesPage;
+use App\Models\JobsPage;
 use App\Models\MainCarousel;
 use App\Models\NewsPage;
 use App\Models\OurTeam;
@@ -288,6 +289,12 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'title' => 'News Page',
             'content' => 'News Content',
             'image' => 'https://st.depositphotos.com/1011976/2987/i/600/depositphotos_29872557-stock-photo-old-bridge-over-the-river.jpg'
+        ]);
+
+        JobsPage::factory()->create([
+            'title' => 'Jobs Page',
+            'content' => 'Jobs Content',
+            'image' => 'https://photoplay.ru/sites/default/files/imce/2019/travel-photo_dk.jpg'
         ]);
     }
 }

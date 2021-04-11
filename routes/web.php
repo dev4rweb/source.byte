@@ -5,6 +5,7 @@ use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\JobsPageController;
 use App\Http\Controllers\MainCarouselController;
 use App\Http\Controllers\NewsPageController;
 use App\Http\Controllers\OurTeamController;
@@ -49,3 +50,5 @@ Route::get('/ourTeam', [OurTeamController::class, 'index'])->name('ourTeam.index
 Route::get('/games', [GamesPageController::class, 'index'])->name('games.index');
 
 Route::get('/news', [NewsPageController::class, 'index'])->name('news.index');
+
+Route::get('/jobs', [JobsPageController::class, 'index'])->name('jobs.index');
