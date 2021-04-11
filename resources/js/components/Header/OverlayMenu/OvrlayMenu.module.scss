@@ -1,0 +1,136 @@
+@import "../../../../sass/variables";
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+
+    .btnClose {
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        font-size: 55px;
+        background: none;
+        border: none;
+        outline: none;
+        color: $text_primary;
+        &:hover{
+            background: $brand_gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: $text_primary;
+        }
+    }
+
+    .navigation{
+
+    }
+
+    ul{
+        position: relative;
+        top: 15%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
+
+        li{
+            padding: 8px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+
+            a{
+                font-family: 'Inter', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 100%;
+                color: $text_primary;
+                -webkit-transition: all .3s;
+                -moz-transition: all .3s;
+                -ms-transition: all .3s;
+                -o-transition: all .3s;
+                transition: all .3s;
+                &:hover, &:active, &.active {
+                    background: $brand_gradient;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    color: $text_primary;
+                }
+            }
+        }
+    }
+    ul.social {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .menu {
+        height: auto;
+        width: 100%;
+        position: static;
+        display: block;
+        background-color: $bg_color;
+
+        .btnClose {
+            display: none;
+        }
+        ul, ul.social {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            //justify-content: flex-start;
+            margin: 0;
+            align-items: center;
+
+            li{
+                height: auto;
+            }
+        }
+        ul.social li:first-child{
+            padding-top: 5px;
+            span {
+                font-family: 'Inter', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 100%;
+                text-align: right;
+                color: $text_one;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .menu{
+        display: flex;
+        justify-content: flex-end;
+
+        .navigation{
+            justify-content: flex-start;
+            margin-left: 55px;
+        }
+    }
+
+    ul.social{
+        width: 50%;
+    }
+}

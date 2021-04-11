@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <linearGradient id="gradient" gradientUnits="userSpaceOnUse"  gradientTransform="rotate(95)">
+        <stop offset="0" stop-color="#E255F2"/>
+        <!-- Colors to transition from -->
+        <stop offset="1" stop-color="#3D97F2"/>
+    </linearGradient>
+<path d="M11.3333 7.33333L7.99999 4L4.66666 7.33333" stroke="url(#gradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.3333 12L7.99999 8.66666L4.66666 12" stroke="url(#gradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

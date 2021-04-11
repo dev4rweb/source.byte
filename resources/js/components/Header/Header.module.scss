@@ -1,0 +1,65 @@
+@import "../../../sass/variables";
+
+.header{
+    //height: 105px;
+    .topNav{
+        display: flex;
+        justify-content: space-between;
+        padding:20px 5px 5px 5px;
+        .logo {
+            display: flex;
+            align-items: center;
+            img{
+                height: 75px;
+                margin-right: 10px;
+            }
+            h4{
+                /*font-family: 'Oswald', sans-serif;*/
+                font-family: 'Open Sans', sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 120%;
+                /* or 22px */
+                letter-spacing: 0.02em;
+                text-transform: uppercase;
+                span {
+                    font-family: 'Oswald', sans-serif;
+                    font-weight: 300;
+                    line-height: 21px;
+                    color: $text_two;
+                }
+            }
+        }
+        .menuOpen{
+            font-size: 45px;
+            cursor: pointer;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            -ms-transition: all .3s;
+            -o-transition: all .3s;
+            transition: all .3s;
+            &:hover{
+                //color: linear-gradient(94.9deg, #E255F2 0.28%, #3D97F2 88.58%);
+                text-transform: uppercase;
+                background: $brand_gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: $text_primary;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .topNav {
+            .menuOpen {
+                display: none;
+            }
+        }
+    }
+}

@@ -2,7 +2,9 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -17,3 +19,256 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+$bg_color: #0C1014;
+$bg_shadow: #C4C4C4;
+$text_primary: #F5F7FA;
+$color_L: #B2B8C2;
+$text_one: #818A99;
+$text_two: #81868F;
+$text_three: #464A4D;
+$dark_one: #222629;
+$dark_two: #14191F;
+$dark_three: #0C1014;
+$brand_blue: #3C9CFF;
+$brand_gradient: linear-gradient(94.9deg, #E255F2 0.28%, #3D97F2 88.58%);
+$blockquote_line: linear-gradient(137.35deg, #E255F2 23.21%, #3D97F2 69.85%);
+$brand_gradient_blue: linear-gradient(180deg, #111D2E 0%, #051839 21.25%, #0A1B48 40.69%, #132E62 58.11%, #144B7E 73.76%, #136497 87.28%, #1387B8 100%);
+$neon_shadow: 0px 4px 24px rgba(59, 157, 255, 0.3), 0px -4px 24px rgba(230, 23, 255, 0.3);
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Lightness */
+    color: $text_primary;
+    background: $bg_color;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+}
+
+h1, h2 {
+    text-shadow: $neon_shadow;
+    font-weight: 700;
+    text-align: center;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+ul.img-marked {
+    list-style-image: url("/images/ul-marked.png");
+}
+
+
+.wrapper {
+    max-width: 896px;
+    margin: 0 auto;
+}
+/* Define mixin with one arguments */
+@mixin iconMenu($url: "/images/map-pin.svg",
+$hoverUrl: '/images/map-pin-hover.svg', $transform: 1.2, $size: 16px) {
+    display: inline-block;
+    content: '';
+    background: url($url) no-repeat center center;
+    background-size: $size;
+    width: $size;
+    height: $size;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    &:hover, &:active {
+        background: url($hoverUrl) no-repeat center center;
+        cursor: pointer;
+        background-size: $size;
+        width: $size;
+        height: $size;
+        -webkit-transform: scale($transform, $transform);
+        -moz-transform: scale($transform, $transform);
+        -ms-transform: scale($transform, $transform);
+        -o-transform: scale($transform, $transform);
+        transform: scale($transform, $transform);
+    }
+}
+
+.icMapPin {
+    @include iconMenu($url: "/images/map-pin.svg", $hoverUrl: '/images/map-pin-hover.svg')
+}
+
+.icSquare {
+    @include iconMenu($url: "/images/square.svg", $hoverUrl: '/images/square-hover.svg')
+}
+
+.icCheckSquare {
+    @include iconMenu($url: "/images/check-square.svg", $hoverUrl: '/images/check-square-hover.svg')
+}
+
+.icPlay {
+    @include iconMenu($url: "/images/play.svg", $hoverUrl: '/images/play-hover.svg')
+}
+
+.icSearch {
+    @include iconMenu($url: "/images/search.svg", $hoverUrl: '/images/search-hover.svg')
+}
+
+.icPhone {
+    @include iconMenu($url: "/images/phone.svg", $hoverUrl: '/images/phone-hover.svg')
+}
+
+.icMail {
+    @include iconMenu($url: "/images/mail.svg", $hoverUrl: '/images/mail-hover.svg')
+}
+
+.icEye {
+    @include iconMenu($url: "/images/eye.svg", $hoverUrl: '/images/eye-hover.svg')
+}
+
+.icArrowRight {
+    @include iconMenu($url: "/images/arrow-right.svg", $hoverUrl: '/images/arrow-right-hover.svg')
+}
+
+.icArrowLeft {
+    @include iconMenu($url: "/images/arrow-left.svg", $hoverUrl: '/images/arrow-left-hover.svg')
+}
+
+.icArrowRightCircle {
+    @include iconMenu($url: "/images/arrow-right-circle.svg", $hoverUrl: '/images/arrow-right-circle-hover.svg')
+}
+
+.icArrowLeftCircle {
+    @include iconMenu($url: "/images/arrow-left-circle.svg", $hoverUrl: '/images/arrow-left-circle-hover.svg')
+}
+
+.icChevronsRight {
+    @include iconMenu($url: "/images/chevrons-right.svg", $hoverUrl: '/images/chevrons-right-hover.svg')
+}
+
+.icChevronsDown {
+    @include iconMenu($url: "/images/chevrons-down.svg", $hoverUrl: '/images/chevrons-down-hover.svg')
+}
+
+.icChevronsUp {
+    @include iconMenu($url: "/images/chevrons-up.svg", $hoverUrl: '/images/chevrons-up-hover.svg')
+}
+
+.icChevronsLeft {
+    @include iconMenu($url: "/images/chevrons-left.svg", $hoverUrl: '/images/chevrons-left-hover.svg')
+}
+
+.icChevronRight {
+    @include iconMenu($url: "/images/chevron-right.svg", $hoverUrl: '/images/chevron-right-hover.svg')
+}
+
+.icChevronDown {
+    @include iconMenu($url: "/images/chevron-down.svg", $hoverUrl: '/images/chevron-down-hover.svg')
+}
+
+.icChevronUp {
+    @include iconMenu($url: "/images/chevron-up.svg", $hoverUrl: '/images/chevron-up-hover.svg')
+}
+
+.icChevronLeft {
+    @include iconMenu($url: "/images/chevron-left.svg", $hoverUrl: '/images/chevron-left-hover.svg')
+}
+
+.icDiscord {
+    @include iconMenu($url: "/images/discord.svg", $hoverUrl: '/images/discord-hover.svg')
+}
+
+.icTelegram {
+    @include iconMenu($url: "/images/telegram.svg", $hoverUrl: '/images/telegram-hover.svg')
+}
+
+.icWhatsapp {
+    @include iconMenu($url: "/images/whatsapp.svg", $hoverUrl: '/images/whatsapp-hover.svg')
+}
+
+.icViber {
+    @include iconMenu($url: "/images/viber.svg", $hoverUrl: '/images/viber-hover.svg')
+}
+
+.icSteam {
+    @include iconMenu($url: "/images/steam.svg", $hoverUrl: '/images/steam-hover.svg')
+}
+
+.icVk {
+    @include iconMenu($url: "/images/vk.svg", $hoverUrl: '/images/vk-hover.svg')
+}
+
+.icInstagram {
+    @include iconMenu($url: "/images/instagram.svg", $hoverUrl: '/images/instagram-hover.svg')
+}
+
+.icTwitter {
+    @include iconMenu($url: "/images/twitter.svg", $hoverUrl: '/images/twitter-hover.svg')
+}
+
+.icYoutube {
+    @include iconMenu($url: "/images/youtube.svg", $hoverUrl: '/images/youtube-hover.svg')
+}
+
+.icFacebook {
+    @include iconMenu($url: "/images/facebook.svg", $hoverUrl: '/images/facebook-hover.svg')
+}
+
+
+.icDiscord24 {
+    @include iconMenu($url: "/images/discord.svg", $hoverUrl: '/images/discord-hover.svg', $size: 24px)
+}
+
+.icTelegram24 {
+    @include iconMenu($url: "/images/telegram.svg", $hoverUrl: '/images/telegram-hover.svg', $size: 24px)
+}
+
+.icWhatsapp24 {
+    @include iconMenu($url: "/images/whatsapp.svg", $hoverUrl: '/images/whatsapp-hover.svg', $size: 24px)
+}
+
+.icViber24 {
+    @include iconMenu($url: "/images/viber.svg", $hoverUrl: '/images/viber-hover.svg', $size: 24px)
+}
+
+.icSteam24 {
+    @include iconMenu($url: "/images/steam.svg", $hoverUrl: '/images/steam-hover.svg', $size: 24px)
+}
+
+.icVk24 {
+    @include iconMenu($url: "/images/vk.svg", $hoverUrl: '/images/vk-hover.svg', $size: 24px)
+}
+
+.icInstagram24 {
+    @include iconMenu($url: "/images/instagram.svg", $hoverUrl: '/images/instagram-hover.svg', $size: 24px)
+}
+
+.icTwitter24 {
+    @include iconMenu($url: "/images/twitter.svg", $hoverUrl: '/images/twitter-hover.svg', $size: 24px)
+}
+
+.icYoutube24 {
+    @include iconMenu($url: "/images/youtube.svg", $hoverUrl: '/images/youtube-hover.svg', $size: 24px)
+}
+
+.icFacebook24 {
+    @include iconMenu($url: "/images/facebook.svg", $hoverUrl: '/images/facebook-hover.svg', $size: 24px)
+}
+
+.carousel-indicators > button {
+    background: $color_L !important;
+    height: 2px !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.carousel-indicators > button.active {
+    background: $brand_gradient !important;
+    height: 2px !important;
+    border: none !important;
+    outline: none !important;
+}
