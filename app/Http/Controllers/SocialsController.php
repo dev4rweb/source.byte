@@ -19,6 +19,23 @@ class SocialsController extends Controller
         return response()->json($socials);
     }
 
+    public function getSpit()
+    {
+        try {
+            $follow = Socials::all()->where('category', 'follow');
+            $write = Socials::all()->where('category', 'write');
+            $response['message'] = 'Get Social link';
+            $response['success'] = true;
+            $response['categoryFollow'] = $follow;
+            $response['categoryWrite'] = $write;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

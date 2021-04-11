@@ -34,7 +34,9 @@ const OverlayMenu = ({toggleNavHandler, isOpen}) => {
             case 'home':
                 const isLocal = window.location.href.includes('source-byte');
                 const urlLength = isLocal ? 23 : 32;
-                // console.log('length', window.location.href.includes('source-byte'));
+                console.log('isSocial', window.location.href.includes('source-byte'));
+                console.log('length', window.location.href.length);
+                console.log('isLess', window.location.href.length < urlLength);
                 return window.location.href.length < urlLength ?  s.activeTab : '';
             default:
                 return window.location.href.includes(pageName) ? s.activeTab : '';

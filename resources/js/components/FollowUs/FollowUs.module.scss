@@ -1,0 +1,81 @@
+@import "../../../sass/variables";
+
+.follow {
+  /*  border: 2px solid transparent;
+    padding: 15px;
+    border-image: $brand_gradient 1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;*/
+  width: 100%;
+  border: double 1px transparent;
+  padding: 1px;
+  border-radius: 5px;
+  background-image: linear-gradient($bg_color, $bg_color), $brand_gradient;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  margin-bottom: 100px;
+
+  .verticalLine {
+    width: 70%;
+    background-color: $dark_two;
+    height: 2px;
+    margin: 0 auto;
+  }
+  .followWrapper {
+    h3{
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .iconWrapper{
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media only screen and (min-width: 480px){
+  .follow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .verticalLine {
+      width: 2px;
+      height: 120px;
+      margin: 0;
+    }
+    .followWrapper{
+      width: 40%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px){
+  .follow{
+    .followWrapper{
+      .iconWrapper{
+        margin-bottom: 80px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .follow{
+    .verticalLine{
+      height: 200px;
+    }
+    .followWrapper{
+      h3{
+        margin-top: 105px;
+        margin-bottom: 60px;
+      }
+      .iconWrapper{
+        margin-bottom: 150px;
+      }
+    }
+  }
+}

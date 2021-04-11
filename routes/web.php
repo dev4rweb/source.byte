@@ -36,3 +36,4 @@ Route::get('/secondCarousel', [SecondCarouselController::class, 'index'])->name(
 Route::get('/detailNewsPage/getThreeLast', [DetailNewsPageController::class, 'getThreeLastPosts'])->name('detailNews.getThreeLastPosts');
 
 Route::get('/socials', [SocialsController::class, 'index'])->name('socials.index');
+Route::get('//socials/getSplit', [SocialsController::class, 'getSpit'])->name('socials.getSplit');

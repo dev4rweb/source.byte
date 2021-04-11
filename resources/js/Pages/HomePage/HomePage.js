@@ -5,6 +5,7 @@ import Carousel from "../../components/Carousel/Carousel";
 import SecondCarousel from "../../components/SecondCarousel/SecondCarousel";
 import UnderLine from "../../components/UnderLine/UnderLine";
 import NewsCardsBlock from "../../components/NewsCardsBlock/NewsCardsBlock";
+import FollowUs from "../../components/FollowUs/FollowUs";
 
 const HomePage = ({homePage}) => {
     // console.log('HomePage - ', homePage.length);
@@ -34,6 +35,7 @@ const HomePage = ({homePage}) => {
                         btnUrl={homePage[1].btnUrl}
                     />
                 </section>
+                <FollowUs/>
             </article>
         </Layout>
     );
