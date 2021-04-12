@@ -1,0 +1,24 @@
+@import "../../../sass/variables";
+
+.adminPage {
+    display: flex;
+    height: 100vh;
+
+    ul {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        justify-content: space-around;
+
+        li:hover {
+            cursor: pointer;
+        }
+    }
+
+    main {
+        width: 80%;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+}

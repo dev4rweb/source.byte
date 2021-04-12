@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\AdminPageController;
 use App\Http\Controllers\ApplyJobPageController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactsPageController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\SocialsController;
 use App\Http\Controllers\SubmitGameFormController;
 use App\Http\Controllers\SubmitPageController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,9 +34,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/laravel', function () {
+/*Route::get('/laravel', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/welcome', [WelcomeController::class, 'index'])->name('welcome.index');
 
 Auth::routes();
 
@@ -78,5 +82,11 @@ Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'
 Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');
 
 Route::get('/news/newsId', [DetailNewsPageController::class, 'index'])->name('newsId.index');
-
+/*https://youtu.be/CNGCelC8n24?t=4982*/
 Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('gameId.index');
+
+
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/admin', [AdminPageController::class, 'index'])->name('admin.index');
+});

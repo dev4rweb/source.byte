@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AboutPage;
+use App\Models\AdminPage;
 use App\Models\ApplyJobPage;
 use App\Models\ContactForm;
 use App\Models\ContactsPage;
@@ -382,6 +383,12 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'title' => 'Detail Game  Page',
             'content' => 'Detail Game Content',
             'image' => 'https://ar.culture.ru/attachments/attachment/preview/5bab955657f0200d3471d194-preview.jpg'
+        ]);
+
+        AdminPage::factory()->create([
+            'title' => 'Admin  Page',
+            'content' => 'Admin Content',
+            'image' => 'https://www.1zoom.ru/big2/81/172586-foxixol.jpg'
         ]);
     }
 }
