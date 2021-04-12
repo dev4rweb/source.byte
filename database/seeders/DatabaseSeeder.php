@@ -14,6 +14,7 @@ use App\Models\OurTeam;
 use App\Models\PressPage;
 use App\Models\SecondCarousel;
 use App\Models\Socials;
+use App\Models\SubmitPage;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -319,6 +320,12 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'title' => 'Press Page',
             'content' => 'Press Content',
             'image' => 'https://cdn.pixabay.com/photo/2020/03/24/22/34/illustration-4965674_960_720.jpg'
+        ]);
+
+        SubmitPage::factory()->create([
+            'title' => 'Submit Page',
+            'content' => 'Submit Content',
+            'image' => 'https://photopoint.com.ua/wp-content/uploads/2015/01/Kak-snimat-peyzazh-2.jpg'
         ]);
     }
 }

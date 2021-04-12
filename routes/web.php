@@ -15,6 +15,7 @@ use App\Http\Controllers\PressPageController;
 use App\Http\Controllers\SecondCarouselController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\SocialsController;
+use App\Http\Controllers\SubmitPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,3 +66,5 @@ Route::post('/send-email/sendEmail', [SendMailController::class, 'sendEmail'])->
 Route::post('/send-email/sendEmailContact', [SendMailController::class, 'sendEmailContact'])->name('send-email.contact');
 
 Route::get('/press', [PressPageController::class, 'index'])->name('press.index');
+
+Route::get('/submit', [SubmitPageController::class, 'index'])->name('submit.index');

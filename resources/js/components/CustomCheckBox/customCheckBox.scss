@@ -1,0 +1,106 @@
+@import "../../../sass/variables";
+
+/* The container */
+.customCheckBox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  //font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  i{
+    margin-left: 10px;
+    font-style: normal;
+
+    &.checked{
+      color: $text_primary;
+    }
+  }
+}
+
+/* Hide the browser's default checkbox */
+.customCheckBox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  /*position: absolute;
+  top: 0;
+  left: 0;*/
+  height: 12px;
+  width: 12px;
+  //background-color: green;
+  border: 1px solid $text_three;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* On mouse-over, add a gradient background color */
+.customCheckBox:hover input ~ .checkmark {
+  //background-color: red;
+
+  outline: none;
+  background: none;
+  border: 1px solid;
+  border-image: $brand_gradient 1;
+  background: $brand_gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* When the checkbox is checked, add a blue background */
+.customCheckBox input:checked ~ .checkmark {
+  //background-color: #2196F3;
+
+  outline: none;
+  background: none;
+  border: 1px solid;
+  border-image: $brand_gradient 1;
+  background: $brand_gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.customCheckBox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.customCheckBox .checkmark:after {
+  left: 6px;
+  top: 1px;
+  width: 5px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+  //outline: 1px solid transparent;
+  background: none;
+  border-image: linear-gradient(34.9deg, #E255F2 -19.72%, #3D97F2 88.58%) 1;
+  background: $brand_gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

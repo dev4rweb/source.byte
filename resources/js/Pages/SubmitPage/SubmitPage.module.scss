@@ -1,0 +1,77 @@
+@import "../../../sass/variables";
+
+.uploadFileWrapper{
+    margin-top: 70px;
+    margin-bottom: 40px;
+    .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40px;
+        button{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.submitPage {
+
+    .formWrapper {
+
+        .group {
+            display: grid;
+        }
+
+        .margins{
+            margin-top: 50px;
+            margin-bottom: 26px;
+        }
+        .threeGroup {
+            display: grid;
+
+            .boxes {
+
+            }
+            .iWrapper{
+
+            }
+        }
+
+        .looking{
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: 60px;
+
+            .btnMargins{
+                margin-top: 35px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .subBox{
+            margin-top: 60px;
+            margin-bottom: 120px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .submitPage {
+
+        .formWrapper{
+            .group {
+                grid-template-columns: auto auto;
+                grid-gap: 1rem;
+            }
+            .threeGroup{
+                grid-template-columns: auto auto auto;
+                grid-gap: 1rem;
+            }
+        }
+    }
+}
