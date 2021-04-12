@@ -15,6 +15,7 @@ use App\Http\Controllers\PressPageController;
 use App\Http\Controllers\SecondCarouselController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\SocialsController;
+use App\Http\Controllers\SubmitGameFormController;
 use App\Http\Controllers\SubmitPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -68,3 +69,6 @@ Route::post('/send-email/sendEmailContact', [SendMailController::class, 'sendEma
 Route::get('/press', [PressPageController::class, 'index'])->name('press.index');
 
 Route::get('/submit', [SubmitPageController::class, 'index'])->name('submit.index');
+
+Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->name('submit-form.index');
+Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'])->name('submit-form.store');

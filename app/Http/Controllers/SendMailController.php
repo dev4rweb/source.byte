@@ -110,7 +110,7 @@ class SendMailController extends Controller
         $view .= str_contains($submitGameForm['cbxDevelopment'], "true") ? "<p>Development Funding - checked</p>" : "";
 
 
-        $view .= $submitGameForm['uploadFile'] ? "<p><a href=" . $submitGameForm['uploadFile'] . ">See upload file</a></p>" : "";
+        $view .= $submitGameForm['uploadFile'] ? "<p><a href='http://source-byte.zzz.com.ua/lsapp/public" . $submitGameForm['uploadFile'] . "'>See upload file</a></p>" : "";
         $view .= $submitGameForm['urlUploadFile'] ? "<p><a href=" . $submitGameForm['urlUploadFile'] . ">" . $submitGameForm['urlUploadFile'] . "</a></p>" : "";
         $view .= $submitGameForm['helpList'] ? "<p>Any things you would like help with which are not part of the above list? - " . $submitGameForm['helpList'] . "</p>" : "";
 
@@ -122,8 +122,8 @@ class SendMailController extends Controller
         try {
             Mail::send('email-template', $data, function ($message) use ($data) {
 //            $message->to($user['email']);
-//                $message->to('dev4rweb@gmail.com');
-                $message->to('admin@source-byte.com');
+                $message->to('dev4rweb@gmail.com');
+//                $message->to('admin@source-byte.com');
                 $message->subject($data['subject']);
             });
             $response['message'] = 'Email Send';

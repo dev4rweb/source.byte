@@ -55,8 +55,7 @@ const SubmitPage = ({submitPage}) => {
 
     function sendEmail(model) {
         setLoading(true);
-        // axios.post('http://127.0.0.1:8000/api/send-email/sendEmail', model)
-        axios.post('/api/send-email/sendEmail', model)
+        axios.post('/send-email/sendEmail', model)
             .then(res => {
                 console.log(res);
                 setLoading(false)
@@ -110,14 +109,8 @@ const SubmitPage = ({submitPage}) => {
         fd.set('urlUploadFile', state.urlUploadFile);
         fd.set('helpList', state.helpList);
         // console.log('form', fd);
-/*        try {
-            const data = await request('/api/submit-game-form/store', 'POST', fd);
-            console.log(data);
-        } catch (e) {
 
-        }*/
-        axios.post('/api/submit-game-form/store', fd)
-        // axios.post('http://127.0.0.1:8000/api/submit-game-form/store', fd)
+        axios.post('/submit-game-form/store', fd)
             .then(res => {
                 console.log(res);
                 const model = res.data.model;
@@ -382,7 +375,7 @@ const SubmitPage = ({submitPage}) => {
                         <ButtonPrimary
                             width={`100%`}
                             text={'Submit your game'}
-                            // onClickHandle={handleSubmit}
+                            onClickHandle={handleSubmit}
                         />
                     </div>
                 </form>

@@ -14,6 +14,7 @@ use App\Models\OurTeam;
 use App\Models\PressPage;
 use App\Models\SecondCarousel;
 use App\Models\Socials;
+use App\Models\SubmitGameForm;
 use App\Models\SubmitPage;
 use Illuminate\Database\Seeder;
 
@@ -326,6 +327,47 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'title' => 'Submit Page',
             'content' => 'Submit Content',
             'image' => 'https://photopoint.com.ua/wp-content/uploads/2015/01/Kak-snimat-peyzazh-2.jpg'
+        ]);
+
+        SubmitGameForm::factory()->create([
+            'gameNameOne' => 'gameNameOne',
+            'gameNameTwo' => 'gameNameTwo',
+            'contactName' => 'contactName',
+            'contactEmail' => 'contactEmail',
+            'company' => 'company',
+            'team' => 'team',
+            'prevProject' => 'prevProject',
+            'gameDesc' => 'gameDesc',
+            'genre' => 'genre',
+            'similar' => 'similar',
+            'featureOne' => 'featureOne',
+            'featureTwo' => 'featureTwo',
+            'featureThree' => 'featureThree',
+            'featureFour' => 'featureFour',
+            'featureFive' => 'featureFive',
+            'featureSix' => 'featureSix',
+            'uniqFeature' => 'uniqFeature',
+            'playTime' => 'playTime',
+            'cbxPC' => false,
+            'cbxPS' => false,
+            'cbxXBox' => false,
+            'cbxSwitch' => false,
+            'optional' => 'optional',
+            'dateMonth' => 'dateMonth',
+            'addPlatform' => 'addPlatform',
+            'topRisks' => 'topRisks',
+            'cbxMarketing' => false,
+            'cbxQA' => false,
+            'cbxConsole' => false,
+            'cbxPorting' => false,
+            'cbxLocalization' => false,
+            'cbxVoice' => false,
+            'cbxProduction' => false,
+            'cbxGameDesign' => false,
+            'cbxDevelopment' => false,
+            'uploadFile' => 'uploadFile',
+            'urlUploadFile' => 'urlUploadFile',
+            'helpList' => 'helpList',
         ]);
     }
 }
