@@ -57,7 +57,7 @@ const SubmitPage = ({submitPage}) => {
         setLoading(true);
         axios.post('/send-email/sendEmail', model)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setLoading(false)
             })
             .catch(err => {
@@ -112,7 +112,7 @@ const SubmitPage = ({submitPage}) => {
 
         axios.post('/submit-game-form/store', fd)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 const model = res.data.model;
                 setLoading(false);
                 sendEmail(model);

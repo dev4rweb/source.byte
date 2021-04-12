@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\ApplyJobPageController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\DetailNewsPageController;
@@ -72,3 +73,5 @@ Route::get('/submit', [SubmitPageController::class, 'index'])->name('submit.inde
 
 Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->name('submit-form.index');
 Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'])->name('submit-form.store');
+
+Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');

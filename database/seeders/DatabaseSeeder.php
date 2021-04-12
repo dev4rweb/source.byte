@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AboutPage;
+use App\Models\ApplyJobPage;
 use App\Models\ContactForm;
 use App\Models\ContactsPage;
 use App\Models\DetailNewsPage;
@@ -368,6 +369,12 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'uploadFile' => 'uploadFile',
             'urlUploadFile' => 'urlUploadFile',
             'helpList' => 'helpList',
+        ]);
+
+        ApplyJobPage::factory()->create([
+            'title' => 'Submit Page',
+            'content' => 'Submit Content',
+            'image' => 'https://images.samsung.com/is/image/samsung/p5/ru/explore/landscape-photography/Explore_How_To_Take_Great_Landscape_Photography_KV.jpg?$ORIGIN_JPG$'
         ]);
     }
 }
