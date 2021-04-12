@@ -1,0 +1,84 @@
+@import "../../../sass/_variables";
+
+.pressPage {
+
+    h2{
+        margin-bottom: 50px;
+    }
+    .cards{
+
+    }
+
+    .partFamily{
+        width: 100%;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-color: $dark_two;
+
+        &>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        h2{
+            margin-bottom: 10px;
+        }
+        h6{
+            margin-bottom: 20px;
+        }
+        p{
+            color: $text_two;
+        }
+        .left, .right{
+            margin: 30px;
+            width: 100%;
+            max-width: 540px;
+        }
+    }
+
+    .team{
+        h2{
+            margin-top: 100px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .pressPage {
+
+        .cards{
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 30px;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px){
+    .pressPage {
+
+        .cards{
+            grid-template-columns: auto auto auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .pressPage {
+        .partFamily{
+            .left {
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .pressPage {
+
+        .cards{
+            grid-template-columns: auto auto auto auto;
+        }
+    }
+}

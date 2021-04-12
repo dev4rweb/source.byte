@@ -11,6 +11,7 @@ use App\Http\Controllers\JobsPageController;
 use App\Http\Controllers\MainCarouselController;
 use App\Http\Controllers\NewsPageController;
 use App\Http\Controllers\OurTeamController;
+use App\Http\Controllers\PressPageController;
 use App\Http\Controllers\SecondCarouselController;
 use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\SocialsController;
@@ -62,3 +63,5 @@ Route::post('/contactForm/store', [ContactFormController::class, 'store'])->name
 
 Route::post('/send-email/sendEmail', [SendMailController::class, 'sendEmail'])->name('send.email');
 Route::post('/send-email/sendEmailContact', [SendMailController::class, 'sendEmailContact'])->name('send-email.contact');
+
+Route::get('/press', [PressPageController::class, 'index'])->name('press.index');

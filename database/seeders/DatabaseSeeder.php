@@ -11,6 +11,7 @@ use App\Models\JobsPage;
 use App\Models\MainCarousel;
 use App\Models\NewsPage;
 use App\Models\OurTeam;
+use App\Models\PressPage;
 use App\Models\SecondCarousel;
 use App\Models\Socials;
 use Illuminate\Database\Seeder;
@@ -312,6 +313,12 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'phone' => '54675',
             'msg' => 'https://images.samsung.com/is/image/samsung/p5/ru/explore/landscape-photography/Explore_How_To_Take_Great_Landscape_Photography_KV.jpg?$ORIGIN_JPG$'
 
+        ]);
+
+        PressPage::factory()->create([
+            'title' => 'Press Page',
+            'content' => 'Press Content',
+            'image' => 'https://cdn.pixabay.com/photo/2020/03/24/22/34/illustration-4965674_960_720.jpg'
         ]);
     }
 }
