@@ -75,10 +75,12 @@ const OverlayMenu = ({toggleNavHandler, isOpen}) => {
                 <li onClick={()=> toggleNavHandler()}>
                     <InertiaLink  className={isActive('jobs')} href={route("jobs.index").url()}>Jobs</InertiaLink>
                 </li>
-              {/*
                 <li onClick={()=> toggleNavHandler()}>
                     <InertiaLink  className={isActive('contacts')} href={route("contacts.index").url()}>Contacts</InertiaLink>
                 </li>
+              {/*
+
+
                 <li onClick={()=> toggleNavHandler()}>
                     <InertiaLink  className={isActive('press')} href={route("press.index").url()}>Press</InertiaLink>
                 </li>

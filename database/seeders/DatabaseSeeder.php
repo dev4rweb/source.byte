@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AboutPage;
+use App\Models\ContactsPage;
 use App\Models\DetailNewsPage;
 use App\Models\GamesPage;
 use App\Models\JobsPage;
@@ -294,6 +295,13 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
         JobsPage::factory()->create([
             'title' => 'Jobs Page',
             'content' => 'Jobs Content',
+            'image' => 'https://photoplay.ru/sites/default/files/imce/2019/travel-photo_dk.jpg'
+        ]);
+
+
+        ContactsPage::factory()->create([
+            'title' => 'Contacts  Page',
+            'content' => 'Contacts Content',
             'image' => 'https://photoplay.ru/sites/default/files/imce/2019/travel-photo_dk.jpg'
         ]);
     }

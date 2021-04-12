@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
@@ -52,3 +53,5 @@ Route::get('/games', [GamesPageController::class, 'index'])->name('games.index')
 Route::get('/news', [NewsPageController::class, 'index'])->name('news.index');
 
 Route::get('/jobs', [JobsPageController::class, 'index'])->name('jobs.index');
+
+Route::get('/contacts', [ContactsPageController::class, 'index'])->name('contacts.index');
