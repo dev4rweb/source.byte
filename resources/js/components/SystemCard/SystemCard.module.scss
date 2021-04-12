@@ -1,0 +1,61 @@
+@import "../../../sass/variables";
+.marked{}
+.wrapper{
+  background-color: $dark_one;
+  padding: 2px;
+  width: 100%;
+  max-width: 360px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  &.marked{
+    background-image: $brand_gradient;
+  }
+  .systemCard {
+    padding: 25px 25px 10px 25px;
+    background-color: $bg_color;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+    h6 {
+      color: $text_primary;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-align: center;
+      &.marked{
+        outline: none;
+        background: none;
+        border-image: $brand_gradient 1;
+        background: $brand_gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $text_primary;
+      }
+    }
+
+    hr {
+
+    }
+
+    .content {
+      list-style: none;
+      padding-left: 0;
+
+      li{
+        display: flex;
+        flex-wrap: wrap;
+        p{
+          font-size: 14px;}
+        p:nth-of-type(1){
+          width: 80px;
+        }
+        p:nth-of-type(2){
+          flex: 1;
+          color: $text_primary;
+        }
+      }
+    }
+  }
+}

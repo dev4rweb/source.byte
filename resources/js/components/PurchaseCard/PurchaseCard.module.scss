@@ -1,0 +1,102 @@
+@import "../../../sass/variables";
+
+.fixedPos {
+}
+.hide{
+
+}
+
+.purchaseCard {
+    border: 2px solid $dark_one;
+    width: 100%;
+    max-width: 350px;
+    padding: 30px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    ul {
+        padding-left: 10px;
+        margin-top: 30px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        li {
+            width: 100%;
+            margin-bottom: 20px;
+
+            p {
+                width: 100%;
+                font-size: 18px;
+                margin-bottom: 14px;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 22px;
+                }
+            }
+
+            p:nth-of-type(2) {
+                color: $text_primary;
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .fixedPos {
+        position: sticky;
+        display: block;
+        top: 100px;
+        right: 0;
+        animation: purchaseAnim 1s 1;
+    }
+    .hide{
+        display: none;
+    }
+}
+
+@-webkit-keyframes purchaseAnim {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100px;
+    }
+
+}
+
+@-o-keyframes purchaseAnim {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100px;
+    }
+
+}
+
+@-moz-keyframes purchaseAnim {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100px;
+    }
+
+}
+
+@keyframes purchaseAnim {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100px;
+    }
+
+}

@@ -6,6 +6,7 @@ use App\Models\AboutPage;
 use App\Models\ApplyJobPage;
 use App\Models\ContactForm;
 use App\Models\ContactsPage;
+use App\Models\DetailGamePage;
 use App\Models\DetailNewsPage;
 use App\Models\GamesPage;
 use App\Models\JobsPage;
@@ -375,6 +376,12 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'title' => 'Submit Page',
             'content' => 'Submit Content',
             'image' => 'https://images.samsung.com/is/image/samsung/p5/ru/explore/landscape-photography/Explore_How_To_Take_Great_Landscape_Photography_KV.jpg?$ORIGIN_JPG$'
+        ]);
+
+        DetailGamePage::factory()->create([
+            'title' => 'Detail Game  Page',
+            'content' => 'Detail Game Content',
+            'image' => 'https://ar.culture.ru/attachments/attachment/preview/5bab955657f0200d3471d194-preview.jpg'
         ]);
     }
 }

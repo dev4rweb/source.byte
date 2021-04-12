@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutPageController;
 use App\Http\Controllers\ApplyJobPageController;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactsPageController;
+use App\Http\Controllers\DetailGamePageController;
 use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
@@ -75,3 +76,5 @@ Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->nam
 Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'])->name('submit-form.store');
 
 Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');
+
+Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('gameId.index');
