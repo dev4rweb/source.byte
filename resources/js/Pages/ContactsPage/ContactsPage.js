@@ -7,6 +7,7 @@ import ButtonPrimary from "../../components/ButtonPrimary/ButtonPrimary";
 import CustomInput from "../../components/CustomInput/CustomInput";
 import {useHttp} from "../../hooks/http.hook";
 import Loader from "../../components/Loader/Loader";
+import axios from "axios";
 
 const ContactsPage = ({contactsPage}) => {
     const title = contactsPage[0].title || 'title';
@@ -24,33 +25,62 @@ const ContactsPage = ({contactsPage}) => {
 
     const sentToEmail = async model =>{
         setLoading(true);
-        try{
+  /*      try{
             // const data = await request('http://127.0.0.1:8000/api/send-email/sendEmailContact', 'POST', model);
-            const data = await request('/api/send-email/sendEmailContact', 'POST', model);
-            console.log('send to email', data);
+            /!*const data = await request('/api/send-email/sendEmailContact', 'POST', model);
+            console.log('send to email', data);*!/
             setLoading(false);
         } catch (e) {
             console.log(e);
             setLoading(false);
+        }*/
+        const fd = new FormData();
+        for (let key in model) {
+            fd.set(key, model[key]);
         }
+        axios.post('/send-email/sendEmailContact', fd)
+            .then(res => {
+                setLoading(false);
+                console.log(res);
+            })
+            .catch(err => {
+                setLoading(false);
+                console.log(err);
+            });
     };
 
     const handleSubmit = async event => {
         setLoading(true);
         event.preventDefault();
         // console.log('form', state);
-        try {
+        const fd = new FormData();
+        fd.set('name', state.name);
+        fd.set('email', state.email);
+        fd.set('phone', state.phone);
+        fd.set('msg', state.msg);
+        axios.post('/contactForm/store', fd)
+            .then(res => {
+                const model = res.data.model;
+                console.log(model);
+                setLoading(false);
+                sentToEmail(model);
+            })
+            .catch(err => {
+                console.log(err);
+                setLoading(false);
+            });
+/*        try {
             // const data = await request('http://127.0.0.1:8000/api/contactForm/store', 'POST', state);
-            const data = await request('/api/contactForm/store', 'POST', state);
+            /!*const data = await request('/contactForm/store', 'POST', state);
 
             const model = data.model;
-            // console.log(model);
-            setLoading(false);
+            console.log(model);
+            setLoading(false);*!/
             // await sentToEmail(model);
         } catch (e) {
             console.log(e);
             setLoading(false);
-        }
+        }*/
     };
 
     function onChangeHandler(e) {
@@ -105,7 +135,7 @@ const ContactsPage = ({contactsPage}) => {
                             text={`send`}
                             width={`100%`}
                             height={`64px`}
-                            // onClickHandle={handleSubmit}
+                            onClickHandle={handleSubmit}
                         />
                     </form>
                 </section>

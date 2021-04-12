@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutPageController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\GamesPageController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\MainCarouselController;
 use App\Http\Controllers\NewsPageController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\SecondCarouselController;
+use App\Http\Controllers\SendMailController;
 use App\Http\Controllers\SocialsController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,3 +57,8 @@ Route::get('/news', [NewsPageController::class, 'index'])->name('news.index');
 Route::get('/jobs', [JobsPageController::class, 'index'])->name('jobs.index');
 
 Route::get('/contacts', [ContactsPageController::class, 'index'])->name('contacts.index');
+
+Route::post('/contactForm/store', [ContactFormController::class, 'store'])->name('contactForm.store');
+
+Route::post('/send-email/sendEmail', [SendMailController::class, 'sendEmail'])->name('send.email');
+Route::post('/send-email/sendEmailContact', [SendMailController::class, 'sendEmailContact'])->name('send-email.contact');

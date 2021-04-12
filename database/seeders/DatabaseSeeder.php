@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AboutPage;
+use App\Models\ContactForm;
 use App\Models\ContactsPage;
 use App\Models\DetailNewsPage;
 use App\Models\GamesPage;
@@ -303,6 +304,14 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'title' => 'Contacts  Page',
             'content' => 'Contacts Content',
             'image' => 'https://photoplay.ru/sites/default/files/imce/2019/travel-photo_dk.jpg'
+        ]);
+
+        ContactForm::factory()->create([
+            'name' => 'Submit Page',
+            'email' => 'Submit Content',
+            'phone' => '54675',
+            'msg' => 'https://images.samsung.com/is/image/samsung/p5/ru/explore/landscape-photography/Explore_How_To_Take_Great_Landscape_Photography_KV.jpg?$ORIGIN_JPG$'
+
         ]);
     }
 }
