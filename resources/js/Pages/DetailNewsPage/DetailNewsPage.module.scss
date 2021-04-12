@@ -1,0 +1,115 @@
+@import "../../../sass/variables";
+
+.newsDetailPage {
+    .main {
+        position: relative;
+        min-height: 200px;
+
+        img {
+            width: 100%;
+        }
+
+        .shadowWrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background: radial-gradient(50% 50% at 50% 50%, rgba(12, 16, 20, 0.75) 0%, #0C1014 100%) no-repeat center center;
+            width: 100%;
+            height: 100%;
+
+            .btnBack {
+                color: $text_primary;
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-right: 8px;
+                }
+            }
+
+            h1 {
+                margin-top: 30px;
+                margin-bottom: 25px;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+    }
+
+    .info {
+        margin-top: 65px;
+
+        p, li {
+            color: $text_two;
+        }
+
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .quoteWrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            .vLine {
+                width: 10px;
+                height: 121px;
+                background: $blockquote_line;
+                margin-right: 20px;
+            }
+            blockquote{
+                margin-bottom: 0;
+            }
+        }
+
+        ul{
+            margin-top: 45px;
+            margin-bottom: 80px;
+        }
+
+        .imgNews {
+            margin-bottom: 65px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            img {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            p{
+                max-width: 665px;
+            }
+        }
+
+        &>p:last-child{
+            margin-bottom: 110px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .newsDetailPage {
+        .main {
+            .shadowWrapper {
+                .btnBack {
+                    margin-top: 25px;
+                }
+
+                h1 {
+                    margin-top: 100px;
+                }
+
+            }
+        }
+    }
+}

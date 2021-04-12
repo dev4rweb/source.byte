@@ -77,4 +77,6 @@ Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'
 
 Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');
 
+Route::get('/news/newsId', [DetailNewsPageController::class, 'index'])->name('newsId.index');
+
 Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('gameId.index');
