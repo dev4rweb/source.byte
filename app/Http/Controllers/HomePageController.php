@@ -88,12 +88,21 @@ class HomePageController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param HomePage $homePage
      * @return Response
      */
-    public function update(Request $request, HomePage $homePage)
+    public function update(Request $request)
     {
-        //
+        try {
+            $homePage = HomePage::find($request['id']);
+            $homePage->update($request->all());
+            $response['message'] = $request;
+            $response['success'] = true;
+            $response['model'] = $homePage;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+        return response()->json($response);
     }
 
     /**

@@ -96,6 +96,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/main-carousel/store', [MainCarouselController::class, 'store'])->name('main-carousel.store');
     Route::post('/main-carousel/update/{id}', [MainCarouselController::class, 'update'])->name('main-carousel.update');
     Route::delete('/main-carousel/destroy/{id}', [MainCarouselController::class, 'destroy'])->name('main-carousel.delete');
+
+    Route::post('/homePage/update', [HomePageController::class, 'update'])->name('home-page.update');
 });
 
 
