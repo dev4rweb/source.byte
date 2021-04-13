@@ -2,6 +2,7 @@ import React, {useEffect, useCallback, useState} from 'react';
 import {useHttp} from "../../../hooks/http.hook";
 import CarouselModule from "../../../components/Carousel/CarouselModule/CarouselModule";
 import HomePageForm from "./HomePageForm/HomePageForm";
+import SecondCarouselModule from "../../../components/SecondCarousel/SecondCarouselModule/SecondCarouselModule";
 
 const AdminPageHome = () => {
     const {request, loading} = useHttp();
@@ -38,6 +39,7 @@ const AdminPageHome = () => {
                 })}
             </div>
             <h1>Second Carousel</h1>
+            <SecondCarouselModule/>
         </div>
     );
 };

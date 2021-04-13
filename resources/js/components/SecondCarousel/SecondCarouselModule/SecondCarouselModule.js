@@ -3,16 +3,18 @@ import {useHttp} from "../../../hooks/http.hook";
 import Loader from "../../Loader/Loader";
 import MainCarouselCardList from "../../Carousel/MainCarouselCardList/MainCarouselCardList";
 import CarouselForm from "../../Carousel/CarouselForm/CarouselForm";
+import axios from "axios";
 
 
 const SecondCarouselModule = () => {
     const [state, setState] = useState(null);
     const {loading, request} = useHttp();
     const [card, setCard] = useState(null);
+    const [load, setLoad] = useState(false);
 
     const fetchTable = useCallback(async () => {
         try {
-            const fetched = await request('/api/secondCarousel');
+            const fetched = await request('/secondCarousel');
             // console.log(fetched);
             setState(fetched);
         } catch (e) {
@@ -26,13 +28,17 @@ const SecondCarouselModule = () => {
 
     const deleteHandler = async card => {
         // console.log('deleteHandler', card);
-        try {
-            const deleteItem = await request(`/api/secondCarousel/destroy/${card.id}`, 'DELETE');
-            // console.log(deleteItem);
-            setState(deleteItem.models);
-        } catch (e) {
-
-        }
+        setLoad(true);
+        axios.delete(`/secondCarousel/destroy/${card.id}`)
+            .then(res => {
+                setLoad(false);
+                console.log(res);
+                setState(res.data.models)
+            })
+            .catch(err => {
+                setLoad(false);
+                console.log(err);
+            });
     };
 
     const editCardHandler = card => {
@@ -40,7 +46,7 @@ const SecondCarouselModule = () => {
         setCard(card);
     };
 
-    if (loading) {
+    if (loading || load) {
         return <Loader/>
     }
     return (
@@ -59,7 +65,7 @@ const SecondCarouselModule = () => {
                 editCardHandler={editCardHandler}
                 mainCarouselItems={state}
                 setMainCarouselItems={setState}
-                editUrl={'/api/secondCarousel/update/'}
+                editUrl={'/secondCarousel/update'}
             />
             }
 
@@ -67,7 +73,7 @@ const SecondCarouselModule = () => {
             <CarouselForm
                 mainCarouselItems={state}
                 setMainCarouselItems={setState}
-                createUrl={'/api/secondCarousel/create'}
+                createUrl={'/secondCarousel/create'}
             />
             }
         </div>

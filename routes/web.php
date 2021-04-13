@@ -98,6 +98,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/main-carousel/destroy/{id}', [MainCarouselController::class, 'destroy'])->name('main-carousel.delete');
 
     Route::post('/homePage/update', [HomePageController::class, 'update'])->name('home-page.update');
+
+    Route::post('/secondCarousel/create', [SecondCarouselController::class, 'store'])->name('second-carousel.index');
+    Route::post('/secondCarousel/update/{id}', [SecondCarouselController::class, 'update'])->name('second-carousel.update');
+    Route::delete('/secondCarousel/destroy/{id}', [SecondCarouselController::class, 'destroy'])->name('second-carousel.destroy');
+
 });
 
 
