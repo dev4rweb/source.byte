@@ -42,12 +42,21 @@ class AboutPageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param AboutPage $aboutPage
      * @return Response
      */
-    public function show(AboutPage $aboutPage)
+    public function show()
     {
-        //
+        try {
+            $aboutPage = AboutPage::all();
+            $response['message'] = 'About Page';
+            $response['success'] = true;
+            $response['model'] = $aboutPage;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**
@@ -68,9 +77,53 @@ class AboutPageController extends Controller
      * @param AboutPage $aboutPage
      * @return Response
      */
-    public function update(Request $request, AboutPage $aboutPage)
+    public function update($id, Request $request)
     {
-        //
+        try {
+            $aboutPage = AboutPage::find($request['id']);
+            $aboutPage->update($request->all());
+
+            if ($request->hasFile('mainImage')) {
+                $response['has main Image'] = 'Has main Image';
+                $this->saveFile($request, $aboutPage, 'mainImage');
+            } else {
+                $response['has main Image'] = 'No main Image';
+            }
+
+            if ($request->hasFile('cardOneImage')) {
+                $response['has card One Image'] = 'has card One Image';
+                $this->saveFile($request, $aboutPage, 'cardOneImage');
+            } else {
+                $response['has card One Image'] = 'NO card One Image';
+            }
+
+            if ($request->hasFile('cardTwoImage')) {
+                $response['has card Two Image'] = 'has card Two Image';
+                $this->saveFile($request, $aboutPage, 'cardTwoImage');
+            } else {
+                $response['has card Two Image'] = 'NO card Two Image';
+            }
+
+            $response['message'] = 'Record changed';
+            $response['success'] = true;
+            $response['models'] = AboutPage::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+        return response()->json($response);
+    }
+
+    public function saveFile(Request $request, AboutPage $aboutPage, $key)
+    {
+        $file = $request->file($key);
+        $filename = $file->getClientOriginalName();
+        $extension = $file->getClientOriginalExtension();
+        $picture = date('His') . '-' . $filename;
+        $file->move(public_path('img'), $picture);
+
+        $aboutPage->update([$key => '/lsapp/public/img/' . $picture]); //with local storage
+//        $aboutPage->update([$key => '/img/' . $picture]); //with local storage
     }
 
     /**

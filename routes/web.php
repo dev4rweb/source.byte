@@ -107,6 +107,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/socials/{id}', [SocialsController::class, 'update'])->name('socials.update');
 
+    // About Page START
+
+    Route::get('/aboutPage/show', [AboutPageController::class, 'show'])->name('about.show');
+    Route::post('/aboutPage/update/{id}', [AboutPageController::class, 'update'])->name('about.update');
+    // About Page END
 });
 
 
