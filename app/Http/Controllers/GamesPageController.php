@@ -11,10 +11,26 @@ class GamesPageController extends Controller
 {
 
     public function index()
-    {$gamesPage = GamesPage::all();
+    {
+        $gamesPage = GamesPage::all();
         return Inertia::render('GamesPage/GamesPage', [
             'gamesPage' => $gamesPage
         ]);
+    }
+
+    public function getAll()
+    {
+        try {
+            $gamesPage = GamesPage::all();
+            $response['message'] = 'Games All';
+            $response['success'] = true;
+            $response['models'] = $gamesPage;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**

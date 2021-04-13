@@ -118,6 +118,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/ourTeam/update/{id}', [OurTeamController::class, 'update'])->name('outTeam.update');
     Route::delete('/ourTeam/destroy/{id}', [OurTeamController::class, 'destroy'])->name('outTeam.destroy');
     // Our Team END
+
+    // GamesPage START
+    Route::get('/gamesAll', [GamesPageController::class, 'getAll'])->name('games.all');
+    // GamesPage END
 });
 
 // Error Page Start
