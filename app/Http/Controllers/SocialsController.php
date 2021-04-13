@@ -85,12 +85,23 @@ class SocialsController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Socials $socials
      * @return Response
      */
-    public function update(Request $request, Socials $socials)
+    public function update($id, Request $request)
     {
-        //
+        try {
+            $socialItem = Socials::find($request['id']);
+            $socialItem->update($request->all());
+
+            $response['message'] = 'Url changed';
+            $response['success'] = true;
+            $response['socials'] = Socials::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**

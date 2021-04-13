@@ -20,7 +20,7 @@ const SocialItem = ({link, setState}) => {
         const fd = new FormData();
         fd.set('url', social.url);
 
-        axios.post(`/api/socials/${social.id}`, fd)
+        axios.post(`/socials/${social.id}`, fd)
             .then(res => {
                 setLoading(false);
                 // console.log(res.data);

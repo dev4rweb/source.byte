@@ -90,6 +90,7 @@ Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('g
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin', [AdminPageController::class, 'index'])->name('admin.index');
 
+    // Home Page Start
     Route::get('/homePage/indexApi', [HomePageController::class, 'indexApi']);
 
     Route::get('/main-carousel', [MainCarouselController::class, 'index'])->name('main-carousel.index');
@@ -102,6 +103,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/secondCarousel/create', [SecondCarouselController::class, 'store'])->name('second-carousel.index');
     Route::post('/secondCarousel/update/{id}', [SecondCarouselController::class, 'update'])->name('second-carousel.update');
     Route::delete('/secondCarousel/destroy/{id}', [SecondCarouselController::class, 'destroy'])->name('second-carousel.destroy');
+    // Home Page End
+
+    Route::post('/socials/{id}', [SocialsController::class, 'update'])->name('socials.update');
 
 });
 
