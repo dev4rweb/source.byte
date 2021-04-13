@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\DetailNewsPage;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Inertia\Inertia;
 
 class DetailNewsPageController extends Controller
@@ -25,7 +27,7 @@ class DetailNewsPageController extends Controller
             $response['message'] = '3 last records';
             $response['success'] = true;
             $response['models'] = $detailNewsPage;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $response['message'] = $exception->getMessage();
             $response['success'] = false;
         }
@@ -36,7 +38,7 @@ class DetailNewsPageController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -46,8 +48,8 @@ class DetailNewsPageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -57,8 +59,8 @@ class DetailNewsPageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\DetailNewsPage  $detailNewsPage
-     * @return \Illuminate\Http\Response
+     * @param DetailNewsPage $detailNewsPage
+     * @return Response
      */
     public function show(DetailNewsPage $detailNewsPage)
     {
@@ -68,8 +70,8 @@ class DetailNewsPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\DetailNewsPage  $detailNewsPage
-     * @return \Illuminate\Http\Response
+     * @param DetailNewsPage $detailNewsPage
+     * @return Response
      */
     public function edit(DetailNewsPage $detailNewsPage)
     {
@@ -79,9 +81,9 @@ class DetailNewsPageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DetailNewsPage  $detailNewsPage
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param DetailNewsPage $detailNewsPage
+     * @return Response
      */
     public function update(Request $request, DetailNewsPage $detailNewsPage)
     {
@@ -91,8 +93,8 @@ class DetailNewsPageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\DetailNewsPage  $detailNewsPage
-     * @return \Illuminate\Http\Response
+     * @param DetailNewsPage $detailNewsPage
+     * @return Response
      */
     public function destroy(DetailNewsPage $detailNewsPage)
     {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AdminPage;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Inertia\Inertia;
 
 class AdminPageController extends Controller
@@ -20,7 +21,7 @@ class AdminPageController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -30,8 +31,8 @@ class AdminPageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -41,8 +42,8 @@ class AdminPageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AdminPage  $adminPage
-     * @return \Illuminate\Http\Response
+     * @param AdminPage $adminPage
+     * @return Response
      */
     public function show(AdminPage $adminPage)
     {
@@ -52,8 +53,8 @@ class AdminPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AdminPage  $adminPage
-     * @return \Illuminate\Http\Response
+     * @param AdminPage $adminPage
+     * @return Response
      */
     public function edit(AdminPage $adminPage)
     {
@@ -63,9 +64,9 @@ class AdminPageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AdminPage  $adminPage
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param AdminPage $adminPage
+     * @return Response
      */
     public function update(Request $request, AdminPage $adminPage)
     {
@@ -75,8 +76,8 @@ class AdminPageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AdminPage  $adminPage
-     * @return \Illuminate\Http\Response
+     * @param AdminPage $adminPage
+     * @return Response
      */
     public function destroy(AdminPage $adminPage)
     {

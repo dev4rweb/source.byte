@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -30,7 +31,7 @@ class SendMailController extends Controller
             $response['success'] = true;
 
             dd('Mail Send Successfully');
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $response['message'] = $exception->getMessage();
             $response['add'] = 'Email Doesnt send';
             $response['success'] = false;
@@ -59,7 +60,7 @@ class SendMailController extends Controller
             });
             $response['message'] = 'Email sent';
             $response['success'] = true;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $response['message'] = $exception->getMessage();
             $response['add'] = 'Email Doesnt send';
             $response['success'] = false;
@@ -128,7 +129,7 @@ class SendMailController extends Controller
             });
             $response['message'] = 'Email Send';
             $response['success'] = true;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $response['message'] = $exception->getMessage();
             $response['add'] = 'Email Doesnt send';
             $response['success'] = false;

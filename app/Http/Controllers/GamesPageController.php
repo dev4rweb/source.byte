@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\GamesPage;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Inertia\Inertia;
 
 class GamesPageController extends Controller
@@ -19,7 +20,7 @@ class GamesPageController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -29,8 +30,8 @@ class GamesPageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -40,8 +41,8 @@ class GamesPageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\GamesPage  $gamesPage
-     * @return \Illuminate\Http\Response
+     * @param GamesPage $gamesPage
+     * @return Response
      */
     public function show(GamesPage $gamesPage)
     {
@@ -51,8 +52,8 @@ class GamesPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\GamesPage  $gamesPage
-     * @return \Illuminate\Http\Response
+     * @param GamesPage $gamesPage
+     * @return Response
      */
     public function edit(GamesPage $gamesPage)
     {
@@ -62,9 +63,9 @@ class GamesPageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\GamesPage  $gamesPage
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param GamesPage $gamesPage
+     * @return Response
      */
     public function update(Request $request, GamesPage $gamesPage)
     {
@@ -74,8 +75,8 @@ class GamesPageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\GamesPage  $gamesPage
-     * @return \Illuminate\Http\Response
+     * @param GamesPage $gamesPage
+     * @return Response
      */
     public function destroy(GamesPage $gamesPage)
     {

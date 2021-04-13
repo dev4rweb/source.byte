@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\SubmitGameForm;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SubmitGameFormController extends Controller
 {
@@ -11,7 +13,7 @@ class SubmitGameFormController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -22,7 +24,7 @@ class SubmitGameFormController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -32,8 +34,8 @@ class SubmitGameFormController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -48,7 +50,7 @@ class SubmitGameFormController extends Controller
 
             $response['message'] = "Image Uploaded Successful from try";
             $response['model'] = $submitGameForm;
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             $response['message'] = $exception->getMessage();
             $response['success'] = false;
         }
@@ -74,8 +76,8 @@ class SubmitGameFormController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\SubmitGameForm  $submitGameForm
-     * @return \Illuminate\Http\Response
+     * @param SubmitGameForm $submitGameForm
+     * @return Response
      */
     public function show(SubmitGameForm $submitGameForm)
     {
@@ -85,8 +87,8 @@ class SubmitGameFormController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\SubmitGameForm  $submitGameForm
-     * @return \Illuminate\Http\Response
+     * @param SubmitGameForm $submitGameForm
+     * @return Response
      */
     public function edit(SubmitGameForm $submitGameForm)
     {
@@ -96,9 +98,9 @@ class SubmitGameFormController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SubmitGameForm  $submitGameForm
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param SubmitGameForm $submitGameForm
+     * @return Response
      */
     public function update(Request $request, SubmitGameForm $submitGameForm)
     {
@@ -108,8 +110,8 @@ class SubmitGameFormController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\SubmitGameForm  $submitGameForm
-     * @return \Illuminate\Http\Response
+     * @param SubmitGameForm $submitGameForm
+     * @return Response
      */
     public function destroy(SubmitGameForm $submitGameForm)
     {

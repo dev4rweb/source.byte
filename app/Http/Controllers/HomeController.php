@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use function logger;
 
 class HomeController extends Controller
 {
@@ -20,11 +22,11 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return Renderable
      */
     public function index()
     {
-        \logger('message');
+        logger('message');
         return Inertia::render('HomePage/HomePage');
     }
 }

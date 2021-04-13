@@ -89,4 +89,13 @@ Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('g
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin', [AdminPageController::class, 'index'])->name('admin.index');
+
+    Route::get('/homePage/indexApi', [HomePageController::class, 'indexApi']);
+
+    Route::get('/main-carousel', [MainCarouselController::class, 'index'])->name('main-carousel.index');
+    Route::post('/main-carousel/store', [MainCarouselController::class, 'store'])->name('main-carousel.store');
+    Route::post('/main-carousel/update/{id}', [MainCarouselController::class, 'update'])->name('main-carousel.update');
+    Route::delete('/main-carousel/destroy/{id}', [MainCarouselController::class, 'destroy'])->name('main-carousel.delete');
 });
+
+

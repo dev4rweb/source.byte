@@ -10,6 +10,7 @@ use App\Models\ContactsPage;
 use App\Models\DetailGamePage;
 use App\Models\DetailNewsPage;
 use App\Models\GamesPage;
+use App\Models\HomePage;
 use App\Models\JobsPage;
 use App\Models\MainCarousel;
 use App\Models\NewsPage;
@@ -19,7 +20,9 @@ use App\Models\SecondCarousel;
 use App\Models\Socials;
 use App\Models\SubmitGameForm;
 use App\Models\SubmitPage;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use function bcrypt;
 
 class DatabaseSeeder extends Seeder
 {
@@ -30,13 +33,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory()->create([
+        User::factory()->create([
             'name' => 'Nikodem',
             'email' => 'admin@source-byte.com',
-            'password' => \bcrypt('qa9h6`dNWNd{J#rd'),
+            'password' => bcrypt('qa9h6`dNWNd{J#rd'),
         ]);
 
-        \App\Models\HomePage::factory()->create([
+        HomePage::factory()->create([
             'title' => 'Interactive',
             'content' => 'Deck13 Interactive is one of Germany’s leading developers with more than 18 years of experience. With over 60 employees located in Frankfurt, Deck13 Interactive has developed upwards of 20 titles, including major releases such',
             'underText' => 'Do you want to see more games?',
@@ -44,7 +47,7 @@ class DatabaseSeeder extends Seeder
             'btnUrl' => 'http://source-byte.zzz.com.ua/'
         ]);
 
-        \App\Models\HomePage::factory()->create([
+        HomePage::factory()->create([
             'title' => 'Our news',
             'content' => '',
             'underText' => 'Do you want to see more games',

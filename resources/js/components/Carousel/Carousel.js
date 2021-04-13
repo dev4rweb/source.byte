@@ -35,7 +35,7 @@ const Carousel = () => {
 
     const fetchCarousel = useCallback(async () => {
         try{
-            const fetched = await request('/mainCarousel');
+            const fetched = await request('/main-carousel');
             // console.log(fetched);
             setCards(fetched);
         } catch (e) {

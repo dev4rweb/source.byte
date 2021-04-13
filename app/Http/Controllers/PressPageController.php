@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PressPage;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Inertia\Inertia;
 
 class PressPageController extends Controller
@@ -20,7 +21,7 @@ class PressPageController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -30,8 +31,8 @@ class PressPageController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -41,8 +42,8 @@ class PressPageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\PressPage  $pressPage
-     * @return \Illuminate\Http\Response
+     * @param PressPage $pressPage
+     * @return Response
      */
     public function show(PressPage $pressPage)
     {
@@ -52,8 +53,8 @@ class PressPageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\PressPage  $pressPage
-     * @return \Illuminate\Http\Response
+     * @param PressPage $pressPage
+     * @return Response
      */
     public function edit(PressPage $pressPage)
     {
@@ -63,9 +64,9 @@ class PressPageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PressPage  $pressPage
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param PressPage $pressPage
+     * @return Response
      */
     public function update(Request $request, PressPage $pressPage)
     {
@@ -75,8 +76,8 @@ class PressPageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\PressPage  $pressPage
-     * @return \Illuminate\Http\Response
+     * @param PressPage $pressPage
+     * @return Response
      */
     public function destroy(PressPage $pressPage)
     {

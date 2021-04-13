@@ -8,9 +8,9 @@ const CarouselForm = ({
                           card, editCardHandler = null,
                           setMainCarouselItems,
                           mainCarouselItems,
-    editUrl = '/api/mCarouselCards/update/',
-    createUrl = '/api/mCarouselCards/create/'
-}) => {
+                          editUrl = '/main-carousel/update',
+                          createUrl = '/main-carousel/store'
+                      }) => {
     const [loading, setLoading] = useState(false);
     const [val, setVal] = useState(card || {
         title: '',
@@ -40,7 +40,7 @@ const CarouselForm = ({
     const onEditHandler = async e => {
         setLoading(true);
         e.preventDefault();
-        console.log('onEditHandler', val);
+        // console.log('onEditHandler', val);
         const fd = new FormData();
         fd.set('title', val.title);
         fd.set('content', val.content);
@@ -48,9 +48,9 @@ const CarouselForm = ({
         fd.set('btnText', val.btnText);
         fd.set('btnUrl', val.btnUrl);
 
-        axios.post(`${editUrl}${val.id}`, fd)
+        axios.post(`${editUrl}/${val.id}`, fd)
             .then(res => {
-                // console.log(res);
+                console.log(res);
                 setLoading(false);
                 // const updateArray = [...mainCarouselItems];
                 // console.log('old', res.data.models);
@@ -85,7 +85,7 @@ const CarouselForm = ({
         fd.set('btnText', val.btnText);
         fd.set('btnUrl', val.btnUrl);
 
-        axios.post(createUrl, fd)
+        axios.post(`${createUrl}`, fd,)
             .then(res => {
                 // console.log(res);
                 // console.log(res.data.model);

@@ -10,6 +10,7 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     @routes
     <script src="{{ mix('/js/app.js') }}" defer></script>
+{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
 
 </head>
 <body>

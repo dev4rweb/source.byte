@@ -3,16 +3,17 @@ import {useHttp} from "../../../hooks/http.hook";
 import Loader from "../../Loader/Loader";
 import MainCarouselCardList from "../MainCarouselCardList/MainCarouselCardList";
 import CarouselForm from "../CarouselForm/CarouselForm";
+import axios from "axios";
 
 const CarouselModule = () => {
     const [mainCarouselItems, setMainCarouselItems] = useState([]);
     const {loading, request} =useHttp();
-
+    const [load, setLoad] = useState(false);
     const [card, setCard] = useState(null);
 
     const fetchMainCarouselItems = useCallback(async () => {
         try {
-            const fetched = await request('/mCarouselCards');
+            const fetched = await request('/main-carousel');
             setMainCarouselItems(fetched);
             // console.log(fetched)
         } catch (e) {
@@ -25,19 +26,23 @@ const CarouselModule = () => {
     }, [fetchMainCarouselItems]);
 
 
-    if (loading) {
+    if (loading || load) {
         return <Loader/>
     }
 
     async function deleteHandler(card) {
-        console.log(card);
-        try {
-            const deleteItem = await request(`/api/mCarouselCards/destroy/${card.id}`, 'DELETE');
-            console.log(deleteItem);
-            setMainCarouselItems(deleteItem.models);
-        } catch (e) {
-
-        }
+        // console.log(card);
+        setLoad(true);
+        axios.delete(`/main-carousel/destroy/${card.id}`)
+            .then(res => {
+                setLoad(false);
+                // console.log(res);
+                setMainCarouselItems(res.data.models);
+            })
+            .catch(err => {
+                console.log(err);
+                setLoad(false);
+            });
     }
 
     function editCardHandler(card) {
