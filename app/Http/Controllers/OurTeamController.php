@@ -47,7 +47,38 @@ class OurTeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $ourTeam = OurTeam::create($request->all());
+
+            if ($request->hasFile('photo')) {
+                $response['hasPhoto'] = 'Has Photo';
+                $this->saveFile($request, $ourTeam);
+            } else {
+                $response['hasPhoto'] = 'No any file to download';
+            }
+
+            $response['message'] = 'Team item created';
+            $response['success'] = true;
+            $response['models'] = OurTeam::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
+    }
+
+    public function saveFile(Request $request, OurTeam $ourTeam)
+    {
+        $file = $request->file('photo');
+        $filename = $file->getClientOriginalName();
+        $extension = $file->getClientOriginalExtension();
+        $picture = date('His') . '-' . $filename;
+        $file->move(public_path('img'), $picture);
+
+//        $ourTeam->update(['photo' => '/img' . '/' . $picture]);
+        $ourTeam->update(['photo' => '/lsapp/public/img/' . $picture]); //host storage
+//        $ourTeam->update(['photo' => '/img/' . $picture]); //with local storage
     }
 
     /**
@@ -76,22 +107,50 @@ class OurTeamController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param OurTeam $ourTeam
      * @return Response
      */
-    public function update(Request $request, OurTeam $ourTeam)
+    public function update($id, Request $request)
     {
-        //
+        try {
+            $ourTeam = OurTeam::find($request['id']);
+            $ourTeam->update($request->all());
+
+            if ($request->hasFile('photo')) {
+                $response['hasPhoto'] = 'Has Photo';
+                $this->saveFile($request, $ourTeam);
+            } else {
+                $response['hasPhoto'] = 'No any file to download';
+            }
+
+            $response['message'] = 'Record changed';
+            $response['success'] = true;
+            $response['models'] = OurTeam::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param OurTeam $ourTeam
      * @return Response
      */
-    public function destroy(OurTeam $ourTeam)
+    public function destroy($id)
     {
-        //
+        try {
+            $ourTeam = OurTeam::find($id);
+            $ourTeam->delete();
+            $response['message'] = 'record was deleted';
+            $response['success'] = true;
+            $response['models'] = OurTeam::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 }

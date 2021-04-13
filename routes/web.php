@@ -108,10 +108,15 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/socials/{id}', [SocialsController::class, 'update'])->name('socials.update');
 
     // About Page START
-
     Route::get('/aboutPage/show', [AboutPageController::class, 'show'])->name('about.show');
     Route::post('/aboutPage/update/{id}', [AboutPageController::class, 'update'])->name('about.update');
     // About Page END
+
+    // Our Team START
+    Route::post('/ourTeam/store', [OurTeamController::class, 'store'])->name('outTeam.store');
+    Route::post('/ourTeam/update/{id}', [OurTeamController::class, 'update'])->name('outTeam.update');
+    Route::delete('/ourTeam/destroy/{id}', [OurTeamController::class, 'destroy'])->name('outTeam.destroy');
+    // Our Team END
 });
 
 
