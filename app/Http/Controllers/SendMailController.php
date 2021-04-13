@@ -54,8 +54,8 @@ class SendMailController extends Controller
         ];
         try {
             Mail::send('email-template', $data, function ($message) use ($data) {
-                $message->to('dev4rweb@gmail.com');
-//                $message->to('admin@source-byte.com');
+//                $message->to('dev4rweb@gmail.com');
+                $message->to('admin@source-byte.com');
                 $message->subject($data['subject']);
             });
             $response['message'] = 'Email sent';
@@ -123,8 +123,8 @@ class SendMailController extends Controller
         try {
             Mail::send('email-template', $data, function ($message) use ($data) {
 //            $message->to($user['email']);
-                $message->to('dev4rweb@gmail.com');
-//                $message->to('admin@source-byte.com');
+//                $message->to('dev4rweb@gmail.com');
+                $message->to('admin@source-byte.com');
                 $message->subject($data['subject']);
             });
             $response['message'] = 'Email Send';

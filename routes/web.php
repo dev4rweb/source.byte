@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\DetailGamePageController;
 use App\Http\Controllers\DetailNewsPageController;
+use App\Http\Controllers\ErrorPageController;
 use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
@@ -119,4 +120,8 @@ Route::group(['middleware' => ['auth']], function () {
     // Our Team END
 });
 
+// Error Page Start
+Route::any('{catchall}', [ErrorPageController::class, 'index'])->where('catchall', '.*')->name('error.page');
+Route::fallback([ErrorPageController::class, 'index']);
+// Error Page END
 
