@@ -12,7 +12,7 @@ const AdminPageAbout = () => {
     const fetchData = useCallback(async () => {
         try {
             const fetched = await request('/aboutPage/show');
-            // console.log(fetched);
+            console.log(fetched);
             setState(fetched.model[0]);
         } catch (e) {
             console.log(e)

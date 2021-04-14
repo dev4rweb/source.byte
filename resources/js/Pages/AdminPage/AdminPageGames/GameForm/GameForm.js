@@ -50,7 +50,7 @@ const GameForm = ({
                         type="text"
                         className="form-control"
                         name="title"
-                        value={state.title}
+                        value={state.title ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -60,7 +60,7 @@ const GameForm = ({
                         className="form-control"
                         placeholder="Leave a content here"
                         name="content"
-                        value={state.content}
+                        value={state.content ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -82,7 +82,7 @@ const GameForm = ({
                         type="text"
                         className="form-control"
                         name="category"
-                        value={state.category}
+                        value={state.category ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -94,7 +94,7 @@ const GameForm = ({
                         type="text"
                         className="form-control"
                         name="video"
-                        value={state.video}
+                        value={state.video ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -106,7 +106,7 @@ const GameForm = ({
                         type="text"
                         className="form-control"
                         name="subtitle"
-                        value={state.subtitle}
+                        value={state.subtitle ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -116,7 +116,7 @@ const GameForm = ({
                         className="form-control"
                         placeholder="Leave a additional content here"
                         name="subContent"
-                        value={state.subContent}
+                        value={state.subContent ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -128,7 +128,7 @@ const GameForm = ({
                         type="text"
                         className="form-control"
                         name="listTitle"
-                        value={state.listTitle}
+                        value={state.listTitle ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -138,7 +138,7 @@ const GameForm = ({
                         className="form-control"
                         placeholder="divide line with *-"
                         name="list"
-                        value={state.list}
+                        value={state.list ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -151,7 +151,7 @@ const GameForm = ({
                         type="text"
                         className="form-control"
                         name="subtitleTwo"
-                        value={state.subtitleTwo}
+                        value={state.subtitleTwo ?? ''}
                         onChange={changeHandler}
                     />
                 </div>
@@ -161,7 +161,7 @@ const GameForm = ({
                         className="form-control"
                         placeholder="content"
                         name="contentTwo"
-                        value={state.contentTwo}
+                        value={state.contentTwo ?? ''}
                         onChange={changeHandler}
                     />
                 </div>

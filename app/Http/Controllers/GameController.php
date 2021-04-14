@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\OurTeam;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -14,7 +15,17 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $games = Game::all();
+            $response['message'] = 'All Games';
+            $response['success'] = true;
+            $response['models'] = $games;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**
@@ -35,7 +46,37 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $game = Game::create($request->all());
+
+            if ($request->hasFile('mainImage')) {
+                $response['hasPhoto'] = 'Has a photo';
+                $this->saveFile($request, $game);
+            } else {
+                $response['hasPhoto'] = 'No photo';
+            }
+
+            $response['message'] = 'Game created';
+            $response['success'] = true;
+            $response['models'] = Game::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
+    }
+
+    public function saveFile(Request $request, Game $game)
+    {
+        $file = $request->file('mainImage');
+        $filename = $file->getClientOriginalName();
+        $extension = $file->getClientOriginalExtension();
+        $picture = date('His') . '-' . $filename;
+        $file->move(public_path('img'), $picture);
+
+        $game->update(['mainImage' => '/lsapp/public/img/' . $picture]); //host storage
+//        $game->update(['mainImage' => '/img/' . $picture]); //with local storage
     }
 
     /**
@@ -64,22 +105,50 @@ class GameController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Game $game)
+    public function update($id, Request $request)
     {
-        //
+        try {
+            $game = Game::find($request['id']);
+            $game->update($request->all());
+
+            if ($request->hasFile('mainImage')) {
+                $response['hasPhoto'] = 'Has main Image';
+                $this->saveFile($request, $game);
+            } else {
+                $response['hasPhoto'] = 'No Photo';
+            }
+
+            $response['message'] = 'Game Changed';
+            $response['success'] = true;
+            $response['models'] = Game::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Game  $game
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Game $game)
+    public function destroy($id)
     {
-        //
+        try {
+            $game = Game::find($id);
+            $game->delete();
+            $response['message'] = 'Game was deleted';
+            $response['success'] = true;
+            $response['models'] = Game::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 }

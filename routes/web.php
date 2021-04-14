@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\DetailGamePageController;
 use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\ErrorPageController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
@@ -54,7 +55,7 @@ Route::get('/secondCarousel', [SecondCarouselController::class, 'index'])->name(
 Route::get('/detailNewsPage/getThreeLast', [DetailNewsPageController::class, 'getThreeLastPosts'])->name('detailNews.getThreeLastPosts');
 
 Route::get('/socials', [SocialsController::class, 'index'])->name('socials.index');
-Route::get('//socials/getSplit', [SocialsController::class, 'getSpit'])->name('socials.getSplit');
+Route::get('/socials/getSplit', [SocialsController::class, 'getSpit'])->name('socials.getSplit');
 
 Route::get('/about', [AboutPageController::class, 'index'])->name('about.index');
 
@@ -121,6 +122,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     // GamesPage START
     Route::get('/gamesAll', [GamesPageController::class, 'getAll'])->name('games.all');
+    Route::get('/games-all', [GameController::class, 'index'])->name('games-all.index');
+    Route::post('/game-store', [GameController::class, 'store'])->name('game.store');
+    Route::post('/game/update/{id}', [GameController::class, 'update'])->name('game.update');
+    Route::delete('/game/destroy/{id}', [GameController::class, 'destroy'])->name('game.destroy');
     // GamesPage END
 });
 
