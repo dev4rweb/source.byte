@@ -13,7 +13,7 @@ const AdminPageGames = () => {
         try {
             const fetched = await request('/gamesAll');
             console.log(fetched);
-            setState(fetched.models)
+            setState(fetched.games);
         } catch (e) {
             console.log(e);
         }
@@ -41,6 +41,10 @@ const AdminPageGames = () => {
 
     if (loading || load) {
         return <Loader/>;
+    }
+
+    if (!state) {
+        return <h1>No Games</h1>;
     }
 
     return (

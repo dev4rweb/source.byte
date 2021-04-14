@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Game;
 use App\Models\GamesPage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -22,9 +23,11 @@ class GamesPageController extends Controller
     {
         try {
             $gamesPage = GamesPage::all();
+            $games = Game::all();
             $response['message'] = 'Games All';
             $response['success'] = true;
             $response['models'] = $gamesPage;
+            $response['games'] = $games;
         } catch (\Exception $exception) {
             $response['message'] = $exception->getMessage();
             $response['success'] = false;

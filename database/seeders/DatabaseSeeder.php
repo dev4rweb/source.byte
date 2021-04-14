@@ -9,6 +9,7 @@ use App\Models\ContactForm;
 use App\Models\ContactsPage;
 use App\Models\DetailGamePage;
 use App\Models\DetailNewsPage;
+use App\Models\Game;
 use App\Models\GamesPage;
 use App\Models\HomePage;
 use App\Models\JobsPage;
@@ -392,6 +393,74 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'title' => 'Admin  Page',
             'content' => 'Admin Content',
             'image' => 'https://www.1zoom.ru/big2/81/172586-foxixol.jpg'
+        ]);
+
+        Game::factory()->create([
+            'title' => 'Bocce VR Simulator',
+            'content' => 'Bocce VR Simulator is a perfect simulation game where you can experience every detail of bocce game. No matter if you are an amateur or professional bocce player you can step in and compete with AI or your local friend.',
+            'mainImage' => '/images/games1.png',
+            'category' => 'Simulation',
+            'video' => 'https://www.youtube.com/watch?v=vRxA6KzIg8g',
+            'subtitle' => 'About this game',
+            'subContent' => 'Bocce VR Simulator – a simple game known to mankind for years with a lot of fans. The simplicity of the rules and the ability to play anywhere make the game suitable for everyone, both for the younger and the older ones. In this game, physical skills are important, as well as strategies and a bit of luck, which introduces some kind of randomness. The object of the game is to throw the balls as close to the Palino as possible. For balls that are closer to the opponent’s balls than the opponent’s balls, a corresponding point reduction is given. The game ends when the player reaches a certain number of points.
+Bocce VR is the perfect simulator where all the rules and details of the game are included. Thanks to the perfect representation of the pitch and surroundings, the game takes a realistic form. The ability to play with a friend increases the desire to compete and win even more, which results in much more excitement.
+So put on your VR headset and indulge in the world of Bocce VR',
+
+            'listTitle' => 'Features',
+            'list' => '*- Competing with your local friend on the same glasses, *- Ability to change CPU level, *- Advanced AI, *- Ability to choose amount of points that are needed to finish the game, *- Choose a name to your character, *- Realistic graphic and gameplay',
+            'subtitleTwo' => 'Gameplay',
+            'contentTwo' => 'Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.'
+        ]);
+
+        Game::factory()->create([
+            'title' => 'Supfly Delivery Simulator',
+            'content' => 'Supfly Delivery Simulator – a game in which humanity is ruled by delivery service and now it’s your time to become the best delivery man in the world! Deliver everything what is needed in the moment. As a robot you have one simple job – to deliver.',
+            'mainImage' => '/images/games3.png',
+            'category' => 'Simulation',
+            'video' => 'https://youtu.be/x11ZCnr87pE',
+            'subtitle' => 'About this game',
+            'subContent' => 'Supfly Delivery Simulator – a game in which humanity is ruled by delivery service and now it’s your time to become the best deliveryman in the world! Deliver everything what is needed in the moment. As a robot you have one simple job – to deliver. But remember, you have to be punctual and precise – you don’t want to make customers angry. Watch out for your battery level – if it ran out, you would be in trouble. So jump in the game, catch some parcels and try yourself as a deliverer!',
+
+            'listTitle' => 'Features',
+            'list' => '*- Weather conditions *- Many unique drones each of them have their own mechanics *- Advanced AI, *- Different types of shipments *- 3 Maps, *- Automatically generated map, *- Fun for hours, *- Possibility to play with a friend',
+            'subtitleTwo' => 'Title two',
+            'contentTwo' => 'Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.'
+        ]);
+
+        Game::factory()->create([
+            'title' => 'Time For Quest',
+            'content' => 'Let’s go for unforgettable journey! Experience amazing moments in the Time For Quest universe! Sail the sea! Fight the biggest beasts in the world! Gain new skills! Get the best weapon of all time and become the greatest hero ever! Take your chance!',
+            'mainImage' => '/images/games2.png',
+            'category' => 'Quest',
+            'video' => 'https://youtu.be/WEh2Ta4prUE',
+            'subtitle' => 'About this game',
+            'subContent' => 'I hope you would like to join to our universe of Time For Quest where there are no restrictions and you will create your own story as a new hero!
+
+Time For Quest is a 2D open world rpg game inspired by combat, adventures, rpg games as Zelda, Final Fantasy & Moonlighter!',
+
+            'listTitle' => 'Features',
+            'list' => '*- Action Battle System *- Crafting *- Fantastic soundtrack, *- Learn countless spells and skills *- More then 100 maps, *- Find secrets and raid dungeons! *- Lots of interesting Quests',
+            'subtitleTwo' => 'Gameplay',
+            'contentTwo' => 'Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
+
+On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word “and” and the Little Blind Text should turn around and return to its own, safe country.'
+        ]);
+
+        Game::factory()->create([
+            'title' => 'Royal Rescue SRPG',
+            'content' => '“Royal Rescue SRPG” is a role-playing game with a turn-based combat system. From here out of nowhere Princess is kidnapped from the Kingdom, you get a secret mission to save her! Challenge yourself in several quests, face the enemies of the kingdom and save the princess!',
+            'mainImage' => '/images/games4.png',
+            'category' => 'SRPG',
+            'video' => 'https://youtu.be/HrmNS4ynJpk',
+            'subtitle' => 'About this game',
+            'subContent' => 'It was a nice calm day … But from here out of nowhere Princess is kidnapped from the Kingdom, you get a secret mission to save her! Challenge yourself in several quests, face the enemies of the kingdom and save the princess!
+
+Visit villages, collect items, explore the world, fight enemies.',
+
+            'listTitle' => 'Features',
+            'list' => '*- 3-4 hours of pure SRPG fun *- Strategy role-playing game *- Control base *- Side quests *- Classic soundtrack ',
+            'subtitleTwo' => 'Gameplay',
+            'contentTwo' => 'Alphabet Village and the subline'
         ]);
     }
 }
