@@ -10,6 +10,7 @@ use App\Models\ContactsPage;
 use App\Models\DetailGamePage;
 use App\Models\DetailNewsPage;
 use App\Models\Game;
+use App\Models\GameCarousel;
 use App\Models\GamesPage;
 use App\Models\HomePage;
 use App\Models\JobsPage;
@@ -461,6 +462,110 @@ Visit villages, collect items, explore the world, fight enemies.',
             'list' => '*- 3-4 hours of pure SRPG fun *- Strategy role-playing game *- Control base *- Side quests *- Classic soundtrack ',
             'subtitleTwo' => 'Gameplay',
             'contentTwo' => 'Alphabet Village and the subline'
+        ]);
+
+
+
+        GameCarousel::factory()->create([
+            'gameId' => '1',
+            'image' => '/images/bocce1.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '1',
+            'image' => '/images/bocce2.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '1',
+            'image' => '/images/bocce3.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '1',
+            'image' => '/images/bocce4.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '1',
+            'image' => '/images/bocce5.png'
+        ]);
+
+        GameCarousel::factory()->create([
+            'gameId' => '2',
+            'image' => '/images/suply1.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '2',
+            'image' => '/images/suply2.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '2',
+            'image' => '/images/suply3.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '2',
+            'image' => '/images/suply4.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '2',
+            'image' => '/images/suply5.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '2',
+            'image' => '/images/suply6.png'
+        ]);
+
+
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest1.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest2.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest3.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest4.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest5.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest6.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest7.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '3',
+            'image' => '/images/quest8.png'
+        ]);
+
+
+        GameCarousel::factory()->create([
+            'gameId' => '4',
+            'image' => '/images/royal1.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '4',
+            'image' => '/images/royal2.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '4',
+            'image' => '/images/royal3.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '4',
+            'image' => '/images/royal4.png'
+        ]);
+        GameCarousel::factory()->create([
+            'gameId' => '4',
+            'image' => '/images/royal5.png'
         ]);
     }
 }

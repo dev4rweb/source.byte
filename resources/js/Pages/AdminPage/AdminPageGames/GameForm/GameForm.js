@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import CustomInput from "../../../../components/CustomInput/CustomInput";
+import SliderControl from "../../../../components/DetailGameSlider/SliderControl/SliderControl";
+
 
 const GameForm = ({
     card,
@@ -11,7 +13,11 @@ const GameForm = ({
         video: '', subtitle: '', subContent: '', listTitle: '',
         list: '', subtitleTwo: '', contentTwo: ''
     });
+
+
     const [btnText, setBtnText] = useState('Upload your Files');
+
+
 
     function changeHandler(e) {
         if (e.currentTarget.name === 'mainImage') {
@@ -29,10 +35,10 @@ const GameForm = ({
 
     function submitHandler() {
         if (card) {
-            console.log('updateHandler');
+            // console.log('updateHandler');
             updateHandler(state)
         } else {
-            console.log('createHandler');
+            // console.log('createHandler');
             createHandler(state);
         }
     }
@@ -41,6 +47,7 @@ const GameForm = ({
         return (
 
             <div className="mb-5 mt-5">
+                <SliderControl card={card}/>
                 <h2>Edit Form</h2>
                 <div className="mb-3">
                     <label className="text-light">
@@ -172,7 +179,7 @@ const GameForm = ({
                     Change
                 </button>
             </div>
-        )
+        );
     }
 
     if (!card) {

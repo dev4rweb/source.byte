@@ -14,7 +14,7 @@ const AdminPageGames = () => {
     const fetchGames = useCallback(async () => {
         try {
             const fetched = await request('/games-all');
-            console.log(fetched);
+            // console.log(fetched);
             setState(fetched.models);
         } catch (e) {
             console.log(e);
@@ -25,18 +25,19 @@ const AdminPageGames = () => {
         fetchGames()
     }, [fetchGames]);
 
+
     function editHandler(card) {
-        console.log('editHandler', card);
+        // console.log('editHandler', card);
         setCard(card);
     }
 
     async function deleteHandler(item) {
-        console.log('deleteHandler', item);
+        // console.log('deleteHandler', item);
         setLoad(true);
         axios.delete(`/game/destroy/${item.id}`)
             .then(res => {
                 setLoad(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.models);
             })
             .catch(err => {
@@ -46,7 +47,7 @@ const AdminPageGames = () => {
     }
 
     function createHandler(item) {
-        console.log('createHandler', item);
+        // console.log('createHandler', item);
         setLoad(true);
         const fd = new FormData();
         for (let key in item) {
@@ -56,7 +57,7 @@ const AdminPageGames = () => {
         axios.post('/game-store', fd)
             .then(res => {
                 setLoad(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.models);
             })
             .catch(err => {
@@ -66,7 +67,7 @@ const AdminPageGames = () => {
     }
 
     function updateHandler(item) {
-        console.log('updateHandler', item);
+        // console.log('updateHandler', item);
         setLoad(true);
         setCard(null);
         const fd = new FormData();
@@ -77,7 +78,7 @@ const AdminPageGames = () => {
         axios.post(`/game/update/${item.id}`, fd)
             .then(res => {
                 setLoad(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.models);
             })
             .catch(err => {
@@ -96,7 +97,7 @@ const AdminPageGames = () => {
 
     return (
         <div className="container">
-            <h1 className="mt-3 mb-3">Our Team</h1>
+            <h1 className="mt-3 mb-3">Games</h1>
             <table className="table text-light">
                 <thead>
                 <tr>

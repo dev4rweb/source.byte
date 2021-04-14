@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\GameCarousel;
 use App\Models\OurTeam;
 use Illuminate\Http\Request;
 

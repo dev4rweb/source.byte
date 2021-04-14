@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\DetailGamePageController;
 use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\ErrorPageController;
+use App\Http\Controllers\GameCarouselController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\HomeController;
@@ -86,6 +87,8 @@ Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('a
 Route::get('/news/newsId', [DetailNewsPageController::class, 'index'])->name('newsId.index');
 /*https://youtu.be/CNGCelC8n24?t=4982*/
 Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('gameId.index');
+Route::get('/game-carousel', [GameCarouselController::class, 'index'])->name('game-carousel.index');
+Route::get('/game-carousel/{id}', [GameCarouselController::class, 'getCarouselById'])->name('game-carousel-byId.index');
 
 
 
