@@ -2,6 +2,7 @@ import React, {useState, useCallback, useEffect} from 'react';
 import {useHttp} from "../../../hooks/http.hook";
 import Loader from "../../../components/Loader/Loader";
 import GamesItem from "./GamesItem/GamesItem";
+import GameForm from "./GameForm/GameForm";
 
 const AdminPageGames = () => {
     const [state, setState] = useState(null);
@@ -25,6 +26,7 @@ const AdminPageGames = () => {
 
     function editHandler(card) {
         console.log('editHandler', card);
+        setCard(card);
     }
 
     async function deleteHandler(item) {
@@ -77,6 +79,9 @@ const AdminPageGames = () => {
 
                 </tbody>
             </table>
+
+            {card && <GameForm card={card} updateHandler={updateHandler}/>}
+            {!card && <GameForm createHandler={createHandler}/>}
         </div>
     );
 };
