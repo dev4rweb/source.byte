@@ -87,6 +87,7 @@ Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('a
 Route::get('/news/newsId', [DetailNewsPageController::class, 'index'])->name('newsId.index');
 /*https://youtu.be/CNGCelC8n24?t=4982*/
 Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('gameId.index');
+Route::get('/games/{id}', [GameController::class, 'show'])->name('game-id.show');
 Route::get('/game-carousel', [GameCarouselController::class, 'index'])->name('game-carousel.index');
 Route::get('/game-carousel/{id}', [GameCarouselController::class, 'getCarouselById'])->name('game-carousel-byId.index');
 

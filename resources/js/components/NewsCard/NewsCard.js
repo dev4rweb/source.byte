@@ -20,7 +20,7 @@ const NewsCard = ({img, title, content}) => {
                     <h5 className="card-title">{head}</h5>
                     <p className="card-text">{text}</p>
                     <CustomLink
-                        link={`newsId.index`}
+                        link={`/news/newsId`}
                     />
                 </div>
         </div>

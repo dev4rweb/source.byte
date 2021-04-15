@@ -3,10 +3,10 @@ import './GamesCard.scss';
 import imgCard from '../../../assets/img/png/games1.png';
 import CustomLink from "../CustomLink/CustomLink";
 
-const GamesCard = ({img, title, text}) => {
-    const image = img ? img : imgCard;
-    const head = title ? title : 'Default text';
-    const content = text ? text : 'The game of bocce (known also as bowls or bocce ball) is an ancient sport that requires skill, strategy and a little bit of luck ...';
+const GamesCard = ({item}) => {
+    const image = item.mainImage ?? imgCard;
+    const head = item.title ? item.title : 'Default text';
+    const content = item.text ? item.text : 'The game of bocce (known also as bowls or bocce ball) is an ancient sport that requires skill, strategy and a little bit of luck ...';
     return (
         <div className="card gameCard">
             <img src={image} className="card-img-top" alt="..."/>
@@ -15,7 +15,7 @@ const GamesCard = ({img, title, text}) => {
                 <p className="card-text">{content.slice(0, 200) + '...'}</p>
                 <CustomLink
                     text={`View more`}
-                    link={`gameId.index`}
+                    link={`/games/${item.id}`}
                 />
             </div>
         </div>

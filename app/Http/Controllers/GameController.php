@@ -6,6 +6,7 @@ use App\Models\Game;
 use App\Models\GameCarousel;
 use App\Models\OurTeam;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class GameController extends Controller
 {
@@ -82,13 +83,14 @@ class GameController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Game  $game
-     * @return \Illuminate\Http\Response
+
      */
-    public function show(Game $game)
+    public function show($id)
     {
-        //
+        $gamePage = Game::find($id);
+        return Inertia::render('DetailGamePage/DetailGamePage', [
+            'detailGamePage' => $gamePage
+        ]);
     }
 
     /**

@@ -10,8 +10,8 @@ const CustomLink = ({text, link}) => {
     return (
         <InertiaLink
             className={s.customLink}
-            href={route(linkTo).url()}
-            // href={`/`}
+            // href={route(linkTo).url()}
+            href={linkTo}
         >
             {msg}
         </InertiaLink>

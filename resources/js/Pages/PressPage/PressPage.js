@@ -23,7 +23,7 @@ const PressPage = ({pressPage}) => {
                     <h2>Our games</h2>
 
                     <section className={s.cards}>
-                        <GamesCard img={imgCard} title={`Bocce VR Simulator`}/>
+{/*                        <GamesCard img={imgCard} title={`Bocce VR Simulator`}/>
                         <GamesCard img={imgCardTwo} title={`Time for quest`}/>
                         <GamesCard img={imgCardThree} title={`Long name for demonstation two-line variant of title`}/>
                         <GamesCard img={imgCardFour} title={`Royal resque`}/>
@@ -34,7 +34,7 @@ const PressPage = ({pressPage}) => {
                         <GamesCard img={imgCard} title={`Bocce VR Simulator`}/>
                         <GamesCard img={imgCardTwo} title={`Time for quest`}/>
                         <GamesCard img={imgCardThree} title={`Long name for demonstation two-line variant of title`}/>
-                        <GamesCard img={imgCardFour} title={`Royal resque`}/>
+                        <GamesCard img={imgCardFour} title={`Royal resque`}/>*/}
                     </section>
 
                     <UnderLine text={`Do you want to see more games?`}/>

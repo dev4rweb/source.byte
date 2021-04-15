@@ -2,14 +2,17 @@ import React, {useState, createRef} from 'react';
 import s from './YoutubeFrame.module.scss'
 import playImg from "../../../assets/img/png/Play.png";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
+import ReactPlayer from "react-player";
 
-const YoutubeFrame = ({isButton = false}) => {
-    const [play, setPlay] = useState('');
+const YoutubeFrame = ({pathUrl = null, isButton = false, bg}) => {
+    const [play, setPlay] = useState(false);
     const cov = createRef();
+    console.log('path', pathUrl);
+    const path = pathUrl ?? 'https://www.youtube.com/embed/x11ZCnr87pE';
 
     function playVideo(event) {
         event.preventDefault();
-        setPlay('?autoplay=1&mute=1');
+        setPlay(true);
         let el = cov.current;
         el.style.height = '0px';
         el.style.overflow = 'hidden';
@@ -17,17 +20,12 @@ const YoutubeFrame = ({isButton = false}) => {
 
     return (
         <section className={`container ${s.frame}`}>
-            <iframe
-                id="myFrame"
-                className="youtube"
-                title='youFrame'
-                src={`https://www.youtube.com/embed/x11ZCnr87pE${play}`}
-                // src="https://www.youtube.com/embed/hEnr6Ewpu_U?autoplay=1&mute=1"
-                frameBorder="0"
-                allowtransparency="true"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen>
-            </iframe>
+            <ReactPlayer
+                url={path}
+                height="auto"
+                width="100%"
+                playing={play}
+            />
             <div
                 ref={cov}
                 className={s.cover}

@@ -10,7 +10,7 @@ import imgCardThree from '../../../assets/img/png/games3.png';
 import imgCardFour from '../../../assets/img/png/games4.png';
 import Pagination from "../../components/Pagination/Pagination";
 
-const GamesPage = ({gamesPage}) => {
+const GamesPage = ({gamesPage, games}) => {
     const [gameCard, setGameCard] = useState([
         {
             title: 'Bocce VR Simulator',
@@ -35,8 +35,8 @@ const GamesPage = ({gamesPage}) => {
     ]);
 
     useEffect(() => {
-        // console.log(gamesPage);
-        setGameCard(gamesPage);
+        console.log(games);
+        setGameCard(games);
     }, [gamesPage]);
 
     return (
@@ -59,16 +59,14 @@ const GamesPage = ({gamesPage}) => {
                         return (
                             <GamesCard
                                 key={index}
-                                img={item.mainImage}
-                                title={item.title}
-                                text={item.content}
+                                item={item}
                             />
                         )
                     })}
                 </section>
 
                 <div>
-                    <Pagination/>
+                    {/*<Pagination/>*/}
                 </div>
             </article>
         </Layout>
