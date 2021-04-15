@@ -130,6 +130,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/game/update/{id}', [GameController::class, 'update'])->name('game.update');
     Route::delete('/game/destroy/{id}', [GameController::class, 'destroy'])->name('game.destroy');
     // GamesPage END
+
+    Route::post('/game-carousel/create', [GameCarouselController::class, 'store'])->name('game-carousel.store');
+    Route::delete('/game-carousel/destroy/{id}', [GameCarouselController::class, 'destroy'])->name('game-carousel.destroy');
 });
 
 // Error Page Start

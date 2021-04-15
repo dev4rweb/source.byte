@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState} from 'react';
 import CustomInput from "../../../../components/CustomInput/CustomInput";
 import SliderControl from "../../../../components/DetailGameSlider/SliderControl/SliderControl";
 

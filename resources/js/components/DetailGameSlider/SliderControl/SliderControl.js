@@ -2,6 +2,7 @@ import React, {useState, useEffect, useCallback} from 'react';
 import axios from "axios";
 import Loader from "../../Loader/Loader";
 import SliderControlItem from "./SliderControlItem";
+import SliderControlForm from "./SliderControlForm";
 
 const SliderControl = ({card}) => {
 
@@ -13,7 +14,7 @@ const SliderControl = ({card}) => {
         axios.get(`/game-carousel/${card.id}`)
             .then(res => {
                 setLoading(false);
-                console.log(res);
+                // console.log(res);
                 setCarousel(res.data.models)
             })
             .catch(err => {
@@ -26,12 +27,39 @@ const SliderControl = ({card}) => {
         fetchedCarousel();
     }, [fetchedCarousel]);
 
-    function editHandler(card) {
-        console.log('editHandler', card);
-    }
 
     async function deleteHandler(item) {
-        console.log('deleteHandler', item);
+        // console.log('deleteHandler', item);
+        setLoading(true);
+        axios.delete(`/game-carousel/destroy/${item.id}`)
+            .then(res => {
+                setLoading(false);
+                // console.log(res);
+                fetchedCarousel();
+            })
+            .catch(err => {
+                setLoading(false);
+                console.log(err);
+            });
+    }
+
+    function onCreateHandler (image)  {
+        setLoading(true);
+        // console.log('onCreateHandler', image);
+        const fd = new FormData();
+        fd.set('gameId', card.id);
+        fd.set('image', image);
+
+        axios.post('/game-carousel/create', fd)
+            .then(res => {
+                setLoading(false);
+                // console.log(res);
+                setCarousel(res.data.models)
+            })
+            .catch(err => {
+                setLoading(false);
+                console.log(err);
+            });
     }
 
     if (loading) {
@@ -47,7 +75,6 @@ const SliderControl = ({card}) => {
                 <tr>
                     <th scope="col">№</th>
                     <th scope="col">Image</th>
-                    <th scope="col">edit</th>
                     <th scope="col">delete</th>
                 </tr>
                 </thead>
@@ -59,12 +86,12 @@ const SliderControl = ({card}) => {
                         item={item}
                         index={index}
                         deleteHandler={deleteHandler}
-                        editHandler={editHandler}
                     />
                 )
             })}
                 </tbody>
             </table>
+            <SliderControlForm onCreateHandler={onCreateHandler} />
         </div>
     );
 };

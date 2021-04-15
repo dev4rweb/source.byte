@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GameCarousel;
+use App\Models\SecondCarousel;
 use Illuminate\Http\Request;
 
 class GameCarouselController extends Controller
@@ -61,7 +62,40 @@ class GameCarouselController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $gameCarousel = GameCarousel::create($request->all());
+
+            if ($request->hasFile('image')) {
+                $response['hasFile'] = 'Has image';
+                $this->saveFile($request, $gameCarousel);
+            } else {
+                $response['hasFile'] = 'No file to download';
+            }
+            $response['message'] = 'Carousel Item created';
+            $response['success'] = true;
+            $response['models'] = GameCarousel::where('gameId', '=', $request['gameId'])->get();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
+    }
+
+    public function saveFile(Request $request, GameCarousel $gameCarousel)
+    {
+        $file = $request->file('image');
+        $filename = $file->getClientOriginalName();
+        $extension = $file->getClientOriginalExtension();
+        $picture = date('His') . '-' . $filename;
+        //move image to public/img folder
+        $file->move(public_path('img'), $picture);
+//        $file->move('/img', $picture);
+
+//        $this->filePath = public_path('img');
+
+        $gameCarousel->update(['image' => '/lsapp/public/img/' . $picture]); //with local storage
+//        $gameCarousel->update(['image' => '/img/' . $picture]); //with local storage
     }
 
     /**
@@ -101,11 +135,20 @@ class GameCarouselController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\GameCarousel $gameCarousel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(GameCarousel $gameCarousel)
+    public function destroy($id)
     {
-        //
+        try {
+            $gameCarousel = GameCarousel::find($id);
+            $gameCarousel->delete();
+            $response['message'] = 'record was deleted';
+            $response['success'] = true;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 }
