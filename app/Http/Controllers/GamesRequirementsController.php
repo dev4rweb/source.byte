@@ -117,9 +117,20 @@ class GamesRequirementsController extends Controller
      * @param \App\Models\GamesRequirements $gamesRequirements
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, GamesRequirements $gamesRequirements)
+    public function update($id, Request $request)
     {
-        //
+        try {
+            $gameRequirement = GamesRequirements::find($request['id']);
+            $gameRequirement->update($request->all());
+            $response['message'] = 'Record updated';
+            $response['success'] = true;
+            $response['model'] = $gameRequirement;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**

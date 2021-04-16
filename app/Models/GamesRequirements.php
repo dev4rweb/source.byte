@@ -9,4 +9,5 @@ class GamesRequirements extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
 }

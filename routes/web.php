@@ -140,6 +140,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/games-requirements-create/{id}', [GamesRequirementsController::class, 'create'])->name('games-requirements.create');
     Route::delete('/games-requirements-delete/{id}', [GamesRequirementsController::class, 'destroy'])->name('/games-requirements.destroy');
+    Route::post('/games-requirements-update/{id}', [GamesRequirementsController::class, 'update'])->name('games-requirements.update');
 });
 
 // Error Page Start

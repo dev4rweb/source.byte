@@ -40,6 +40,7 @@ const AdminPage = ({adminPage}) => {
                         method="post"
                         as="button"
                         type="button"
+                        className="btn btn-warning w-100"
                     >
                         Logout
                     </InertiaLink>

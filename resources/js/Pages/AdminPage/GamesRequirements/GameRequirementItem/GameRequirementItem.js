@@ -13,7 +13,7 @@ const GameRequirementItem = ({gameId}) => {
             axios.get(`/games-requirements/${gameId}`)
                 .then(res => {
                     setLoading(false);
-                    console.log(res);
+                    // console.log(res);
                     setMinRequirements(res.data.model[0]);
                     setMaxRequirements(res.data.model[1]);
                 })
@@ -34,27 +34,59 @@ const GameRequirementItem = ({gameId}) => {
     }
 
     function minChangeHandler(e) {
-        console.log('minChangeHandler');
+        // console.log('minChangeHandler');
         setMinRequirements({
             ...minRequirements,
             [e.currentTarget.name]: e.currentTarget.value
         })
     }
 
-    function minSubmitHandler() {
-        console.log('minSubmitHandler');
+    function minSubmitHandler(e) {
+        // console.log('minSubmitHandler');
+        e.preventDefault();
+        setLoading(true);
+        const fd = new FormData();
+        for (let key in minRequirements) {
+            fd.set(key, minRequirements[key]);
+        }
+        axios.post(`/games-requirements-update/${minRequirements.id}`, fd)
+            .then(res => {
+                setLoading(false);
+                // setMinRequirements(res.data.model);
+                console.log(res);
+            })
+            .catch(err => {
+                setLoading(false);
+                console.log(err);
+            });
     }
 
     function maxChangeHandler(e) {
-        console.log('maxChangeHandler');
-        setMinRequirements({
-            ...minRequirements,
+        // console.log('maxChangeHandler');
+        setMaxRequirements({
+            ...maxRequirements,
             [e.currentTarget.name]: e.currentTarget.value
         })
     }
 
-    function maxSubmitHandler() {
-        console.log('maxSubmitHandler');
+    function maxSubmitHandler(e) {
+        // console.log('maxSubmitHandler');
+        setLoading(true);
+        e.preventDefault();
+        const fd = new FormData();
+        for (let key in maxRequirements) {
+            fd.set(key, maxRequirements[key]);
+        }
+        axios.post(`/games-requirements-update/${maxRequirements.id}`, maxRequirements)
+            .then(res => {
+                setLoading(false);
+                // setMaxRequirements(res.data.model);
+                console.log(res);
+            })
+            .catch(err => {
+                setLoading(false);
+                console.log(err);
+            });
     }
 
     return (
