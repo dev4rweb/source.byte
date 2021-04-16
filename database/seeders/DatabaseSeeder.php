@@ -12,6 +12,7 @@ use App\Models\DetailNewsPage;
 use App\Models\Game;
 use App\Models\GameCarousel;
 use App\Models\GamesPage;
+use App\Models\GamesRequirements;
 use App\Models\HomePage;
 use App\Models\JobsPage;
 use App\Models\MainCarousel;
@@ -566,6 +567,95 @@ Visit villages, collect items, explore the world, fight enemies.',
         GameCarousel::factory()->create([
             'gameId' => '4',
             'image' => '/images/royal5.png'
+        ]);
+
+
+
+        GamesRequirements::factory()->create([
+            'gameId' => '1',
+            'minMax' => 'min',
+            'OS'=> 'Windows 7',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '4 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '1 GB available space',
+        ]);
+        GamesRequirements::factory()->create([
+            'gameId' => '1',
+            'minMax' => 'max',
+            'OS'=> 'Windows 8',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '5 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '1 GB available space',
+        ]);
+
+
+        GamesRequirements::factory()->create([
+            'gameId' => '2',
+            'minMax' => 'min',
+            'OS'=> 'Windows 8',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '5 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '1 GB available space',
+        ]);
+        GamesRequirements::factory()->create([
+            'gameId' => '2',
+            'minMax' => 'max',
+            'OS'=> 'Windows 9',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '7 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '13 GB available space',
+        ]);
+
+
+        GamesRequirements::factory()->create([
+            'gameId' => '3',
+            'minMax' => 'min',
+            'OS'=> 'Windows ',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '5 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '1 GB available space',
+        ]);
+        GamesRequirements::factory()->create([
+            'gameId' => '3',
+            'minMax' => 'max',
+            'OS'=> 'Windows xp',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '8 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '20 GB available space',
+        ]);
+
+
+        GamesRequirements::factory()->create([
+            'gameId' => '4',
+            'minMax' => 'min',
+            'OS'=> 'Windows NT',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '5 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '1 GB available space',
+        ]);
+        GamesRequirements::factory()->create([
+            'gameId' => '4',
+            'minMax' => 'max',
+            'OS'=> 'Windows 10',
+            'processor'=> 'Core i5-4590 (AMD FX 8350)',
+            'memory'=> '8 GB RAM',
+            'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
+            'directX'=> 'Version 11',
+            'storage'=> '20 GB available space',
         ]);
     }
 }

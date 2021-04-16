@@ -39,6 +39,20 @@ const AdminPageGames = () => {
                 setLoad(false);
                 // console.log(res);
                 setState(res.data.models);
+                deleteRequirementsSystem(item.id);
+            })
+            .catch(err => {
+                setLoad(false);
+                console.log(err);
+            });
+    }
+
+    function deleteRequirementsSystem(gameId) {
+        setLoad(true);
+        axios.delete(`/games-requirements-delete/${gameId}`)
+            .then(res => {
+                setLoad(false);
+                console.log('games-requirements-delete', res);
             })
             .catch(err => {
                 setLoad(false);
@@ -57,12 +71,26 @@ const AdminPageGames = () => {
         axios.post('/game-store', fd)
             .then(res => {
                 setLoad(false);
-                // console.log(res);
+                console.log(res);
                 setState(res.data.models);
+                createSystemRequiremets(res.data.createdModel.id);
             })
             .catch(err => {
                 setLoad(false);
                 console.log(err);
+            });
+    }
+
+    function createSystemRequiremets(gameId) {
+        setLoad(true);
+        axios.post(`/games-requirements-create/${gameId}`)
+            .then(res => {
+                setLoad(false);
+                console.log('games-requirements-create', res);
+            })
+            .catch(err => {
+                setLoad(false);
+                console.log('error requirement', err);
             });
     }
 
@@ -85,6 +113,7 @@ const AdminPageGames = () => {
                 setLoad(false);
                 console.log(err);
             });
+
     }
 
     if (loading || load) {

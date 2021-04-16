@@ -11,6 +11,7 @@ use App\Http\Controllers\ErrorPageController;
 use App\Http\Controllers\GameCarouselController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GamesPageController;
+use App\Http\Controllers\GamesRequirementsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\JobsPageController;
@@ -92,6 +93,8 @@ Route::get('/game-carousel', [GameCarouselController::class, 'index'])->name('ga
 Route::get('/game-carousel/{id}', [GameCarouselController::class, 'getCarouselById'])->name('game-carousel-byId.index');
 
 Route::get('/games-all', [GameController::class, 'index'])->name('games-all.index');
+Route::get('/games-requirements', [GamesRequirementsController::class, 'index'])->name('games-requirements.index');
+Route::get('/games-requirements/{id}', [GamesRequirementsController::class, 'show'])->name('games-requirements.show');
 
 
 Route::group(['middleware' => ['auth']], function () {
@@ -134,6 +137,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/game-carousel/create', [GameCarouselController::class, 'store'])->name('game-carousel.store');
     Route::delete('/game-carousel/destroy/{id}', [GameCarouselController::class, 'destroy'])->name('game-carousel.destroy');
+
+    Route::post('/games-requirements-create/{id}', [GamesRequirementsController::class, 'create'])->name('games-requirements.create');
+    Route::delete('/games-requirements-delete/{id}', [GamesRequirementsController::class, 'destroy'])->name('/games-requirements.destroy');
 });
 
 // Error Page Start

@@ -53,11 +53,7 @@ const DetailGamePage = ({detailGamePage}) => {
                 <h2>More realeses</h2>
                 <MultiCarousel/>
             </section>
-            <UnderLine text={`Do you want to see more games?`}/>
-
-            {/*<h1>{title}</h1>
-            <p>{content}</p>
-            <img style={{width: '100%'}} src={image} alt="image"/>*/}
+            <UnderLine btnUrl={`/games`} text={`Do you want to see more games?`}/>
         </Layout>
     );
 };

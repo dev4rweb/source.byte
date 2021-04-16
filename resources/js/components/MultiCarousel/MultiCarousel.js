@@ -40,7 +40,7 @@ class MultiCarousel extends React.Component {
             .then(res => {
 
                 this.setState({loading: false});
-                console.log(res);
+                // console.log(res);
                 this.updateState(res.data.models)
             })
             .catch(err => {
@@ -111,7 +111,7 @@ class MultiCarousel extends React.Component {
     }
 
     updateState(models) {
-        console.log('updateState', models);
+        // console.log('updateState', models);
         let images = [];
         let titles = [];
         let gameIds = [];

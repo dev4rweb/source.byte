@@ -61,6 +61,7 @@ class GameController extends Controller
             $response['message'] = 'Game created';
             $response['success'] = true;
             $response['models'] = Game::all();
+            $response['createdModel'] = $game;
         } catch (\Exception $exception) {
             $response['message'] = $exception->getMessage();
             $response['success'] = false;
