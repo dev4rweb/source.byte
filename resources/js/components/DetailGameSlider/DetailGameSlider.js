@@ -6,7 +6,7 @@ import Loader from "../Loader/Loader";
 import axios from "axios";
 
 const DetailGameSlider = ({pageId = null}) => {
-    console.log('pageId', pageId);
+    // console.log('pageId', pageId);
     const [carousel, setCarousel] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -16,7 +16,7 @@ const DetailGameSlider = ({pageId = null}) => {
             axios.get(`/game-carousel/${pageId}`)
                 .then(res => {
                     setLoading(false);
-                    console.log(res);
+                    // console.log(res);
                     setCarousel(res.data.models)
                 })
                 .catch(err => {

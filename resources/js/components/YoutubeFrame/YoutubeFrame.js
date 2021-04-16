@@ -7,7 +7,7 @@ import ReactPlayer from "react-player";
 const YoutubeFrame = ({pathUrl = null, isButton = false, bg}) => {
     const [play, setPlay] = useState(false);
     const cov = createRef();
-    console.log('path', pathUrl);
+    // console.log('path', pathUrl);
     const path = pathUrl ?? 'https://www.youtube.com/embed/x11ZCnr87pE';
 
     function playVideo(event) {

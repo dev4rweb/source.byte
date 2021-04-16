@@ -91,6 +91,7 @@ Route::get('/games/{id}', [GameController::class, 'show'])->name('game-id.show')
 Route::get('/game-carousel', [GameCarouselController::class, 'index'])->name('game-carousel.index');
 Route::get('/game-carousel/{id}', [GameCarouselController::class, 'getCarouselById'])->name('game-carousel-byId.index');
 
+Route::get('/games-all', [GameController::class, 'index'])->name('games-all.index');
 
 
 Route::group(['middleware' => ['auth']], function () {
@@ -126,7 +127,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     // GamesPage START
     Route::get('/gamesAll', [GamesPageController::class, 'getAll'])->name('games.all');
-    Route::get('/games-all', [GameController::class, 'index'])->name('games-all.index');
     Route::post('/game-store', [GameController::class, 'store'])->name('game.store');
     Route::post('/game/update/{id}', [GameController::class, 'update'])->name('game.update');
     Route::delete('/game/destroy/{id}', [GameController::class, 'destroy'])->name('game.destroy');
