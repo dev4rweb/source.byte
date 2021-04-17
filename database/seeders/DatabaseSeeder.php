@@ -11,6 +11,7 @@ use App\Models\DetailGamePage;
 use App\Models\DetailNewsPage;
 use App\Models\Game;
 use App\Models\GameCarousel;
+use App\Models\GamePurchase;
 use App\Models\GamesPage;
 use App\Models\GamesRequirements;
 use App\Models\HomePage;
@@ -656,6 +657,63 @@ Visit villages, collect items, explore the world, fight enemies.',
             'graphics'=> 'NVIDIA GeForce GTX 970 or AMD RX480',
             'directX'=> 'Version 11',
             'storage'=> '20 GB available space',
+        ]);
+
+
+        GamePurchase::factory()->create([
+            'gameId' => '1',
+            'price' => '$19.99',
+            'xBox' => true,
+            'ps' => true,
+            'microsoft' => true,
+            'steam' => true,
+            'released' => '1/12/16',
+            'publisher' => 'Xion Studios',
+            'rating' => 'ESRB',
+            'fileSize' => '6.8 GB',
+
+        ]);
+
+        GamePurchase::factory()->create([
+            'gameId' => '2',
+            'price' => '$25.99',
+            'xBox' => false,
+            'ps' => false,
+            'microsoft' => true,
+            'steam' => true,
+            'released' => '12/10/18',
+            'publisher' => 'Any Studios',
+            'rating' => 'ESRBA',
+            'fileSize' => '86 GB',
+
+        ]);
+
+        GamePurchase::factory()->create([
+            'gameId' => '3',
+            'price' => '$45.99',
+            'xBox' => false,
+            'ps' => true,
+            'microsoft' => true,
+            'steam' => false,
+            'released' => '25/10/21',
+            'publisher' => 'Storm Studios',
+            'rating' => 'ESRBA',
+            'fileSize' => '8 GB',
+
+        ]);
+
+        GamePurchase::factory()->create([
+            'gameId' => '4',
+            'price' => '$18.45',
+            'xBox' => false,
+            'ps' => false,
+            'microsoft' => true,
+            'steam' => false,
+            'released' => '17/10/18',
+            'publisher' => 'Visual Studio',
+            'rating' => 'RBA',
+            'fileSize' => '12 GB',
+
         ]);
     }
 }

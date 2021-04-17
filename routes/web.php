@@ -10,6 +10,7 @@ use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\ErrorPageController;
 use App\Http\Controllers\GameCarouselController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\GamePurchaseController;
 use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\GamesRequirementsController;
 use App\Http\Controllers\HomeController;
@@ -96,6 +97,8 @@ Route::get('/games-all', [GameController::class, 'index'])->name('games-all.inde
 Route::get('/games-requirements', [GamesRequirementsController::class, 'index'])->name('games-requirements.index');
 Route::get('/games-requirements/{id}', [GamesRequirementsController::class, 'show'])->name('games-requirements.show');
 
+Route::get('/game-purchase', [GamePurchaseController::class, 'index'])->name('game-purchase.index');
+Route::get('/game-purchase/{id}', [GamePurchaseController::class, 'show'])->name('game-purchase.show');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin', [AdminPageController::class, 'index'])->name('admin.index');
@@ -141,6 +144,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/games-requirements-create/{id}', [GamesRequirementsController::class, 'create'])->name('games-requirements.create');
     Route::delete('/games-requirements-delete/{id}', [GamesRequirementsController::class, 'destroy'])->name('/games-requirements.destroy');
     Route::post('/games-requirements-update/{id}', [GamesRequirementsController::class, 'update'])->name('games-requirements.update');
+
+    Route::post('/game-purchase-create/{id}', [GamePurchaseController::class, 'create'])->name('game-purchase.create');
+    Route::post('/game-purchase-update/{id}', [GamePurchaseController::class, 'update'])->name('game-purchase.update');
+    Route::delete('/game-purchase-delete/{id}', [GamePurchaseController::class, 'destroy'])->name('game-purchase.destroy');
 });
 
 // Error Page Start

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './detailGamePage.scss'
 import Layout from "../../components/Layout/Layout";
 import YoutubeFrame from "../../components/YoutubeFrame/YoutubeFrame";
@@ -7,10 +7,11 @@ import SystemCard from "../../components/SystemCard/SystemCard";
 import PurchaseCard from "../../components/PurchaseCard/PurchaseCard";
 import UnderLine from "../../components/UnderLine/UnderLine";
 import MultiCarousel from "../../components/MultiCarousel/MultiCarousel";
-import MCarousel from "../../components/MCarousel/MCarousel";
 
-const DetailGamePage = ({detailGamePage}) => {
-    // console.log(detailGamePage);
+const DetailGamePage = ({detailGamePage, gamesRequirements}) => {
+    // console.log(gamesRequirements);
+    const [minReq, setMinReq] = useState(gamesRequirements[0]);
+    const [maxReq, setMaxReq] = useState(gamesRequirements[1]);
     const markedList = detailGamePage.list.split('*-');
     // console.log(markedList);
     return (
@@ -39,8 +40,16 @@ const DetailGamePage = ({detailGamePage}) => {
                         <p>{detailGamePage.contentTwo}</p>
                         <h2>System requirements</h2>
                         <div className="system-wrapper">
-                            <SystemCard title={'Minimum'} isMarked={false}/>
-                            <SystemCard title={'Recomended'} isMarked={true}/>
+                            <SystemCard
+                                title={'Minimum'}
+                                isMarked={false}
+                                item={minReq}
+                            />
+                            <SystemCard
+                                title={'Recomended'}
+                                isMarked={true}
+                                item={maxReq}
+                            />
                         </div>
                     </div>
                     <div className="right-side">
