@@ -33,11 +33,73 @@ const GamesPage = ({gamesPage, games}) => {
             mainImage: imgCardFour
         },
     ]);
+    const [originGame, setOriginGame] = useState(null);
+    const [category, setCategory] = useState([]);
+    const sorting = ['date', 'name'];
 
     useEffect(() => {
         console.log(games);
         setGameCard(games);
+        setOriginGame(games);
+        createCategory(games)
     }, [gamesPage]);
+
+    function createCategory(games) {
+        let cut = [];
+        games.map(item => {
+            cut.push(item.category);
+        });
+        let unique = cut.filter(onlyUnique);
+        setCategory(unique);
+    }
+
+    function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+    }
+
+    function filterByCategoryHandler(category) {
+        console.log('filterHandler',category);
+        if (category !== 'all') {
+            const result = games.filter(game => game.category === category);
+            setGameCard(result);
+        } else {
+            setGameCard(originGame);
+        }
+    }
+
+    function filterBySearchHandler(letters) {
+        console.log('filterBySearchHandler', letters);
+        if (letters) {
+            const result = gameCard.filter(game => game.title.toLowerCase().includes(letters.toLowerCase()));
+            setGameCard(result);
+        } else {
+            setGameCard(originGame);
+        }
+    }
+
+    function filterBySortingHandler(category) {
+        if (category === 'name') {
+            // console.log('filterBySortingHandler', category);
+            const result = [...gameCard].sort(function (a, b) {
+                if (a.title < b.title) {return -1;}
+                if (a.title > b.title) {return 1;}
+                return 0;
+            });
+            setGameCard(result);
+            // console.log(gameCard);
+        }
+        if (category === 'date') {
+            const result = [...gameCard].sort(function (a, b) {
+                if(a.id > b.id) {return -1;}
+                if (a.id < b.id) {return 1;}
+                return 0;
+            });
+            setGameCard(result);
+        }
+        if (category === 'Sorting') {
+            setGameCard(originGame);
+        }
+    }
 
     return (
         <Layout>
@@ -45,12 +107,20 @@ const GamesPage = ({gamesPage, games}) => {
                 <h1>Our games</h1>
                 <div className={s.controls}>
                     <div className={s.topLine}>
-                        <InputSelect/>
-                        <InputGroup/>
+                        <InputSelect
+                            data={category}
+                            filterHandler={filterByCategoryHandler}
+                        />
+                        <InputGroup filterHandler={filterBySearchHandler}/>
                     </div>
                     <div className={s.bottomLine}>
-                        <p>Search results: <span>312</span></p>
-                        <InputSelect placeHolder={`Sort by`} height={`48px`}/>
+                        <p>Search results: <span>{gameCard.length}</span></p>
+                        <InputSelect
+                            placeHolder={`Sorting`}
+                            height={`48px`}
+                            data={sorting}
+                            filterHandler={filterBySortingHandler}
+                        />
                     </div>
                 </div>
 

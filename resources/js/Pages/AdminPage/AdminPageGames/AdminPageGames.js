@@ -53,7 +53,7 @@ const AdminPageGames = () => {
         axios.delete(`/games-requirements-delete/${gameId}`)
             .then(res => {
                 setLoad(false);
-                console.log('games-requirements-delete', res);
+                // console.log('games-requirements-delete', res);
             })
             .catch(err => {
                 setLoad(false);
@@ -66,7 +66,7 @@ const AdminPageGames = () => {
         axios.delete(`/game-purchase-delete/${gameId}`)
             .then(res => {
                 setLoad(false);
-                console.log('/game-purchase-delete/', res);
+                // console.log('/game-purchase-delete/', res);
             })
             .catch(err => {
                 setLoad(false);
@@ -101,7 +101,7 @@ const AdminPageGames = () => {
         axios.post(`/games-requirements-create/${gameId}`)
             .then(res => {
                 setLoad(false);
-                console.log('games-requirements-create', res);
+                // console.log('games-requirements-create', res);
             })
             .catch(err => {
                 setLoad(false);
@@ -114,7 +114,7 @@ const AdminPageGames = () => {
         axios.post(`/game-purchase-create/${gameId}`)
             .then(res => {
                 setLoad(false);
-                console.log('/game-purchase-create', res);
+                // console.log('/game-purchase-create', res);
             })
             .catch(err => {
                 setLoad(false);

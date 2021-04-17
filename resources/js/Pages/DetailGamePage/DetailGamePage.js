@@ -9,7 +9,7 @@ import UnderLine from "../../components/UnderLine/UnderLine";
 import MultiCarousel from "../../components/MultiCarousel/MultiCarousel";
 
 const DetailGamePage = ({detailGamePage, gamesRequirements, gamePurchase}) => {
-    console.log(gamePurchase);
+    // console.log(gamePurchase);
     const [minReq, setMinReq] = useState(gamesRequirements[0]);
     const [maxReq, setMaxReq] = useState(gamesRequirements[1]);
     const [gamePur, setGamePur] = useState(gamePurchase[0]);

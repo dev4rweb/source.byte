@@ -12,7 +12,7 @@ const GamePurchaseItem = ({gameId}) => {
             axios.get(`/game-purchase/${gameId}`)
                 .then(res => {
                     setLoading(false);
-                    console.log(res);
+                    // console.log(res);
                     setPurchase(res.data.model[0]);
                 })
                 .catch(err => {
@@ -46,7 +46,7 @@ const GamePurchaseItem = ({gameId}) => {
         axios.post(`/game-purchase-update/${purchase.id}`, purchase)
             .then(res => {
                 setLoading(false);
-                console.log(res);
+                // console.log(res);
             })
             .catch(err => {
                 console.log(err);
