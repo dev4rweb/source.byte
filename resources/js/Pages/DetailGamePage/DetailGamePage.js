@@ -8,11 +8,12 @@ import PurchaseCard from "../../components/PurchaseCard/PurchaseCard";
 import UnderLine from "../../components/UnderLine/UnderLine";
 import MultiCarousel from "../../components/MultiCarousel/MultiCarousel";
 
-const DetailGamePage = ({detailGamePage, gamesRequirements}) => {
-    // console.log(gamesRequirements);
+const DetailGamePage = ({detailGamePage, gamesRequirements, gamePurchase}) => {
+    console.log(gamePurchase);
     const [minReq, setMinReq] = useState(gamesRequirements[0]);
     const [maxReq, setMaxReq] = useState(gamesRequirements[1]);
-    const markedList = detailGamePage.list.split('*-');
+    const [gamePur, setGamePur] = useState(gamePurchase[0]);
+    const markedList = detailGamePage.list ? detailGamePage.list.split('*-') : '';
     // console.log(markedList);
     return (
         <Layout>
@@ -53,7 +54,7 @@ const DetailGamePage = ({detailGamePage, gamesRequirements}) => {
                         </div>
                     </div>
                     <div className="right-side">
-                        <PurchaseCard isActive={true}/>
+                        <PurchaseCard isActive={true} data={gamePur}/>
                     </div>
                 </section>
             </article>

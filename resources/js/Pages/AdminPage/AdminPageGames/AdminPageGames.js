@@ -40,6 +40,7 @@ const AdminPageGames = () => {
                 // console.log(res);
                 setState(res.data.models);
                 deleteRequirementsSystem(item.id);
+                deletePurchase(item.id);
             })
             .catch(err => {
                 setLoad(false);
@@ -60,6 +61,19 @@ const AdminPageGames = () => {
             });
     }
 
+    function deletePurchase(gameId) {
+        setLoad(true);
+        axios.delete(`/game-purchase-delete/${gameId}`)
+            .then(res => {
+                setLoad(false);
+                console.log('/game-purchase-delete/', res);
+            })
+            .catch(err => {
+                setLoad(false);
+                console.log('/game-purchase-delete ERROR', err);
+            });
+    }
+
     function createHandler(item) {
         // console.log('createHandler', item);
         setLoad(true);
@@ -74,6 +88,7 @@ const AdminPageGames = () => {
                 console.log(res);
                 setState(res.data.models);
                 createSystemRequiremets(res.data.createdModel.id);
+                createPurchase(res.data.createdModel.id);
             })
             .catch(err => {
                 setLoad(false);
@@ -91,6 +106,19 @@ const AdminPageGames = () => {
             .catch(err => {
                 setLoad(false);
                 console.log('error requirement', err);
+            });
+    }
+
+    function createPurchase(gameId) {
+        setLoad(true);
+        axios.post(`/game-purchase-create/${gameId}`)
+            .then(res => {
+                setLoad(false);
+                console.log('/game-purchase-create', res);
+            })
+            .catch(err => {
+                setLoad(false);
+                console.log('/game-purchase-create ERROR', err);
             });
     }
 

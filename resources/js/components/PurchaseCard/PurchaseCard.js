@@ -6,7 +6,7 @@ import fPlaystation from "../../../assets/icons/svg/footer-Playstation.svg";
 import fMicrosoft from "../../../assets/icons/svg/footer-Microsoft-Store.svg";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
-const PurchaseCard = ({isActive}) => {
+const PurchaseCard = ({isActive, data}) => {
     let [fixPos, setFixPos] = useState('');
     const opacity = isActive ? '1' : '0.5';
     if (window.innerWidth > 1200) {
@@ -19,36 +19,45 @@ const PurchaseCard = ({isActive}) => {
         });
     }
     return (
+        data &&
         <div
             className={`${s.purchaseCard} ${fixPos}`}
             style={{opacity: opacity}}
         >
-            <ButtonPrimary text={'Purchase - $19.99'} width={`100%`}/>
+            <ButtonPrimary text={`Purchase - ${data.price}`} width={`100%`}/>
             <ul>
                 <li>
                     <p>Platforms</p>
                     <p>
+                        {data.xBox === 1 &&
                         <img src={fXbox} alt="logo"/>
+                        }
+                        {data.ps === 1 &&
                         <img src={fPlaystation} alt="logo"/>
+                        }
+                        {data.microsoft === 1 &&
                         <img src={fMicrosoft} alt="logo"/>
+                        }
+                        {data.steam === 1 &&
                         <img src={fOne} alt="logo"/>
+                        }
                     </p>
                 </li>
                 <li>
                     <p>Released on</p>
-                    <p>1/12/16</p>
+                    <p>{data.released}</p>
                 </li>
                 <li>
                     <p>Publisher</p>
-                    <p>Xion Studios</p>
+                    <p>{data.publisher}</p>
                 </li>
                 <li>
                     <p>Rating</p>
-                    <p>ESRB</p>
+                    <p>{data.rating}</p>
                 </li>
                 <li>
                     <p>File size</p>
-                    <p>6.8 GB</p>
+                    <p>{data.fileSize}</p>
                 </li>
             </ul>
         </div>

@@ -35,6 +35,7 @@ const DetailGameSlider = ({pageId = null}) => {
     }
 
     return (
+        carousel.length > 0 &&
         <div className="detail-game-slider">
             <div
                 id="detailGameSlider"

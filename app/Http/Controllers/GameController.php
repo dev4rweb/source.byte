@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Game;
 use App\Models\GameCarousel;
+use App\Models\GamePurchase;
 use App\Models\GamesRequirements;
 use App\Models\OurTeam;
 use Illuminate\Http\Request;
@@ -91,9 +92,11 @@ class GameController extends Controller
     {
         $gamePage = Game::find($id);
         $gamesRequirements = GamesRequirements::where('gameId', '=', $id)->get();
+        $gamePurchase = GamePurchase::where('gameId', '=', $id)->get();
         return Inertia::render('DetailGamePage/DetailGamePage', [
             'detailGamePage' => $gamePage,
-            'gamesRequirements' => $gamesRequirements
+            'gamesRequirements' => $gamesRequirements,
+            'gamePurchase' => $gamePurchase
         ]);
     }
 
