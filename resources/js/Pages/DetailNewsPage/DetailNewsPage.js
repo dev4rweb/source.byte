@@ -4,8 +4,6 @@ import route from "ziggy-js";
 import s from './DetailNewsPage.module.scss'
 import Layout from "../../components/Layout/Layout";
 import FollowUs from "../../components/FollowUs/FollowUs";
-import imgMain from '../../../assets/img/png/image-news-two.png'
-import imgNews from '../../../assets/img/png/img-news.png';
 
 const DetailNewsPage = ({detailNewsPage}) => {
     const markedList = detailNewsPage.list ? detailNewsPage.list.split('*-') : '';

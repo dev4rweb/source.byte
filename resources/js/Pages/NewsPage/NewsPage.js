@@ -5,11 +5,7 @@ import Layout from "../../components/Layout/Layout";
 import InputSelect from "../../components/InputSelect/InputSelect";
 import InputGroup from "../../components/InputGroup/InputGroup";
 import NewsCard from "../../components/NewsCard/NewsCard";
-import imgOne from "../../../assets/img/png/new-one.png";
-import imgTwo from "../../../assets/img/png/new-two.png";
-import imgThree from "../../../assets/img/png/new-three.png";
 import FollowUs from "../../components/FollowUs/FollowUs";
-import NewsCardsBlock from "../../components/NewsCardsBlock/NewsCardsBlock";
 
 const NewsPage = ({newsPage, news}) => {
     const [newsCard, setNewsCard] = useState([]);

@@ -84,8 +84,8 @@ class NewsController extends Controller
         $picture = date('His') . '-' . $filename;
         $file->move(public_path('img'), $picture);
 
-//        $news->update([$key => '/lsapp/public/img/' . $picture]); //with local storage
-        $news->update([$key => '/img/' . $picture]); //with local storage
+        $news->update([$key => '/lsapp/public/img/' . $picture]); //with local storage
+//        $news->update([$key => '/img/' . $picture]); //with local storage
     }
 
     /**
