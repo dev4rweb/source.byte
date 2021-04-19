@@ -30,7 +30,7 @@ const NewsCardsBlock = () => {
     const getThreeRecords = useCallback(async () => {
         try {
             const fetched = await request('/detailNewsPage/getThreeLast');
-            // console.log('getThreeRecords', fetched);
+            console.log('getThreeRecords', fetched);
             setNews(fetched.models)
         } catch (e) {
             console.log(e);
@@ -48,12 +48,10 @@ const NewsCardsBlock = () => {
     return (
         <div className={s.cardWrapper}>
             {news.map((card, index) => {
-                return(
+                return (
                     <NewsCard
                         key={index}
-                        img={card.mainImage}
-                        title={card.title}
-                        content={card.contentOne.slice(0, 200) + '...'} // cut first 200 charts
+                        item={card}
                     />
                 )
             })}
@@ -62,3 +60,9 @@ const NewsCardsBlock = () => {
 };
 
 export default NewsCardsBlock;
+/*                    <NewsCard
+                        key={index}
+                        img={card.mainImage}
+                        title={card.title}
+                        content={card.contentOne.slice(0, 200) + '...'} // cut first 200 charts
+                    />*/

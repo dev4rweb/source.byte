@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DetailNewsPage;
+use App\Models\News;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -23,7 +24,7 @@ class DetailNewsPageController extends Controller
     public function getThreeLastPosts()
     {
         try {
-            $detailNewsPage = DetailNewsPage::orderBy('id', 'desc')->take(3)->get();
+            $detailNewsPage = News::orderBy('id', 'desc')->take(3)->get();
             $response['message'] = '3 last records';
             $response['success'] = true;
             $response['models'] = $detailNewsPage;

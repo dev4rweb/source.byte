@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './GamesPage.module.scss'
 import Layout from "../../components/Layout/Layout";
 import InputSelect from "../../components/InputSelect/InputSelect";
@@ -37,7 +37,7 @@ const GamesPage = ({gamesPage, games}) => {
     const sorting = ['date', 'name'];
 
     useEffect(() => {
-        console.log(games);
+        // console.log(games);
         setGameCard(games);
         setOriginGame(games);
         createCategory(games)
