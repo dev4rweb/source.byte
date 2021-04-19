@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\JobsPageController;
 use App\Http\Controllers\MainCarouselController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NewsPageController;
 use App\Http\Controllers\OurTeamController;
 use App\Http\Controllers\PressPageController;
@@ -87,6 +88,9 @@ Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'
 Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');
 
 Route::get('/news/newsId', [DetailNewsPageController::class, 'index'])->name('newsId.index');
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news-id.show');
+Route::get('/news-all', [NewsController::class, 'index'])->name('news-all.index');
+
 /*https://youtu.be/CNGCelC8n24?t=4982*/
 Route::get('/games/gameId', [DetailGamePageController::class, 'index'])->name('gameId.index');
 Route::get('/games/{id}', [GameController::class, 'show'])->name('game-id.show');
@@ -130,6 +134,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/ourTeam/update/{id}', [OurTeamController::class, 'update'])->name('outTeam.update');
     Route::delete('/ourTeam/destroy/{id}', [OurTeamController::class, 'destroy'])->name('outTeam.destroy');
     // Our Team END
+
+    // News page START
+    Route::post('/news-store', [NewsController::class, 'store'])->name('news.store');
+    Route::post('/news/update/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::delete('/news/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    // News page END
 
     // GamesPage START
     Route::get('/gamesAll', [GamesPageController::class, 'getAll'])->name('games.all');

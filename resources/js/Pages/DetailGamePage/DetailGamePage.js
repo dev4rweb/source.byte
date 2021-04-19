@@ -22,7 +22,7 @@ const DetailGamePage = ({detailGamePage, gamesRequirements, gamePurchase}) => {
 
                 <section className="container side-wrapper">
                     <div className="left-side">
-                        <h1>{detailGamePage.title}</h1>
+                        <h1 style={{marginTop: '50px'}}>{detailGamePage.title}</h1>
                         <p>{detailGamePage.content}</p>
                         <DetailGameSlider pageId={detailGamePage.id}/>
                         <h2>{detailGamePage.subtitle}</h2>

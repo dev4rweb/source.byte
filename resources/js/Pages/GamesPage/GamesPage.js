@@ -8,7 +8,6 @@ import imgCard from '../../../assets/img/png/games1.png';
 import imgCardTwo from '../../../assets/img/png/games2.png';
 import imgCardThree from '../../../assets/img/png/games3.png';
 import imgCardFour from '../../../assets/img/png/games4.png';
-import Pagination from "../../components/Pagination/Pagination";
 
 const GamesPage = ({gamesPage, games}) => {
     const [gameCard, setGameCard] = useState([

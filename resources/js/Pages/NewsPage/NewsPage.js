@@ -8,13 +8,9 @@ import NewsCard from "../../components/NewsCard/NewsCard";
 import imgOne from "../../../assets/img/png/new-one.png";
 import imgTwo from "../../../assets/img/png/new-two.png";
 import imgThree from "../../../assets/img/png/new-three.png";
-import Pagination from "../../components/Pagination/Pagination";
 import FollowUs from "../../components/FollowUs/FollowUs";
 
 const NewsPage = ({newsPage}) => {
-    const title = newsPage[0].title || 'title';
-    const content = newsPage[0].content || 'content';
-    const image = newsPage[0].image || '';
     return (
         <Layout>
             <article className={`container ${gpStyle.gamesPage}`}>
@@ -78,13 +74,10 @@ const NewsPage = ({newsPage}) => {
                 </section>
 
                 <div className={s.paginationWrapper}>
-                    <Pagination/>
+                    {/*<Pagination/>*/}
                 </div>
                 <FollowUs/>
             </article>
-            {/*<h1>{title}</h1>
-            <p>{content}</p>
-            <img style={{width: '100%'}} src={image} alt="image"/>*/}
         </Layout>
     );
 };

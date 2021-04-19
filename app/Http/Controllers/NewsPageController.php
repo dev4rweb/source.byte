@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\NewsPage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -13,8 +14,10 @@ class NewsPageController extends Controller
     public function index()
     {
         $newsPage = NewsPage::all();
+        $news = News::all();
         return Inertia::render('NewsPage/NewsPage', [
-            'newsPage' => $newsPage
+            'newsPage' => $newsPage,
+            'news' => $news
         ]);
     }
 

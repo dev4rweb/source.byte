@@ -17,6 +17,7 @@ use App\Models\GamesRequirements;
 use App\Models\HomePage;
 use App\Models\JobsPage;
 use App\Models\MainCarousel;
+use App\Models\News;
 use App\Models\NewsPage;
 use App\Models\OurTeam;
 use App\Models\PressPage;
@@ -714,6 +715,62 @@ Visit villages, collect items, explore the world, fight enemies.',
             'rating' => 'RBA',
             'fileSize' => '12 GB',
 
+        ]);
+
+
+        News::factory()->create([
+            'title' => 'Looking for a Publisher?',
+            'category' => 'company',
+            'description' => 'Games  description',
+            'mainImage' => '/images/new-one.png',
+            'content' => 'Always strive for better work. Never stop learning. Have fun a clear plan for a new project or just an idea on a napkin? Sky, land, and sea disappear together out of the world..
+
+The dawn breaks high behind the towering and serrated wall of the Cordillera, a clear-cut vision of dark peaks rearing their steep slopes on a lofty pedestal of forest rising from the very edge of the shore. Amongst them the white head of Higuerota rises majestically upon the blue. Bare clusters of enormous.',
+            'subtitle' => 'Above it all',
+            'subContent' => 'The wasting edge of the cloud-bank always strives for, but seldom wins, the middle of the gulf. The sun—as the sailors say—is eating it up. Unless perchance a sombre thunder-head breaks away from the main body to career all over the gulf till it escapes into the offing beyond Azuera, where it bursts suddenly.',
+            'blockquote' => 'People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully. Steve Jobs – Apple Worldwide Developers’ Conference, 1997',
+            'postContent' => 'At night the body of clouds advancing higher up the sky smothers the whole quiet gulf below with an impenetrable darkness, in which the sound of the falling showers can be heard beginning and ceasing abruptly—now here, now there. Indeed, these cloudy nights are proverbial with the seamen along the whole west coast of a great continent.',
+            'list' => 'The dawn breaks high behind the towering and serrated wall *- The dawn breaks high behind the towering and serrated wall *- Amongst them the white head of Higuerota *- Bare clusters of enormous rocks sprinkle with tiny black dots',
+            'lastImage' => '/images/img-news.png',
+            'altImage' => 'The Indian girls, with hair like flowing black manes, and dressed only in a shift and short petticoat, stared dully from under the square-cut fringes on',
+            'lastContent' => 'The Italian drivers saluted him from the foot-plate with raised hand, while the negro brakesmen sat carelessly on the brakes, looking straight forward, with the rims of their big hats flapping in the wind. In return Giorgio would give a slight sideways jerk of the head, without unfolding his arms.',
+        ]);
+
+        News::factory()->create([
+            'title' => 'Source Byte: Inside',
+            'category' => 'feature company',
+            'description' => 'Home/Features of VR development. Part 3 — Creating Graphics for VR Games',
+            'mainImage' => '/images/new-two.png',
+            'content' => 'In Playground VR, we relied on a large number of elements with which the player could interact, challenge their agility and reaction.
+The visual and the feel it creates play a key role in these kinds of games, as the player is the most “part” of the game world. Therefore, it is important to approach the creation of models and the interface in such a way that they do not cause hostility, but complement each other and fulfill their main function – they are the guides of the user in the game.',
+            'subtitle' => 'The variety of environments',
+            'subContent' => 'When creating models for VR, the emphasis is on geometry, not textures. This is necessary so that the player can, if desired, interact with the object from different angles.
+
+You need to plan the look and feel of your models in advance so that they can be reused and combined with other resources. This will greatly simplify development and optimize the game (more on that later).',
+            'blockquote' => 'When creating a staircase, it makes no sense to impose a unique texture on each step and make unique geometry for it, it’s easier to unify them.Simplification',
+            'postContent' => 'Interaction is a key element of immersion in VR. For smaller games, the investment of team resources in animation, sound and environment interactivity will be more significant.',
+            'list' => 'The dawn breaks high behind the towering and serrated wall *- The dawn breaks high behind the towering and serrated wall *- Amongst them the white head of Higuerota *- Bare clusters of enormous rocks sprinkle with tiny black dots',
+            'lastImage' => '/images/news-last-image-two.gif',
+            'altImage' => 'When creating VR games, special attention must be paid to the interaction of hardware and software. In particular, one of the key goals is rendering from 90 frames per second for each eye',
+            'lastContent' => 'Models with different levels of detail can be created independently or you can entrust this work to automatic polygon reduction systems.',
+        ]);
+
+        News::factory()->create([
+            'title' => 'Jobs Available Now!',
+            'category' => 'feature',
+            'description' => 'Home/Features of VR development. Part 3 — Creating Graphics for VR Games',
+            'mainImage' => '/images/new-three.png',
+            'content' => 'In the previous parts, we wrote about how to get started developing a game in VR, and how game designers work when creating games in VR. In this article, we will',
+            'subtitle' => 'The variety of environments',
+            'subContent' => 'When creating models for VR, the emphasis is on geometry, not textures. This is necessary so that the player can, if desired, interact with the object from different angles.
+
+You need to plan the look and feel of your models in advance so that they can be reused and combined with other resources. This will greatly simplify development and optimize the game (more on that later).',
+            'blockquote' => 'When creating a staircase, it makes no sense to impose a unique texture on each step and make unique geometry for it, it’s easier to unify them.Simplification',
+            'postContent' => 'Interaction is a key element of immersion in VR. For smaller games, the investment of team resources in animation, sound and environment interactivity will be more significant.',
+            'list' => 'The dawn breaks high behind the towering and serrated wall *- The dawn breaks high behind the towering and serrated wall *- Amongst them the white head of Higuerota *- Bare clusters of enormous rocks sprinkle with tiny black dots',
+            'lastImage' => '/images/news-last-image-two.gif',
+            'altImage' => 'When creating VR games, special attention must be paid to the interaction of hardware and software. In particular, one of the key goals is rendering from 90 frames per second for each eye',
+            'lastContent' => 'Models with different levels of detail can be created independently or you can entrust this work to automatic polygon reduction systems.',
         ]);
     }
 }
