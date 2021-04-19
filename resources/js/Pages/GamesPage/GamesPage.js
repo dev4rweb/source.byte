@@ -47,7 +47,10 @@ const GamesPage = ({gamesPage, games}) => {
     function createCategory(games) {
         let cut = [];
         games.map(item => {
-            cut.push(item.category);
+            const list = item.category.split(',');
+            list.forEach(item => cut.push(item.replace(/\s/g, '')));
+            // console.log(item.category.split(','));
+            // cut.push(item.category);
         });
         let unique = cut.filter(onlyUnique);
         setCategory(unique);
@@ -58,9 +61,9 @@ const GamesPage = ({gamesPage, games}) => {
     }
 
     function filterByCategoryHandler(category) {
-        console.log('filterHandler',category);
+        // console.log('filterHandler',category);
         if (category !== 'all') {
-            const result = games.filter(game => game.category === category);
+            const result = games.filter(game => game.category.includes(category));
             setGameCard(result);
         } else {
             setGameCard(originGame);
@@ -68,7 +71,7 @@ const GamesPage = ({gamesPage, games}) => {
     }
 
     function filterBySearchHandler(letters) {
-        console.log('filterBySearchHandler', letters);
+        // console.log('filterBySearchHandler', letters);
         if (letters) {
             const result = gameCard.filter(game => game.title.toLowerCase().includes(letters.toLowerCase()));
             setGameCard(result);

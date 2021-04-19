@@ -1,9 +1,8 @@
 import React, {useState, useCallback, useEffect} from 'react';
-import './detailGameSlider.scss'
-import mainImg from "../../../assets/img/png/simulator.png";
-import imgSlide from "../../../assets/img/png/game-detail-slider-1.png"
+import './detailGameSlider.scss';
 import Loader from "../Loader/Loader";
 import axios from "axios";
+import SliderItem from "./SliderItem";
 
 const DetailGameSlider = ({pageId = null}) => {
     // console.log('pageId', pageId);
@@ -47,27 +46,12 @@ const DetailGameSlider = ({pageId = null}) => {
                 <div className="carousel-indicators">
                     {carousel && carousel.map((item, index) => {
                         return (
-                            <div
-                                key={index}
-                                className="indicator"
-                            >
-                                <img src={item.image} alt=""/>
-                                <button
-                                    type="button"
-                                    data-bs-target="#detailGameSlider"
-                                    data-bs-slide-to={`${index}`}
-                                    className={index === 1 ? 'active' : ''}
-                                    aria-current={index === 1 ? 'true' : ''}
-                                    aria-label={`Slide ${index}`}
-                                >
-                                </button>
-                            </div>
+                            <SliderItem key={index} item={item} index={index} />
+
                         )
                     })}
 
                 </div>
-
-
                 <div className="carousel-inner" role="listbox">
                     {carousel && carousel.map((item, index) => {
                         const isActive = index === 1 ? 'active' : '';

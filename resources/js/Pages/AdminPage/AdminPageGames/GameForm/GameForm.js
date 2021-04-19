@@ -226,6 +226,7 @@ const GameForm = ({
                         type="text"
                         className="form-control"
                         name="category"
+                        placeholder="divide category by comma"
                         value={state.category}
                         onChange={changeHandler}
                     />
