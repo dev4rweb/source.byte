@@ -1,14 +1,18 @@
 import React from 'react';
 import './accordion.scss'
-import {InertiaLink} from "@inertiajs/inertia-react";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
-import route from "ziggy-js";
+import AccordionItem from "./AccordionItem/AccordionItem";
 
-const Accordion = () => {
-
+const Accordion = ({jobs}) => {
+    // console.log('Accordion', jobs);
     return (
         <div className="accordion" id="accordionExample">
-            <div className="accordion-item">
+            {jobs.map((item, index) => {
+                return (
+                    <AccordionItem key={index} item={item} index={index}/>
+                )
+            })}
+{/*            <div className="accordion-item">
                 <h2 className="accordion-header" id="headingOne">
                     <button className="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -53,10 +57,10 @@ const Accordion = () => {
                                 <li>C++, HLSL/GLSL, Git, SVN, Perforce, Strong 3D Math</li>
                             </ul>
                             <div>
-                                {/*<InertiaLink
+                                <InertiaLink
                                     href={route("apply-job.index").url()}
                                 >
-                                </InertiaLink>*/}
+                                </InertiaLink>
 
                                 <ButtonPrimary text={`Apply now`} btnUrl={`/jobs/apply-job`}/>
 
@@ -126,12 +130,12 @@ const Accordion = () => {
                                     </li>
                                 </ul>
                                 <div>
-                                    {/*<InertiaLink
+                                    <InertiaLink
                                         // to="/apply-job"
                                         href={route("apply-job.index").url()}
                                     >
                                         <ButtonPrimary text={`Apply now`}/>
-                                    </InertiaLink>*/}
+                                    </InertiaLink>
 
                                     <ButtonPrimary text={`Apply now`} btnUrl={`/jobs/apply-job`}/>
                                 </div>
@@ -183,11 +187,11 @@ const Accordion = () => {
                                     </li>
                                 </ul>
                                 <div className="btn-wrapper">
-                                    {/*<InertiaLink
+                                    <InertiaLink
                                         href={route("apply-job.index").url()}
                                     >
                                         <ButtonPrimary text={`Apply now`}/>
-                                    </InertiaLink>*/}
+                                    </InertiaLink>
 
                                     <ButtonPrimary text={`Apply now`} btnUrl={`/jobs/apply-job`}/>
                                 </div>
@@ -195,7 +199,7 @@ const Accordion = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*/}
         </div>
     );
 };

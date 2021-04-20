@@ -4,7 +4,7 @@ import Layout from "../../components/Layout/Layout";
 import Accordion from "../../components/Accordion/Accordion";
 import FollowUs from "../../components/FollowUs/FollowUs";
 
-const JobsPage = ({jobsPage}) => {
+const JobsPage = ({jobsPage, jobs}) => {
     const title = jobsPage[0].title || 'title';
     const content = jobsPage[0].content;
     const image = jobsPage[0].image || '';
@@ -13,8 +13,8 @@ const JobsPage = ({jobsPage}) => {
             <article className={`container ${s.jobsPage}`}>
                 <section className="wrapper">
                     <h1>{title}</h1>
-                    {content ?? <p>content</p>}
-                    <Accordion/>
+                    {content ?? <p>{content}</p>}
+                    {jobs && <Accordion jobs={jobs}/>}
                 </section>
                 <section className={s.followWrap}>
                     <FollowUs/>

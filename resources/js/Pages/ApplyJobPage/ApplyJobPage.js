@@ -6,14 +6,15 @@ import CustomInput from "../../components/CustomInput/CustomInput";
 import CustomCheckBox from "../../components/CustomCheckBox/CustomCheckBox";
 import ButtonPrimary from "../../components/ButtonPrimary/ButtonPrimary";
 
-const ApplyJobPage = ({applyJobPage}) => {
+const ApplyJobPage = ({applyJobPage, job}) => {
+
     /*const title = applyJobPage[0].title || 'title';
     const content = applyJobPage[0].content || 'content';
     const image = applyJobPage[0].image || '';*/
     return (
         <Layout>
             <article className={s.submitPage}>
-                <MainBlock title={`Are you looking for a job?`}/>
+                <MainBlock title={`Are you looking for a job?`} description={job.position}/>
                 <section className={`container wrapper ${s.formWrapper}`}>
                     <div className={s.group}>
                         <CustomInput label={`*Name`} type={`text`}/>

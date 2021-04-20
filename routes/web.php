@@ -15,6 +15,7 @@ use App\Http\Controllers\GamesPageController;
 use App\Http\Controllers\GamesRequirementsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\JobController;
 use App\Http\Controllers\JobsPageController;
 use App\Http\Controllers\MainCarouselController;
 use App\Http\Controllers\NewsController;
@@ -71,6 +72,7 @@ Route::get('/news', [NewsPageController::class, 'index'])->name('news.index');
 
 Route::get('/jobs', [JobsPageController::class, 'index'])->name('jobs.index');
 
+
 Route::get('/contacts', [ContactsPageController::class, 'index'])->name('contacts.index');
 
 Route::post('/contactForm/store', [ContactFormController::class, 'store'])->name('contactForm.store');
@@ -86,6 +88,7 @@ Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->nam
 Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'])->name('submit-form.store');
 
 Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');
+Route::get('/apply-job/{id}', [JobController::class, 'show'])->name('apply-job.show');
 
 Route::get('/news/newsId', [DetailNewsPageController::class, 'index'])->name('newsId.index');
 Route::get('/news/{id}', [NewsController::class, 'show'])->name('news-id.show');
@@ -161,6 +164,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/jobs-page/all', [JobsPageController::class, 'getAll'])->name('jobs-page.getAll');
     Route::post('/jobs-page/update/{id}', [JobsPageController::class, 'update'])->name('jobs-page.update');
+
+    Route::get('/jobsAll', [JobController::class, 'index'])->name('jobs-all.index');
+    Route::post('/job-store', [JobController::class, 'store'])->name('job.store');
+    Route::post('/job/update/{id}', [JobController::class, 'update'])->name('job.update');
+    Route::delete('/job/destroy/{id}', [JobController::class, 'destroy'])->name('job.destroy');
 });
 
 // Error Page Start

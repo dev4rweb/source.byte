@@ -15,6 +15,7 @@ use App\Models\GamePurchase;
 use App\Models\GamesPage;
 use App\Models\GamesRequirements;
 use App\Models\HomePage;
+use App\Models\Job;
 use App\Models\JobsPage;
 use App\Models\MainCarousel;
 use App\Models\News;
@@ -771,6 +772,39 @@ You need to plan the look and feel of your models in advance so that they can be
             'lastImage' => '/images/news-last-image-two.gif',
             'altImage' => 'When creating VR games, special attention must be paid to the interaction of hardware and software. In particular, one of the key goals is rendering from 90 frames per second for each eye',
             'lastContent' => 'Models with different levels of detail can be created independently or you can entrust this work to automatic polygon reduction systems.',
+        ]);
+
+        Job::factory()->create([
+            'position' => 'Graphics Programmer',
+            'description' => 'Description',
+            'titleOne' => 'You are:',
+            'listOne' => 'A graphics geek: Constantly on the lookout for new features and techniques defining the bleeding edge of real time rendering *- An engineer: Not only do you know all the advances in realtime rendering and love talking about them, you also know the importance of being able to implement them efficiently *- A problem solver: You know a problem when you see one, and you also know that if you put on your blindfold, the problem will come back later and bite you and your fellow developers in the rear right. *- Educated: your Bachelor’s or Master’s degree in Computer Science or a related tech field has a few scratches on it from where you’ve put it to use.',
+            'titleTwo' => 'You will:',
+            'listTwo' => 'Become an integral part of our small core tech team *- Help define the looks of our next games *- Make sure that all the shiny features and techniques work equally well *- Dig deep into the codebase of our tech to improve existing systems',
+            'titleThree' => 'Your specs:',
+            'listThree' => 'C++, HLSL/GLSL, Git, SVN, Perforce, Strong 3D Math',
+        ]);
+
+        Job::factory()->create([
+            'position' => 'Unity Developer',
+            'description' => 'Description',
+            'titleOne' => 'Who are we looking for?',
+            'listOne' => 'We are looking for someone who will be able to work with us and won’t be afraid of taking on new challenges.',
+            'titleTwo' => 'What we expect:',
+            'listTwo' => 'being familiar with Unity 3D and being able to do the deputed tasks *- self-reliance *- being full of passion and desire *- ability of using Discord/Skype *- being familiar with engines, simulations of physic and animations *- being familiar to Unity UI *- having knowledge about the lightning, textures, materials and shaders *- Experience in compiling and implementing Unity projects for Nintendo Switch, PC, VR, Xbox, Playstation.',
+            'titleThree' => 'What will be your duties:',
+            'listThree' => 'creating games in Unity *- projecting and editing the code *- optimizing our projects *- Dig deep into the codebase of our tech to improve existing systems',
+        ]);
+
+        Job::factory()->create([
+            'position' => 'Game Designer',
+            'description' => 'Description',
+            'titleOne' => 'What will you be responsible for:',
+            'listOne' => 'working on one of the gameplay core features *- creating in-game levels *- bringing a creative content to our projects',
+            'titleTwo' => 'What we require:',
+            'listTwo' => 'ability to work in a group *- fluent English (Writing and speaking) *- being creative and self-reliance *- be familiar with popular game engines *- knowladge about the game development process',
+            'titleThree' => '',
+            'listThree' => '',
         ]);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use App\Models\JobsPage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -13,8 +14,10 @@ class JobsPageController extends Controller
     public function index()
     {
         $jobsPage = JobsPage::all();
+        $jobs = Job::all();
         return Inertia::render('JobsPage/JobsPage', [
-            'jobsPage' => $jobsPage
+            'jobsPage' => $jobsPage,
+            'jobs' => $jobs
         ]);
     }
 

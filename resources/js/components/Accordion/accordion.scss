@@ -10,6 +10,7 @@
   .accordion-button{
     color: $text_primary;
       background-color: $bg_color;
+      text-transform: uppercase;
 
     &:not(.collapsed) {
       color: $text_primary;
