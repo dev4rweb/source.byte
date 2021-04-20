@@ -158,6 +158,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/game-purchase-create/{id}', [GamePurchaseController::class, 'create'])->name('game-purchase.create');
     Route::post('/game-purchase-update/{id}', [GamePurchaseController::class, 'update'])->name('game-purchase.update');
     Route::delete('/game-purchase-delete/{id}', [GamePurchaseController::class, 'destroy'])->name('game-purchase.destroy');
+
+    Route::get('/jobs-page/all', [JobsPageController::class, 'getAll'])->name('jobs-page.getAll');
+    Route::post('/jobs-page/update/{id}', [JobsPageController::class, 'update'])->name('jobs-page.update');
 });
 
 // Error Page Start

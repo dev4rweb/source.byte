@@ -18,6 +18,21 @@ class JobsPageController extends Controller
         ]);
     }
 
+    public function getAll()
+    {
+        try {
+            $jobsPage = JobsPage::all();
+            $response['message'] = 'All contents Jobs Page';
+            $response['success'] = true;
+            $response['models'] = $jobsPage;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -65,12 +80,22 @@ class JobsPageController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param JobsPage $jobsPage
      * @return Response
      */
-    public function update(Request $request, JobsPage $jobsPage)
+    public function update($id, Request $request)
     {
-        //
+        try {
+            $jobsPage = JobsPage::find($request['id']);
+            $jobsPage->update($request->all());
+            $response['message'] = 'Jobs Page updated';
+            $response['success'] = true;
+            $response['model'] = $jobsPage;
+        }  catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**

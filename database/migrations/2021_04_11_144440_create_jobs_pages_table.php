@@ -15,9 +15,9 @@ class CreateJobsPagesTable extends Migration
     {
         Schema::create('jobs_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content');
-            $table->text('image');
+            $table->string('title')->nullable();
+            $table->text('content')->nullable();
+            $table->text('image')->nullable();
 
             $table->timestamps();
         });

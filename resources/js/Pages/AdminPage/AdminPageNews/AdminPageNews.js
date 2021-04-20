@@ -15,7 +15,7 @@ const AdminPageNews = () => {
     const fetchNews = useCallback(async () => {
         try{
             const fetched = await request('/news-all');
-            console.log(fetched);
+            // console.log(fetched);
             setState(fetched.models);
         } catch (e) {
             console.log(e);
