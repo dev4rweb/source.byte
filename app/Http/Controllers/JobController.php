@@ -125,5 +125,7 @@ class JobController extends Controller
             $response['message'] = $exception->getMessage();
             $response['success'] = false;
         }
+
+        return response()->json($response);
     }
 }

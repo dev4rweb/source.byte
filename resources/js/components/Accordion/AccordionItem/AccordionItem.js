@@ -7,14 +7,19 @@ const AccordionItem = ({item, index}) => {
     const markedListOne = item.listOne ? item.listOne.split('*-') : '';
     const markedListTwo = item.listTwo ? item.listTwo.split('*-') : '';
     const markedListThree = item.listThree ? item.listThree.split('*-') : '';
+
+    const collapsed = index === 0 ? '' : 'collapsed';
+    const show = index === 0 ? 'show' : '';
+
     return (
         <div className="accordion-item">
             <h2 className="accordion-header" id={`heading${index}`}>
                 <button
-                    className="accordion-button"
+                    className={`accordion-button ${collapsed}`}
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target={`#collapse${index}`} aria-expanded={index === 0 ? 'true' : 'false'}
+                    data-bs-target={`#collapse${index}`}
+                    aria-expanded={index === 0 ? 'true' : 'false'}
                     aria-controls={`collapse${index}`}
                 >
                     {item.position ?? ''}
@@ -22,7 +27,7 @@ const AccordionItem = ({item, index}) => {
             </h2>
             <div
                 id={`collapse${index}`}
-                className="accordion-collapse collapse show"
+                className={`accordion-collapse collapse ${show}`}
                 aria-labelledby={`heading${index}`}
                 data-bs-parent="#accordionExample">
                 <div className="accordion-body">

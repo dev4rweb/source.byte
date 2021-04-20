@@ -2,6 +2,7 @@ import React, {useEffect, useState, useCallback} from 'react';
 import axios from "axios";
 import {useHttp} from "../../../hooks/http.hook";
 import Loader from "../../../components/Loader/Loader";
+import AccordionController from "../../../components/Accordion/AccordionController/AccordionController";
 
 const AdminPageJobs = () => {
     const [state, setState] = useState(null);
@@ -11,7 +12,7 @@ const AdminPageJobs = () => {
     const fetchJobsPage = useCallback(async () => {
         try {
             const fetched = await request('/jobs-page/all');
-            console.log(fetched.models[0]);
+            // console.log(fetched.models[0]);
             setState(fetched.models[0]);
         } catch (e) {
             console.log(e);
@@ -28,7 +29,7 @@ const AdminPageJobs = () => {
         axios.post(`/jobs-page/update/${state.id}`, state)
             .then(res => {
                 setLoad(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.model)
             })
             .catch(err => {
@@ -50,7 +51,7 @@ const AdminPageJobs = () => {
     }
 
     return (
-        <div className="mb-5 mt-5">
+        <div className="mb-5 mt-5 container">
             <h2>Jobs page</h2>
             {state &&
             <div>
@@ -87,6 +88,8 @@ const AdminPageJobs = () => {
                 </button>
             </div>
             }
+
+            <AccordionController/>
         </div>
     );
 };

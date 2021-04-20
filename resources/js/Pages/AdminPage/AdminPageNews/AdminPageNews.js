@@ -3,7 +3,6 @@ import axios from "axios";
 import {useHttp} from "../../../hooks/http.hook";
 import Loader from "../../../components/Loader/Loader";
 import NewsItem from "./NewsItem/NewsItem";
-import GamesItem from "../AdminPageGames/GamesItem/GamesItem";
 import NewsForm from "./NewsForm/NewsForm";
 
 const AdminPageNews = () => {
@@ -57,7 +56,7 @@ const AdminPageNews = () => {
         axios.post('/news-store', fd)
             .then(res => {
                 setLoad(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.models);
             })
             .catch(err => {
@@ -78,7 +77,7 @@ const AdminPageNews = () => {
         axios.post(`/news/update/${item.id}`, fd)
             .then(res => {
                 setLoad(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.models);
             })
             .catch(err => {
