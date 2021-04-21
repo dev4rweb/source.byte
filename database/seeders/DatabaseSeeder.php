@@ -342,7 +342,7 @@ In his journey, Harkyn will forge strong alliances and face even stronger enemie
             'image' => 'https://photopoint.com.ua/wp-content/uploads/2015/01/Kak-snimat-peyzazh-2.jpg'
         ]);
 
-        SubmitGameForm::factory()->create([
+        SubmitGameForm::factory(7)->create([
             'gameNameOne' => 'gameNameOne',
             'gameNameTwo' => 'gameNameTwo',
             'contactName' => 'contactName',

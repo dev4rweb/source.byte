@@ -86,7 +86,6 @@ Route::get('/press', [PressPageController::class, 'index'])->name('press.index')
 
 Route::get('/submit', [SubmitPageController::class, 'index'])->name('submit.index');
 
-Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->name('submit-form.index');
 Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'])->name('submit-form.store');
 
 
@@ -183,6 +182,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/contactForm', [ContactFormController::class, 'index'])->name('contactForm.index');
     Route::delete('/contactForm/destroy/{id}', [ContactFormController::class, 'destroy'])->name('contactForm.destroy');
 
+    Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->name('submit-form.index');
+    Route::delete('/submit-game-form/destroy/{id}', [SubmitGameFormController::class, 'destroy'])->name('submit-form.destroy');
 });
 
 // Error Page Start

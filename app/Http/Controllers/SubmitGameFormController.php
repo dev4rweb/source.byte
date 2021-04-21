@@ -17,8 +17,17 @@ class SubmitGameFormController extends Controller
      */
     public function index()
     {
-        $data = SubmitGameForm::all();
-        return response()->json($data);
+        try {
+            $data = SubmitGameForm::all();
+            $response['message'] = 'Incoming Games all';
+            $response['success'] = true;
+            $response['models'] = $data;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**
@@ -113,8 +122,19 @@ class SubmitGameFormController extends Controller
      * @param SubmitGameForm $submitGameForm
      * @return Response
      */
-    public function destroy(SubmitGameForm $submitGameForm)
+    public function destroy($id)
     {
-        //
+        try {
+            $contactForm = SubmitGameForm::find($id);
+            $contactForm->delete();
+            $response['message'] = 'incoming Submit Game deleted';
+            $response['success'] = true;
+            $response['models'] = SubmitGameForm::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 }
