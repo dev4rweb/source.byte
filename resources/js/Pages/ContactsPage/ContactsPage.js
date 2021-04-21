@@ -25,15 +25,7 @@ const ContactsPage = ({contactsPage}) => {
 
     const sentToEmail = async model =>{
         setLoading(true);
-  /*      try{
-            // const data = await request('http://127.0.0.1:8000/api/send-email/sendEmailContact', 'POST', model);
-            /!*const data = await request('/api/send-email/sendEmailContact', 'POST', model);
-            console.log('send to email', data);*!/
-            setLoading(false);
-        } catch (e) {
-            console.log(e);
-            setLoading(false);
-        }*/
+
         const fd = new FormData();
         for (let key in model) {
             fd.set(key, model[key]);
@@ -69,18 +61,7 @@ const ContactsPage = ({contactsPage}) => {
                 console.log(err);
                 setLoading(false);
             });
-/*        try {
-            // const data = await request('http://127.0.0.1:8000/api/contactForm/store', 'POST', state);
-            /!*const data = await request('/contactForm/store', 'POST', state);
 
-            const model = data.model;
-            console.log(model);
-            setLoading(false);*!/
-            // await sentToEmail(model);
-        } catch (e) {
-            console.log(e);
-            setLoading(false);
-        }*/
     };
 
     function onChangeHandler(e) {

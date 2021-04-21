@@ -2,16 +2,16 @@ import React, {useState, useEffect, useCallback} from 'react';
 import axios from "axios";
 import {useHttp} from "../../../hooks/http.hook";
 import Loader from "../../../components/Loader/Loader";
-import IncomingJobItem from "./IncomingJobItem";
+import EmailItem from "./EmailItem";
 
-const AdminIncomingJobs = () => {
+const AdminContactEmails = () => {
     const [state, setState] = useState(null);
     const [load, setLoad] = useState(false);
     const {request, loading} = useHttp();
 
-    const fetchInJobs = useCallback(async () => {
+    const fetchInMails = useCallback(async () => {
         try{
-            const fetched = await request('/looking-job-all');
+            const fetched = await request('/contactForm');
             // console.log(fetched);
             setState(fetched.models);
         } catch (e) {
@@ -20,12 +20,12 @@ const AdminIncomingJobs = () => {
     }, [request]);
 
     useEffect(() => {
-        fetchInJobs()
-    }, [fetchInJobs]);
+        fetchInMails()
+    }, [fetchInMails]);
 
     async function deleteHandler(item) {
         setLoad(true);
-        axios.delete(`/looking-job/destroy/${item.id}`)
+        axios.delete(`/contactForm/destroy/${item.id}`)
             .then(res => {
                 setLoad(false);
                 // console.log(res);
@@ -38,7 +38,7 @@ const AdminIncomingJobs = () => {
     }
 
     if (!state) {
-        return <h1>No Incoming jobs</h1>;
+        return <h1>No Incoming Mails</h1>;
     }
 
     if (loading || load) {
@@ -47,19 +47,20 @@ const AdminIncomingJobs = () => {
 
     return (
         <div className="container mb-5 mt-3">
-            <h1>Incoming Jobs ({state.length} CV)</h1>
+            <h1>Incoming Mails ({state.length} mails)</h1>
+
             {state && state.map((item, index) => {
                 return (
-                    <IncomingJobItem
+                    <EmailItem
                         key={index}
-                        index={index}
                         item={item}
                         deleteHandler={deleteHandler}
                     />
-                )
+                );
             })}
+
         </div>
     );
 };
 
-export default AdminIncomingJobs;
+export default AdminContactEmails;

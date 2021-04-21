@@ -1,7 +1,7 @@
 import React from 'react';
 
 const IncomingJobItem = ({index, item, deleteHandler}) => {
-    console.log('IncomingJobItem', item);
+    // console.log('IncomingJobItem', item);
 
     return (
         <div className="mb-5 container border border-warning border-3 p-3">

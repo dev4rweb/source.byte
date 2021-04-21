@@ -16,8 +16,17 @@ class ContactFormController extends Controller
      */
     public function index()
     {
-        $data = ContactForm::all();
-        return response()->json($data);
+        try {
+            $data = ContactForm::all();
+            $response['message'] = 'Incoming mails all';
+            $response['success'] = true;
+            $response['models'] = $data;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**
@@ -90,11 +99,21 @@ class ContactFormController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param ContactForm $contactForm
      * @return Response
      */
-    public function destroy(ContactForm $contactForm)
+    public function destroy($id)
     {
-        //
+        try {
+            $contactForm = ContactForm::find($id);
+            $contactForm->delete();
+            $response['message'] = 'mail deleted';
+            $response['success'] = true;
+            $response['models'] = ContactForm::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 }

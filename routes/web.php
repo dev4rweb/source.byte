@@ -178,6 +178,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/looking-job-all', [LookingJobController::class, 'index'])->name('looking-job.index');
     Route::get('/looking-job/{id}', [LookingJobController::class, 'show'])->name('looking-job.show');
     Route::delete('/looking-job/destroy/{id}', [LookingJobController::class, 'destroy'])->name('looking-job.destroy');
+
+
+    Route::get('/contactForm', [ContactFormController::class, 'index'])->name('contactForm.index');
+    Route::delete('/contactForm/destroy/{id}', [ContactFormController::class, 'destroy'])->name('contactForm.destroy');
+
 });
 
 // Error Page Start
