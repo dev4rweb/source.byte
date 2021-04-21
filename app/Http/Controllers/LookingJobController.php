@@ -16,8 +16,16 @@ class LookingJobController extends Controller
      */
     public function index()
     {
-        $lookingJob = LookingJob::all();
-        return response()->json($lookingJob);
+        try {
+            $lookingJob = LookingJob::all();
+            $response['message'] = 'Incoming All Jobs';
+            $response['success'] = true;
+            $response['models'] = $lookingJob;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+        return response()->json($response);
     }
 
     /**
@@ -72,12 +80,20 @@ class LookingJobController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LookingJob  $lookingJob
      * @return \Illuminate\Http\Response
      */
-    public function show(LookingJob $lookingJob)
+    public function show($id)
     {
-        //
+        try {
+            $lookingJob = LookingJob::find($id);
+            $response['message'] = 'CV found';
+            $response['success'] = true;
+            $response['model'] = $lookingJob;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+         return response()->json($response);
     }
 
     /**
@@ -109,8 +125,19 @@ class LookingJobController extends Controller
      * @param  \App\Models\LookingJob  $lookingJob
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LookingJob $lookingJob)
+    public function destroy($id)
     {
-        //
+        try {
+            $lookingJob = LookingJob::find($id);
+            $lookingJob->delete();
+            $response['message'] = 'CV Deleted';
+            $response['success'] = true;
+            $response['models'] = LookingJob::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 }

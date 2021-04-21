@@ -89,7 +89,7 @@ Route::get('/submit', [SubmitPageController::class, 'index'])->name('submit.inde
 Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->name('submit-form.index');
 Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'])->name('submit-form.store');
 
-Route::get('/looking-job-form', [LookingJobController::class, 'index'])->name('looking-job.index');
+
 Route::post('/looking-job-form/store', [LookingJobController::class, 'store'])->name('looking-job.store');
 
 Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');
@@ -174,6 +174,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/job-store', [JobController::class, 'store'])->name('job.store');
     Route::post('/job/update/{id}', [JobController::class, 'update'])->name('job.update');
     Route::delete('/job/destroy/{id}', [JobController::class, 'destroy'])->name('job.destroy');
+
+    Route::get('/looking-job-all', [LookingJobController::class, 'index'])->name('looking-job.index');
+    Route::get('/looking-job/{id}', [LookingJobController::class, 'show'])->name('looking-job.show');
+    Route::delete('/looking-job/destroy/{id}', [LookingJobController::class, 'destroy'])->name('looking-job.destroy');
 });
 
 // Error Page Start

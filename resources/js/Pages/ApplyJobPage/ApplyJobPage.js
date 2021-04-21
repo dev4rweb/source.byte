@@ -64,7 +64,7 @@ const ApplyJobPage = ({applyJobPage, job, lookingJobForm}) => {
 
         axios.post('/looking-job-form/store', fd)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setLoading(false);
                 sendEmail(res.data.model)
             })

@@ -808,7 +808,7 @@ You need to plan the look and feel of your models in advance so that they can be
             'listThree' => '',
         ]);
 
-        LookingJob::factory()->create([
+        LookingJob::factory(3)->create([
             'jobPosition'=> 'position',
 
             'name' => 'name',

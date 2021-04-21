@@ -14,6 +14,7 @@ import AdminPageSocial from "./AdminPageSocial/AdminPageSocial";
 import AdminPageOurTeam from "./AdminPageOurTeam/AdminPageOurTeam";
 import GamesPurchase from "./GamesPurchase/GamesPurchase";
 import GamesRequirements from "./GamesRequirements/GamesRequirements";
+import AdminIncomingJobs from "./AdminIncomingJobs/AdminIncomingJobs";
 
 const AdminPage = ({adminPage}) => {
     const title = adminPage[0].title || 'title';
@@ -30,6 +31,7 @@ const AdminPage = ({adminPage}) => {
                     <Tab>Games System Requirements</Tab>
                     <Tab>News</Tab>
                     <Tab>Jobs</Tab>
+                    <Tab>Incoming Jobs</Tab>
                     <Tab>Contacts</Tab>
                     <Tab>Press</Tab>
                     <Tab>Submit your game</Tab>
@@ -67,6 +69,9 @@ const AdminPage = ({adminPage}) => {
                     </TabPanel>
                     <TabPanel>
                         <AdminPageJobs/>
+                    </TabPanel>
+                    <TabPanel>
+                        <AdminIncomingJobs/>
                     </TabPanel>
                     <TabPanel>
                         <AdminPageContacts/>
