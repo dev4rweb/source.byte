@@ -137,4 +137,59 @@ class SendMailController extends Controller
 
         return response()->json($response);
     }
+
+    public function sendEmailJobForm(Request $jobForm)
+    {
+        $view = $jobForm['jobPosition'] ? "<h1>Position  - " . $jobForm['jobPosition'] . "</h1>" : "";
+
+        $view .= $jobForm['name'] ? "<p>Name - " . $jobForm['name'] . "</p>" : "";
+        $view .= $jobForm['country'] ? "<p>Country - " . $jobForm['country'] . "</p>" : "";
+        $view .= $jobForm['email'] ? "<p>Email - " . $jobForm['email'] . "</p>" : "";
+        $view .= $jobForm['yourSite'] ? "<p>Your Website - " . $jobForm['yourSite'] . "</p>" : "";
+        $view .= $jobForm['experience'] ? "<p>Company Experience - " . $jobForm['experience'] . "</p>" : "";
+        $view .= $jobForm['yourSiteTwo'] ? "<p>Your website Two - " . $jobForm['yourSiteTwo'] . "</p>" : "";
+
+        $view .= str_contains($jobForm['unity'], "true") ? "<p>Unity Game Developer - checked</p>" : "";
+        $view .= str_contains($jobForm['unreal'], "true") ? "<p>Unreal Game Developer - checked</p>" : "";
+        $view .= str_contains($jobForm['design'], "true") ? "<p>3D Designer - checked</p>" : "";
+        $view .= str_contains($jobForm['artist'], "true") ? "<p>Pixel Artist - checked</p>" : "";
+        $view .= str_contains($jobForm['marketing'], "true") ? "<p>Marketing Specialist - checked</p>" : "";
+        $view .= str_contains($jobForm['webDev'], "true") ? "<p>Web Developer - checked</p>" : "";
+        $view .= str_contains($jobForm['cProgrammer'], "true") ? "<p>C# Developer - checked</p>" : "";
+        $view .= str_contains($jobForm['graphicDesign'], "true") ? "<p>Graphic Designer - checked</p>" : "";
+        $view .= str_contains($jobForm['writer'], "true") ? "<p>Writer - checked</p>" : "";
+        $view .= str_contains($jobForm['levelDesigner'], "true") ? "<p>Level Designer - checked</p>" : "";
+        $view .= str_contains($jobForm['gameDesigner'], "true") ? "<p>Game Designer - checked</p>" : "";
+        $view .= str_contains($jobForm['composer'], "true") ? "<p>Composer - checked</p>" : "";
+        $view .= str_contains($jobForm['other'], "true") ? "<p>Other - checked</p>" : "";
+
+        $view .= $jobForm['impress'] ? "<p>Impress us - " . $jobForm['impress'] . "</p>" : "";
+        $view .= $jobForm['earn'] ? "<p>How much you would like to earn?  - " . $jobForm['earn'] . "</p>" : "";
+        $view .= $jobForm['website'] ? "<p>Your website Three - " . $jobForm['website'] . "</p>" : "";
+        $view .= $jobForm['help'] ? "<p>Any things you would like help with which are not part of the abouve list - " . $jobForm['help'] . "</p>" : "";
+
+        $view .= $jobForm['uploadFile'] ? "<p><a href='http://source-byte.zzz.com.ua/" . $jobForm['uploadFile'] . "'>See upload file</a></p>" : "";
+
+        $data = [
+            'subject' => 'Apply Job!',
+            'content' => "<div> $view </div>",
+        ];
+
+        try {
+            Mail::send('email-template', $data, function ($message) use ($data) {
+//            $message->to($user['email']);
+//                $message->to('dev4rweb@gmail.com');
+                $message->to('admin@source-byte.com');
+                $message->subject($data['subject']);
+            });
+            $response['message'] = 'Email Send';
+            $response['success'] = true;
+        } catch (Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['add'] = 'Email Doesnt send';
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
+    }
 }

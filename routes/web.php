@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\JobsPageController;
+use App\Http\Controllers\LookingJobController;
 use App\Http\Controllers\MainCarouselController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\NewsPageController;
@@ -79,6 +80,7 @@ Route::post('/contactForm/store', [ContactFormController::class, 'store'])->name
 
 Route::post('/send-email/sendEmail', [SendMailController::class, 'sendEmail'])->name('send.email');
 Route::post('/send-email/sendEmailContact', [SendMailController::class, 'sendEmailContact'])->name('send-email.contact');
+Route::post('/send-email/sendEmailJob', [SendMailController::class, 'sendEmailJobForm'])->name('send-email.job');
 
 Route::get('/press', [PressPageController::class, 'index'])->name('press.index');
 
@@ -86,6 +88,9 @@ Route::get('/submit', [SubmitPageController::class, 'index'])->name('submit.inde
 
 Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->name('submit-form.index');
 Route::post('/submit-game-form/store', [SubmitGameFormController::class, 'store'])->name('submit-form.store');
+
+Route::get('/looking-job-form', [LookingJobController::class, 'index'])->name('looking-job.index');
+Route::post('/looking-job-form/store', [LookingJobController::class, 'store'])->name('looking-job.store');
 
 Route::get('/jobs/apply-job', [ApplyJobPageController::class, 'index'])->name('apply-job.index');
 Route::get('/apply-job/{id}', [JobController::class, 'show'])->name('apply-job.show');

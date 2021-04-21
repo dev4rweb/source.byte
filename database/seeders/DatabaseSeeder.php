@@ -17,6 +17,7 @@ use App\Models\GamesRequirements;
 use App\Models\HomePage;
 use App\Models\Job;
 use App\Models\JobsPage;
+use App\Models\LookingJob;
 use App\Models\MainCarousel;
 use App\Models\News;
 use App\Models\NewsPage;
@@ -805,6 +806,37 @@ You need to plan the look and feel of your models in advance so that they can be
             'listTwo' => 'ability to work in a group *- fluent English (Writing and speaking) *- being creative and self-reliance *- be familiar with popular game engines *- knowladge about the game development process',
             'titleThree' => '',
             'listThree' => '',
+        ]);
+
+        LookingJob::factory()->create([
+            'jobPosition'=> 'position',
+
+            'name' => 'name',
+            'country' => 'country',
+            'email' => 'email',
+            'yourSite' => 'yourSite',
+            'experience' => 'experience',
+            'yourSiteTwo' => 'yourSiteTwo',
+
+            'unity' => false,
+            'unreal' => false,
+            'design' => false,
+            'artist' => false,
+            'marketing' => false,
+            'webDev' => false,
+            'cProgrammer' => false,
+            'graphicDesign' => false,
+            'writer' => false,
+            'levelDesigner' => false,
+            'gameDesigner' => false,
+            'composer' => false,
+            'other' => false,
+
+            'impress' => 'impress',
+            'earn' => 'earn',
+            'uploadFile' => 'uploadFile',
+            'website' => 'website',
+            'help' => 'help',
         ]);
     }
 }

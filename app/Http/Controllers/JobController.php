@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ApplyJobPage;
 use App\Models\Job;
+use App\Models\LookingJob;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -69,9 +70,11 @@ class JobController extends Controller
     {
         $job = Job::find($id);
         $applyJobPage = ApplyJobPage::all();
+        $lookingJobForm = LookingJob::all();
         return Inertia::render('ApplyJobPage/ApplyJobPage', [
             'applyJobPage' => $applyJobPage,
-            'job' => $job
+            'job' => $job,
+            'lookingJobForm' => $lookingJobForm
         ]);
     }
 
