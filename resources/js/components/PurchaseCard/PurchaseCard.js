@@ -29,17 +29,17 @@ const PurchaseCard = ({isActive, data}) => {
                 <li>
                     <p>Platforms</p>
                     <p>
-                        {data.xBox === 1 &&
-                        <img src={fXbox} alt="logo"/>
+                        {data.xBox &&
+                        <a href={data.xBox}><img src={fXbox} alt="logo"/></a>
                         }
-                        {data.ps === 1 &&
-                        <img src={fPlaystation} alt="logo"/>
+                        {data.ps &&
+                        <a href={data.ps}><img src={fPlaystation} alt="logo"/></a>
                         }
-                        {data.microsoft === 1 &&
-                        <img src={fMicrosoft} alt="logo"/>
+                        {data.microsoft &&
+                        <a href={data.microsoft}><img src={fMicrosoft} alt="logo"/></a>
                         }
-                        {data.steam === 1 &&
-                        <img src={fOne} alt="logo"/>
+                        {data.steam &&
+                        <a href={data.steam}><img src={fOne} alt="logo"/></a>
                         }
                     </p>
                 </li>

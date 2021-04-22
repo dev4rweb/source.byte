@@ -74,7 +74,20 @@ const GamePurchaseItem = ({gameId}) => {
                 </div>
                 <h3>Platforms</h3>
 
-                <div className="form-check">
+                <div className="mb-3 container">
+                    <label className="text-light">
+                        <h6>XBox</h6>
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        name="xBox"
+                        value={purchase.xBox}
+                        onChange={changeHandler}
+                    />
+                </div>
+
+{/*                <div className="form-check">
                     <input
                         className="form-check-input"
                         type="checkbox"
@@ -85,9 +98,22 @@ const GamePurchaseItem = ({gameId}) => {
                     <label className="form-check-label text-light">
                         X Box
                     </label>
+                </div>*/}
+
+                <div className="mb-3 container">
+                    <label className="text-light">
+                        <h6>PlayStation</h6>
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        name="ps"
+                        value={purchase.ps}
+                        onChange={changeHandler}
+                    />
                 </div>
 
-                <div className="form-check">
+{/*                <div className="form-check">
                     <input
                         className="form-check-input"
                         type="checkbox"
@@ -98,9 +124,22 @@ const GamePurchaseItem = ({gameId}) => {
                     <label className="form-check-label text-light">
                         PlayStation
                     </label>
+                </div>*/}
+
+                <div className="mb-3 container">
+                    <label className="text-light">
+                        <h6>Microsoft</h6>
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        name="microsoft"
+                        value={purchase.microsoft}
+                        onChange={changeHandler}
+                    />
                 </div>
 
-                <div className="form-check">
+{/*                <div className="form-check">
                     <input
                         className="form-check-input"
                         type="checkbox"
@@ -111,9 +150,22 @@ const GamePurchaseItem = ({gameId}) => {
                     <label className="form-check-label text-light">
                         Microsoft
                     </label>
+                </div>*/}
+
+                <div className="mb-3 container">
+                    <label className="text-light">
+                        <h6>Steam</h6>
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        name="steam"
+                        value={purchase.steam}
+                        onChange={changeHandler}
+                    />
                 </div>
 
-                <div className="form-check">
+                {/*<div className="form-check">
                     <input
                         className="form-check-input"
                         type="checkbox"
@@ -124,7 +176,7 @@ const GamePurchaseItem = ({gameId}) => {
                     <label className="form-check-label text-light">
                         Steam
                     </label>
-                </div>
+                </div>*/}
 
 
                 <div className="mb-3 container">

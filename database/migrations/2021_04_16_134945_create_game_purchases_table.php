@@ -17,10 +17,10 @@ class CreateGamePurchasesTable extends Migration
             $table->id();
             $table->string('gameId')->nullable();
             $table->string('price')->nullable();
-            $table->boolean('xBox')->nullable();
-            $table->boolean('ps')->nullable();
-            $table->boolean('microsoft')->nullable();
-            $table->boolean('steam')->nullable();
+            $table->string('xBox')->nullable();
+            $table->string('ps')->nullable();
+            $table->string('microsoft')->nullable();
+            $table->string('steam')->nullable();
             $table->string('released')->nullable();
             $table->string('publisher')->nullable();
             $table->string('rating')->nullable();
