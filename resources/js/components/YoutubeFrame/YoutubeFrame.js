@@ -25,12 +25,14 @@ const YoutubeFrame = ({pathUrl = null, isButton = false, bg, btnPath = null}) =>
                 height="auto"
                 width="100%"
                 playing={play}
+                controls="false"
             />
             <div
                 ref={cov}
                 className={s.cover}
             >
                 <a
+
                     href="#"
                     onClick={event => playVideo(event)}
                 >

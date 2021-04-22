@@ -60,7 +60,9 @@ const DetailGamePage = ({detailGamePage, gamesRequirements, gamePurchase}) => {
             </article>
 
             <section className="container carousel-wrapper">
+                <br/><br/><br/>
                 <h2>More realeses</h2>
+                <br/>
                 <MultiCarousel/>
             </section>
             <UnderLine btnUrl={`/games`} text={`Do you want to see more games?`}/>

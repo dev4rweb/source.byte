@@ -71,7 +71,7 @@ const AccordionItem = ({item, index}) => {
                             <p>{markedListThree}</p>
                         }
 
-                        <div>
+                        <div style={{marginTop: "50px", marginBottom: "50px"}}>
 
                             <ButtonPrimary text={`Apply now`} btnUrl={`/apply-job/${item.id}`}/>
 

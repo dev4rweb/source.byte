@@ -11,15 +11,16 @@ const NewsCard = ({item}) => {
     return (
         <div
             className={`card ${s.card}`}
+            onClick={ event => window.open(`/news/${item.id}`, "_self")}
         >
             <img src={image} className="card-img-top" alt="..."/>
-                <div className="card-body">
-                    <h5 className="card-title">{head}</h5>
-                    <p className="card-text">{text.slice(0, 150) + '...'}</p>
-                    <CustomLink
-                        link={`/news/${item.id}`}
-                    />
-                </div>
+            <div className="card-body">
+                <h5 className="card-title">{head}</h5>
+                <p className="card-text">{text.slice(0, 150) + '...'}</p>
+                <CustomLink
+                    link={`/news/${item.id}`}
+                />
+            </div>
         </div>
     );
 };

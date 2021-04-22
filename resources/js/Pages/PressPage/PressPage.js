@@ -46,7 +46,7 @@ const PressPage = ({pressPage}) => {
                         pathUrl={state.ytLink}
                         btnPath={state.ytBtnLink}
                     />
-                    <h2>{state.gameTitle}</h2>
+                    <h2 style={{marginTop: "80px", marginBottom: "80px"}} >{state.gameTitle}</h2>
 
                     <section className={s.cards}>
                         {games && games.map((item, index) => {

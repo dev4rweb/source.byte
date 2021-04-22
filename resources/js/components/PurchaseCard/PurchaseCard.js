@@ -11,10 +11,10 @@ const PurchaseCard = ({isActive, data}) => {
     const opacity = isActive ? '1' : '0.5';
     if (window.innerWidth > 1200) {
         window.addEventListener('scroll', (event) => {
-            if (window.pageYOffset > 900 && window.pageYOffset < 2200) {
+            if (window.pageYOffset > 0 && window.pageYOffset < 5000) {
                 setFixPos(s.fixedPos);
             } else {
-                setFixPos(s.hide);
+                 setFixPos(s.hide);
             }
         });
     }
@@ -30,16 +30,20 @@ const PurchaseCard = ({isActive, data}) => {
                     <p>Platforms</p>
                     <p>
                         {data.xBox &&
-                        <a href={data.xBox}><img src={fXbox} alt="logo"/></a>
+                        <a href={data.xBox} target="_blank">
+                            <img src={fXbox} alt="logo"/></a>
                         }
                         {data.ps &&
-                        <a href={data.ps}><img src={fPlaystation} alt="logo"/></a>
+                        <a href={data.ps} target="_blank">
+                            <img src={fPlaystation} alt="logo"/></a>
                         }
                         {data.microsoft &&
-                        <a href={data.microsoft}><img src={fMicrosoft} alt="logo"/></a>
+                        <a href={data.microsoft} target="_blank">
+                            <img src={fMicrosoft} alt="logo"/></a>
                         }
                         {data.steam &&
-                        <a href={data.steam}><img src={fOne} alt="logo"/></a>
+                        <a href={data.steam} target="_blank">
+                            <img src={fOne} alt="logo"/></a>
                         }
                     </p>
                 </li>

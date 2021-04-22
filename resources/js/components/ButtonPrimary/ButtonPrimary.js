@@ -22,7 +22,7 @@ const ButtonPrimary = ({
         <a
             className={s.btnPrimary}
             onClick={handleClick}
-            style={{maxWidth: w, height, zIndex}}
+            style={{maxWidth: w, height, zIndex, borderRadius: "4px"}}
             type={btnType}
             href={btnUrl}
         >
