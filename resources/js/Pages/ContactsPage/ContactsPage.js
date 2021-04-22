@@ -26,7 +26,7 @@ const ContactsPage = ({contactsPage}) => {
         axios.post('/send-email/sendEmailContact', fd)
             .then(res => {
                 setLoading(false);
-                console.log(res);
+                // console.log(res);
             })
             .catch(err => {
                 setLoading(false);
@@ -46,7 +46,7 @@ const ContactsPage = ({contactsPage}) => {
         axios.post('/contactForm/store', fd)
             .then(res => {
                 const model = res.data.model;
-                console.log(model);
+                // console.log(model);
                 setLoading(false);
                 sentToEmail(model);
             })

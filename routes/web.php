@@ -184,6 +184,9 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/submit-game-form', [SubmitGameFormController::class, 'index'])->name('submit-form.index');
     Route::delete('/submit-game-form/destroy/{id}', [SubmitGameFormController::class, 'destroy'])->name('submit-form.destroy');
+
+    Route::get('/contacts/getAll', [ContactsPageController::class, 'getAll'])->name('contacts.getAll');
+    Route::post('/contacts/update/{id}', [ContactsPageController::class, 'update'])->name('contacts.update');
 });
 
 // Error Page Start

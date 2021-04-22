@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import s from './Footer.module.scss'
 import logo from "../../../assets/logo.svg";
 import FooterMenu from "./FooterMenu/FooterMenu";
@@ -13,10 +13,30 @@ import fOculus from "../../../assets/icons/svg/footer-Oculus-Quest.svg";
 import fGOG from "../../../assets/icons/svg/footer-GOG.svg";
 import fEpic from "../../../assets/icons/svg/footer-Epic.svg";
 import fItch from "../../../assets/icons/svg/footer-Itch.io.svg";
+import {useHttp} from "../../hooks/http.hook";
 
 const Footer = () => {
+    const [contact, setContact] = useState(null);
+    const [load, setLoad] = useState(false);
+    const {request, loading} = useHttp();
+
+    const fetchContacts = useCallback(async () => {
+        try {
+            const fetched = await request('/contacts/getAll');
+            console.log(fetched);
+            setContact(fetched.model[0]);
+        } catch (e) {
+            console.log(e);
+        }
+    }, [request]);
+
+    useEffect(() => {
+        fetchContacts()
+    }, [fetchContacts]);
+
     return (
         <footer className={`container ${s.footer}`}>
+            {contact &&
             <div className={s.topRow}>
                 <div className={s.logo}>
                     <img src={logo} alt="logo"/>
@@ -25,32 +45,41 @@ const Footer = () => {
                 <div className={s.menuContact}>
                     <FooterMenu/>
                     <div className={s.contacts}>
-                        <a href="tel: +48517429774" className={s.phone}>
+                        <a
+                            href={`tel: ${contact.phone ?? '+380931731730'}`}
+                            className={s.phone}>
                             <i className={`icPhone`}/>
-                            +48 517 429 774
+                            {
+                                contact.phone ?
+                                    `${contact.phone.replace(/(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 ($2) $3 $4 $5')}` :
+                                    '+380931731730'
+                            }
                         </a>
                         <a
-                            href="mailto: admin@source-byte.com"
+                            href={`mailto: ${contact.email}`}
                             className={s.email}
                             rel="noreferrer"
                             target="_blank"
                         >
                             <i className={`icMail`}/>
-                            admin@source-byte.com
+                            {contact.email}
                         </a>
                     </div>
                 </div>
             </div>
+            }
+            {contact &&
             <div className={s.middleRow}>
                 <div>
-                    <p>SOURCE BYTE SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ | Warszawska 36 / 1, 40-010 Katowice, Polska</p>
-                    <p>P 9542816866 | KRS 0000850810 | REGON 386561446</p>
+                    <p>{contact.address}</p>
+                    <p>{contact.other}</p>
                 </div>
                 <div className={s.right}>
-                    <p>2020 © SourceByte | All rights reserved</p>
+                    <p>{contact.copyright}</p>
                     {/*<p>Created by <span>@k0vel</span> and <span>@nolis920</span></p>*/}
                 </div>
             </div>
+            }
             <hr/>
             <div className={s.bottomRow}>
                 <ul>

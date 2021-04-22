@@ -18,6 +18,20 @@ class ContactsPageController extends Controller
         ]);
     }
 
+    public function getAll()
+    {
+        try {
+            $response['message'] = 'Get all data from Contact';
+            $response['success'] = true;
+            $response['model'] = ContactsPage::all();
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return \response()->json($response);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -65,12 +79,22 @@ class ContactsPageController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param ContactsPage $contactsPage
      * @return Response
      */
-    public function update(Request $request, ContactsPage $contactsPage)
+    public function update($id, Request $request)
     {
-        //
+        try {
+            $contact = ContactsPage::find($request['id']);
+            $contact->update($request->all());
+            $response['message'] = 'Contacts updated';
+            $response['success'] = true;
+            $response['model'] = $contact;
+        } catch (\Exception $exception) {
+            $response['message'] = $exception->getMessage();
+            $response['success'] = false;
+        }
+
+        return response()->json($response);
     }
 
     /**
