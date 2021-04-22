@@ -191,6 +191,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/contacts/getAll', [ContactsPageController::class, 'getAll'])->name('contacts.getAll');
     Route::post('/contacts/update/{id}', [ContactsPageController::class, 'update'])->name('contacts.update');
 
+    Route::get('/press/getAll', [PressPageController::class, 'getAll'])->name('press.getAll');
+    Route::post('/press/update/{id}', [PressPageController::class, 'update'])->name('press.update');
+
     Route::post('/footer-links/update/{id}', [FooterLinksController::class, 'update'])->name('footer-links.update');
 });
 
