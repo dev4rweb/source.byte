@@ -17,13 +17,14 @@ import {useHttp} from "../../hooks/http.hook";
 
 const Footer = () => {
     const [contact, setContact] = useState(null);
+    const [links, setLinks] = useState(null);
     const [load, setLoad] = useState(false);
     const {request, loading} = useHttp();
 
     const fetchContacts = useCallback(async () => {
         try {
             const fetched = await request('/contacts/getAll');
-            console.log(fetched);
+            // console.log(fetched);
             setContact(fetched.model[0]);
         } catch (e) {
             console.log(e);
@@ -33,6 +34,20 @@ const Footer = () => {
     useEffect(() => {
         fetchContacts()
     }, [fetchContacts]);
+
+    const fetchLinks = useCallback(async () => {
+        try {
+            const fetched = await request('/footer-links');
+            // console.log(fetched);
+            setLinks(fetched.model[0])
+        } catch (e) {
+            console.log(e);
+        }
+    }, [request]);
+
+    useEffect(() => {
+        fetchLinks()
+    }, [fetchLinks]);
 
     return (
         <footer className={`container ${s.footer}`}>
@@ -81,21 +96,67 @@ const Footer = () => {
             </div>
             }
             <hr/>
+            {links &&
             <div className={s.bottomRow}>
                 <ul>
-                    <li><img src={fOne} alt="logo"/></li>
-                    <li><img src={fXbox} alt="logo"/></li>
-                    <li><img src={fPlaystation} alt="logo"/></li>
-                    <li><img src={fTwitch} alt="logo"/></li>
-                    <li><img src={fMicrosoft} alt="logo"/></li>
-                    <li><img src={fViveport} alt="logo"/></li>
-                    <li><img src={fNintendo} alt="logo"/></li>
-                    <li><img src={fOculus} alt="logo"/></li>
-                    <li><img src={fGOG} alt="logo"/></li>
-                    <li><img src={fEpic} alt="logo"/></li>
-                    <li><img src={fItch} alt="logo"/></li>
+                    <li>
+                        <a href={links.steam}>
+                            <img src={fOne} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.xBox}>
+                            <img src={fXbox} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.playstation}>
+                            <img src={fPlaystation} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.twitch}>
+                            <img src={fTwitch} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.microsoft}>
+                            <img src={fMicrosoft} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.viveport}>
+                            <img src={fViveport} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.nintendo}>
+                            <img src={fNintendo} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.oculus}>
+                            <img src={fOculus} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.gog}>
+                            <img src={fGOG} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.epic}>
+                            <img src={fEpic} alt="logo"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={links.itch}>
+                            <img src={fItch} alt="logo"/>
+                        </a>
+                    </li>
                 </ul>
             </div>
+            }
         </footer>
     );
 };

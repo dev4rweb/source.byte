@@ -9,6 +9,7 @@ use App\Models\ContactForm;
 use App\Models\ContactsPage;
 use App\Models\DetailGamePage;
 use App\Models\DetailNewsPage;
+use App\Models\FooterLinks;
 use App\Models\Game;
 use App\Models\GameCarousel;
 use App\Models\GamePurchase;
@@ -842,6 +843,20 @@ You need to plan the look and feel of your models in advance so that they can be
             'uploadFile' => 'uploadFile',
             'website' => 'website',
             'help' => 'help',
+        ]);
+
+        FooterLinks::factory()->create([
+            'steam' => 'https://source-byte.com/',
+            'xBox' => 'https://source-byte.com/',
+            'playstation' => 'https://source-byte.com/',
+            'twitch' => 'https://source-byte.com/',
+            'microsoft' => 'https://source-byte.com/',
+            'viveport' => 'https://source-byte.com/',
+            'nintendo' => 'https://source-byte.com/',
+            'oculus' => 'https://source-byte.com/',
+            'gog' => 'https://source-byte.com/',
+            'epic' => 'https://source-byte.com/',
+            'itch' => 'https://source-byte.com/',
         ]);
     }
 }

@@ -15,14 +15,14 @@ class CreateContactsPagesTable extends Migration
     {
         Schema::create('contacts_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('rightTitle');
-            $table->string('email');
-            $table->text('location');
-            $table->string('phone');
-            $table->text('address');
-            $table->text('other');
-            $table->string('copyright');
+            $table->string('title')->nullable();
+            $table->string('rightTitle')->nullable();
+            $table->string('email')->nullable();
+            $table->text('location')->nullable();
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
+            $table->text('other')->nullable();
+            $table->string('copyright')->nullable();
             $table->timestamps();
         });
     }

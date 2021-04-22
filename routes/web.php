@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactsPageController;
 use App\Http\Controllers\DetailGamePageController;
 use App\Http\Controllers\DetailNewsPageController;
 use App\Http\Controllers\ErrorPageController;
+use App\Http\Controllers\FooterLinksController;
 use App\Http\Controllers\GameCarouselController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\GamePurchaseController;
@@ -108,6 +109,8 @@ Route::get('/games-all', [GameController::class, 'index'])->name('games-all.inde
 Route::get('/games-requirements', [GamesRequirementsController::class, 'index'])->name('games-requirements.index');
 Route::get('/games-requirements/{id}', [GamesRequirementsController::class, 'show'])->name('games-requirements.show');
 
+Route::get('/footer-links', [FooterLinksController::class, 'index'])->name('footer-links.index');
+
 Route::get('/game-purchase', [GamePurchaseController::class, 'index'])->name('game-purchase.index');
 Route::get('/game-purchase/{id}', [GamePurchaseController::class, 'show'])->name('game-purchase.show');
 
@@ -187,6 +190,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/contacts/getAll', [ContactsPageController::class, 'getAll'])->name('contacts.getAll');
     Route::post('/contacts/update/{id}', [ContactsPageController::class, 'update'])->name('contacts.update');
+
+    Route::post('/footer-links/update/{id}', [FooterLinksController::class, 'update'])->name('footer-links.update');
 });
 
 // Error Page Start

@@ -11,7 +11,7 @@ const AdminPageContacts = () => {
     const fetchContacts = useCallback(async () => {
         try{
             const fetched = await request('/contacts/getAll');
-            console.log(fetched);
+            // console.log(fetched);
             setState(fetched.model[0]);
         } catch (e) {
             console.log(e);
@@ -28,7 +28,7 @@ const AdminPageContacts = () => {
         axios.post(`/contacts/update/${state.id}`, state)
             .then(res => {
                 setLoad(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.model)
             })
             .catch(err => {
