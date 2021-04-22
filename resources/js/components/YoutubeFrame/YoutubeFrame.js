@@ -4,7 +4,7 @@ import playImg from "../../../assets/img/png/Play.png";
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 import ReactPlayer from "react-player";
 
-const YoutubeFrame = ({pathUrl = null, isButton = false, bg}) => {
+const YoutubeFrame = ({pathUrl = null, isButton = false, bg, btnPath = null}) => {
     const [play, setPlay] = useState(false);
     const cov = createRef();
     // console.log('path', pathUrl);
@@ -39,7 +39,11 @@ const YoutubeFrame = ({pathUrl = null, isButton = false, bg}) => {
 
                 {isButton &&
                 <div className={s.btnWrapper}>
-                    <ButtonPrimary text={`View Games`} width={`170px`}/>
+                    <ButtonPrimary
+                        text={`View Games`}
+                        width={`170px`}
+                        btnUrl={btnPath ?? null}
+                    />
                 </div>
                 }
             </div>

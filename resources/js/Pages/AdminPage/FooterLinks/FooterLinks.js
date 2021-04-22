@@ -11,7 +11,7 @@ const FooterLinks = () => {
     const fetchLinks = useCallback(async () => {
         try{
             const fetched = await request('/footer-links');
-            console.log(fetched);
+            // console.log(fetched);
             setState(fetched.model[0]);
         } catch (e) {
             console.log(e);
@@ -24,7 +24,7 @@ const FooterLinks = () => {
 
 
     function updateHandler() {
-        console.log('updateHandler', state);
+        // console.log('updateHandler', state);
         setLoad(true);
         axios.post(`/footer-links/update/${state.id}`, state)
             .then(res => {
@@ -39,7 +39,7 @@ const FooterLinks = () => {
     }
 
     function changeHandler(e) {
-        console.log('changeHandler');
+        // console.log('changeHandler');
         setState({
             ...state,
             [e.currentTarget.name]: e.currentTarget.value

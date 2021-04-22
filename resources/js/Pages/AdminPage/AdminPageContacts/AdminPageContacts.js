@@ -23,7 +23,7 @@ const AdminPageContacts = () => {
     }, [fetchContacts]);
 
     function updateHandler() {
-        console.log('updateHandler', state);
+        // console.log('updateHandler', state);
         setLoad(true);
         axios.post(`/contacts/update/${state.id}`, state)
             .then(res => {
@@ -38,7 +38,7 @@ const AdminPageContacts = () => {
     }
 
     function changeHandler(e) {
-        console.log('changeHandler');
+        // console.log('changeHandler');
         setState({
             ...state,
             [e.currentTarget.name]: e.currentTarget.value

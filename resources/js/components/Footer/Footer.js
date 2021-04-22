@@ -14,11 +14,11 @@ import fGOG from "../../../assets/icons/svg/footer-GOG.svg";
 import fEpic from "../../../assets/icons/svg/footer-Epic.svg";
 import fItch from "../../../assets/icons/svg/footer-Itch.io.svg";
 import {useHttp} from "../../hooks/http.hook";
+import Loader from "../Loader/Loader";
 
 const Footer = () => {
     const [contact, setContact] = useState(null);
     const [links, setLinks] = useState(null);
-    const [load, setLoad] = useState(false);
     const {request, loading} = useHttp();
 
     const fetchContacts = useCallback(async () => {
@@ -48,6 +48,10 @@ const Footer = () => {
     useEffect(() => {
         fetchLinks()
     }, [fetchLinks]);
+
+    if (loading) {
+        return <Loader/>
+    }
 
     return (
         <footer className={`container ${s.footer}`}>
