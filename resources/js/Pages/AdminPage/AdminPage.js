@@ -16,6 +16,7 @@ import GamesPurchase from "./GamesPurchase/GamesPurchase";
 import GamesRequirements from "./GamesRequirements/GamesRequirements";
 import AdminIncomingJobs from "./AdminIncomingJobs/AdminIncomingJobs";
 import AdminContactEmails from "./AdminContactEmails/AdminContactEmails";
+import FooterLinks from "./FooterLinks/FooterLinks";
 
 const AdminPage = ({adminPage}) => {
     const title = adminPage[0].title || 'title';
@@ -39,6 +40,7 @@ const AdminPage = ({adminPage}) => {
                     <Tab>Submit your game</Tab>
                     <Tab>Social</Tab>
                     <Tab>Our Team</Tab>
+                    <Tab>Footer Links</Tab>
                     <InertiaLink
                         href="/logout"
                         method="post"
@@ -92,6 +94,9 @@ const AdminPage = ({adminPage}) => {
                     </TabPanel>
                     <TabPanel>
                         <AdminPageOurTeam/>
+                    </TabPanel>
+                    <TabPanel>
+                        <FooterLinks/>
                     </TabPanel>
                 </main>
             </Tabs>

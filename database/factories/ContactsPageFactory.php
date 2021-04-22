@@ -22,9 +22,14 @@ class ContactsPageFactory extends Factory
     public function definition()
     {
         return [
-            'title' => 'Contacts  Page',
-            'content' => 'Contacts Content',
-            'image'=> 'https://photoplay.ru/sites/default/files/imce/2019/travel-photo_dk.jpg'
+            'title' => 'Contacts',
+            'rightTitle' => 'Do you have a question? Write us',
+            'email'=> 'admin@source-byte.com',
+            'location'=> 'http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003',
+            'phone'=> '+380931731730',
+            'address'=> 'SOURCE BYTE SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ | Warszawska 36 / 1, 40-010 Katowice, Polska',
+            'other'=> 'P 9542816866 | KRS 0000850810 | REGON 386561446',
+            'copyright'=> '2020 © SourceByte | All rights reserved',
         ];
     }
 }

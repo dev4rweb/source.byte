@@ -2,7 +2,7 @@ import React from 'react';
 import s from './CustomNavLink.module.scss'
 
 
-const CustomNavLink = ({type}) => {
+const CustomNavLink = ({type, link = null}) => {
     let icon;
     let href;
     let title;
@@ -10,20 +10,22 @@ const CustomNavLink = ({type}) => {
     switch (type) {
         case 'mail':
             icon = `icMail`;
-            href = 'mailto: general@gmail.com';
+            href = `mailto: ${link ?? 'general@gmail.com'}`;
             title = 'Email';
-            text = 'general@gmail.com';
+            text = `${link ?? 'general@gmail.com'}`;
             break;
         case 'location':
             icon = `icMapPin`;
             title = 'Location';
-            href = 'http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003';
+            href = `${link ?? 'http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003'}`;
             break;
         default :
             icon = `icPhone`;
             title = 'Phone';
-            href = 'tel: +380931731730';
-            text = '+38 093 173 17 30';
+            href = `tel: ${link?? '+380931731730'}`;
+            text = `${link ?
+                link.replace(/(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 ($2) $3 $4 $5'):
+                '+380931731730'}`;
             break;
     }
 

@@ -5,23 +5,16 @@ import CustomNavLink from "../../components/CustomNavLink/CustomNavLink";
 import FollowUs from "../../components/FollowUs/FollowUs";
 import ButtonPrimary from "../../components/ButtonPrimary/ButtonPrimary";
 import CustomInput from "../../components/CustomInput/CustomInput";
-import {useHttp} from "../../hooks/http.hook";
 import Loader from "../../components/Loader/Loader";
 import axios from "axios";
 
 const ContactsPage = ({contactsPage}) => {
-    const title = contactsPage[0].title || 'title';
-    const content = contactsPage[0].content || 'content';
-    const image = contactsPage[0].image || '';
     const [loading, setLoading] = useState(false);
-    const [state, setState] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        msg: ''
+    const [state, setState] = useState(contactsPage[0]);
+    const [form, setForm] = useState({
+        name: '', email: '', phone: '', msg: ''
     });
 
-    const {request} = useHttp();
 
     const sentToEmail = async model =>{
         setLoading(true);
@@ -46,10 +39,10 @@ const ContactsPage = ({contactsPage}) => {
         event.preventDefault();
         // console.log('form', state);
         const fd = new FormData();
-        fd.set('name', state.name);
-        fd.set('email', state.email);
-        fd.set('phone', state.phone);
-        fd.set('msg', state.msg);
+        fd.set('name', form.name);
+        fd.set('email', form.email);
+        fd.set('phone', form.phone);
+        fd.set('msg', form.msg);
         axios.post('/contactForm/store', fd)
             .then(res => {
                 const model = res.data.model;
@@ -66,30 +59,39 @@ const ContactsPage = ({contactsPage}) => {
 
     function onChangeHandler(e) {
         // console.log('onChangeHandler', e.currentTarget.name);
-        setState({...state,
+        setForm({...form,
             [e.currentTarget.name] : e.currentTarget.value
         });
     }
 
     return (
         <Layout>
+            {state &&
             <article className={`container`}>
                 <section className={` wrapper ${s.contactPage}`}>
                     <div className={s.leftSide}>
-                        <h3>Contacts</h3>
+                        <h3>{state.title}</h3>
                         <div>
-                            <CustomNavLink type={`mail`}/>
+                            <CustomNavLink
+                                type={`mail`}
+                                link={state.email}
+                            />
                             <hr/>
-                            <CustomNavLink type={`location`}/>
+                            <CustomNavLink
+                                type={`location`}
+                                link={state.location}
+                            />
                             <hr/>
-                            <CustomNavLink/>
+                            <CustomNavLink
+                                link={state.phone}
+                            />
                         </div>
                     </div>
                     <form
                         className={s.rightSide}
                         // onSubmit={handleSubmit}
                     >
-                    {/*<form className={s.rightSide}>*/}
+                        {/*<form className={s.rightSide}>*/}
                         <h3>Do you have a question? Write us</h3>
                         <CustomInput
                             label={`*Your name`}
@@ -123,9 +125,7 @@ const ContactsPage = ({contactsPage}) => {
                 <FollowUs/>
                 {loading && <Loader/>}
             </article>
-            {/*<h1>{title}</h1>
-            <p>{content}</p>
-            <img style={{width: '100%'}} src={image} alt="image"/>*/}
+            }
         </Layout>
     );
 };

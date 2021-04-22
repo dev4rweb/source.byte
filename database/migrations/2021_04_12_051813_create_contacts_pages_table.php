@@ -16,9 +16,13 @@ class CreateContactsPagesTable extends Migration
         Schema::create('contacts_pages', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->text('content');
-            $table->text('image');
-
+            $table->string('rightTitle');
+            $table->string('email');
+            $table->text('location');
+            $table->string('phone');
+            $table->text('address');
+            $table->text('other');
+            $table->string('copyright');
             $table->timestamps();
         });
     }
