@@ -36,7 +36,7 @@ const Carousel = () => {
     const fetchCarousel = useCallback(async () => {
         try{
             const fetched = await request('/main-carousel');
-            // console.log(fetched);
+            console.log(fetched);
             setCards(fetched);
         } catch (e) {
             console.log(e);
@@ -86,7 +86,7 @@ const Carousel = () => {
                                 <div className={s.gradient}>
                                     <h1>{item.title}</h1>
                                     <p>{item.content}</p>
-                                    <ButtonPrimary text={item.btnText}/>
+                                    <ButtonPrimary text={item.btnText} btnUrl={item.btnUrl}/>
                                 </div>
                             </div>
                         )

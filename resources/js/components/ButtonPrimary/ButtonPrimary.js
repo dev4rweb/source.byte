@@ -4,6 +4,7 @@ import s from './ButtonPrimary.module.scss'
 const ButtonPrimary = ({
                            text, width, height = '', zIndex = 'auto',
                            onClickHandle = null,
+                            purchase = '',
                            btnUrl = null,
                            btnType = 'button'
                        }) => {
@@ -20,7 +21,7 @@ const ButtonPrimary = ({
 
     return (
         <a
-            className={s.btnPrimary}
+            className={`${s.btnPrimary} ${purchase}`}
             onClick={handleClick}
             style={{maxWidth: w, height, zIndex, borderRadius: "4px"}}
             type={btnType}

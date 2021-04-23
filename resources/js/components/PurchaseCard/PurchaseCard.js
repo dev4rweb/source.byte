@@ -24,7 +24,7 @@ const PurchaseCard = ({isActive, data}) => {
             className={`${s.purchaseCard} ${fixPos}`}
             style={{opacity: opacity}}
         >
-            <ButtonPrimary text={`Purchase - ${data.price}`} width={`100%`}/>
+            <ButtonPrimary text={`Purchase - ${data.price}`} width={`100%`} purchase={`purchaseBtn`}/>
             <ul>
                 <li>
                     <p>Platforms</p>

@@ -1,6 +1,9 @@
 @import "../../../sass/variables";
 
 .fixedPos {
+    .purchaseBtn{
+        width: 100% !important;
+    }
 }
 .hide{
 
@@ -51,10 +54,14 @@
 @media only screen and (min-width: 1200px) {
     .fixedPos {
         position: sticky;
-        display: block;
+        display: flex;
         top: 100px;
         right: 0;
         animation: purchaseAnim 1s 1;
+
+        .purchaseBtn{
+            width: 100% !important;
+        }
     }
     .hide{
         //display: none;
