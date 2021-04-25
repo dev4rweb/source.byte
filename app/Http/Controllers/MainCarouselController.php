@@ -65,11 +65,13 @@ class MainCarouselController extends Controller
         $extension = $file->getClientOriginalExtension();
         $picture = date('His') . '-' . $filename;
         //move image to public/img folder
+//        $file->move(base_path('img'), $picture);
         $file->move(public_path('img'), $picture);
-//        $file->move('/img', $picture);
+//        $file->move('/img/', $picture);
 
         $this->filePath = public_path('img');
 
+//        $mainCarousel->update(['image' => '/lsapp/public/img/' . $picture]); //with local storage
         $mainCarousel->update(['image' => '/lsapp/public/img/' . $picture]); //with local storage
 //        $mainCarousel->update(['image' => '/img/' . $picture]); //with local storage
     }

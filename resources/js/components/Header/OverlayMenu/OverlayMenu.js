@@ -33,7 +33,7 @@ const OverlayMenu = ({toggleNavHandler, isOpen}) => {
         switch (pageName) {
             case 'home':
                 const isHost = window.location.href.includes('source-byte');
-                const urlLength = isHost ? 31 : 23;
+                const urlLength = isHost ? 26 : 23;
                 // console.log('isSocial', window.location.href.includes('source-byte'));
                 // console.log('length', window.location.href.length);
                 // console.log('isLess', window.location.href.length < urlLength);

@@ -55,7 +55,7 @@ const Footer = () => {
 
     return (
         <footer className={`container ${s.footer}`}>
-            {contact &&
+
             <div className={s.topRow}>
                 <div className={s.logo}>
                     <img src={logo} alt="logo"/>
@@ -63,6 +63,7 @@ const Footer = () => {
                 </div>
                 <div className={s.menuContact}>
                     <FooterMenu/>
+                    {contact &&
                     <div className={s.contacts}>
                         <a
                             href={`tel: ${contact.phone ?? '+380931731730'}`}
@@ -84,9 +85,10 @@ const Footer = () => {
                             {contact.email}
                         </a>
                     </div>
+                    }
                 </div>
             </div>
-            }
+
             {contact &&
             <div className={s.middleRow}>
                 <div>

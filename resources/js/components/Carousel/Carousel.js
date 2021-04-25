@@ -76,7 +76,7 @@ const Carousel = () => {
                         )
                     })}
                 </div>
-                <div className="carousel-inner" role="listbox">
+                <div className="carousel-inner main-carousel" role="listbox">
 
                     {cards && cards.map((item, index) => {
                         const isActive = index === 1 ? 'active' : '';

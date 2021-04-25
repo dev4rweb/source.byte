@@ -9,7 +9,7 @@ const FooterMenu = () => {
         switch (pageName) {
             case 'home':
                 const isHost = window.location.href.includes('source-byte');
-                const urlLength = isHost ? 32 : 23;
+                const urlLength = isHost ? 26 : 23;
                 // console.log('length', window.location.href.includes('source-byte'));
                 return window.location.href.length < urlLength ? s.active : '';
             default:
