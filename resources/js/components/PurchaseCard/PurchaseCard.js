@@ -4,6 +4,12 @@ import fOne from "../../../assets/icons/svg/footer-steam.svg";
 import fXbox from "../../../assets/icons/svg/footer-Xbox.svg";
 import fPlaystation from "../../../assets/icons/svg/footer-Playstation.svg";
 import fMicrosoft from "../../../assets/icons/svg/footer-Microsoft-Store.svg";
+
+import whiteXbox from "../../../assets/icons/whiteXBox.png"
+import whitePS from "../../../assets/icons/whitePS.png"
+import whiteWindows from "../../../assets/icons/whiteWindows.png"
+import whiteSteam from "../../../assets/icons/whiteSteam.png"
+
 import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
 
 const PurchaseCard = ({isActive, data}) => {
@@ -31,19 +37,19 @@ const PurchaseCard = ({isActive, data}) => {
                     <p>
                         {data.xBox &&
                         <a href={data.xBox} target="_blank" className={s.hov}>
-                            <img src={fXbox} alt="logo"/></a>
+                            <img src={whiteXbox} alt="logo"/></a>
                         }
                         {data.ps &&
                         <a href={data.ps} target="_blank" className={s.hov}>
-                            <img src={fPlaystation} alt="logo"/></a>
+                            <img src={whitePS} alt="logo"/></a>
                         }
                         {data.microsoft &&
                         <a href={data.microsoft} target="_blank" className={s.hov}>
-                            <img src={fMicrosoft} alt="logo"/></a>
+                            <img src={whiteWindows} alt="logo"/></a>
                         }
                         {data.steam &&
                         <a href={data.steam} target="_blank" className={s.hov}>
-                            <img src={fOne} alt="logo"/></a>
+                            <img src={whiteSteam} alt="logo"/></a>
                         }
                     </p>
                 </li>
