@@ -17,10 +17,10 @@ const Header = () => {
     return (
         <header className={`container ${s.header}`}>
             <div className={s.topNav}>
-                <div className={s.logo}>
+                <a className={s.logo} href={`/`}>
                     <img src={logo} alt="logo"/>
                     <h4>SOURCE<br/><span>BYTE</span></h4>
-                </div>
+                </a>
                 <div
                     className={s.menuOpen}
                     onClick={toggleNavHandler}

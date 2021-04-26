@@ -43,7 +43,7 @@ const NewsForm = ({
     if (card) {
         return (
             <div className="mb-5 mt-5">
-                <h2>Create Form</h2>
+                <h2>Change Form</h2>
 
                 <div className="mb-3">
                     <label className="text-light">

@@ -96,7 +96,7 @@ const AdminPageNews = () => {
 
     return (
         <div className="container">
-            <h1 className="mt-3 mb-3">Games</h1>
+            <h1 className="mt-3 mb-3">News</h1>
             <table className="table text-light">
                 <thead>
                 <tr>

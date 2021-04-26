@@ -10,7 +10,10 @@ const GamesCard = ({item}) => {
     const content = item.content ? item.content : 'The game of bocce (known also as bowls or bocce ball) is an ancient sport that requires skill, strategy and a little bit of luck ...';
     return (
         item &&
-        <div className="card gameCard">
+        <div
+            className="card gameCard"
+            onClick={ event => window.open(`/games/${item.id}`, "_self")}
+        >
             <img src={image} className="card-img-top" alt="..."/>
             <div className="card-body flex-column justify-content-start">
                 <h5>{head}</h5>

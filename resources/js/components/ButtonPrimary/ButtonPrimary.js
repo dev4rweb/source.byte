@@ -23,7 +23,7 @@ const ButtonPrimary = ({
         <a
             className={`${s.btnPrimary} ${purchase}`}
             onClick={handleClick}
-            style={{maxWidth: w, height, zIndex, borderRadius: "4px"}}
+            style={{maxWidth: w, height, zIndex, borderRadius: "4px", display: "block"}}
             type={btnType}
             href={btnUrl}
         >

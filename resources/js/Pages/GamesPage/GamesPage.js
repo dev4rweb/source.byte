@@ -136,7 +136,9 @@ const GamesPage = ({gamesPage, games}) => {
                         )
                     })}
                 </section>
-
+                <br/>
+                <br/>
+                <br/>
                 <div>
                     {/*<Pagination/>*/}
                 </div>

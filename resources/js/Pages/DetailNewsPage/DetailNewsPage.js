@@ -11,7 +11,11 @@ const DetailNewsPage = ({detailNewsPage}) => {
         <Layout>
             <article className={`${s.newsDetailPage}`}>
                 <section className={`container ${s.main}`}>
-                    <img src={detailNewsPage.mainImage} alt="bg"/>
+                    {
+                        detailNewsPage.mainImage &&
+                        <img src={detailNewsPage.mainImage} alt="bg"/>
+                    }
+
                     <div className={s.shadowWrapper}>
                         <div>
                             <InertiaLink
@@ -22,19 +26,48 @@ const DetailNewsPage = ({detailNewsPage}) => {
                                 Back to News
                             </InertiaLink>
                         </div>
-                        <h1>{detailNewsPage.title}</h1>
-                        <p>{detailNewsPage.description}</p>
+                        {
+                            detailNewsPage.title &&
+                            <h1>{detailNewsPage.title}</h1>
+                        }
+
+                        {
+                            detailNewsPage.description &&
+                            <p>{detailNewsPage.description}</p>
+                        }
+
                     </div>
                 </section>
                 <section className={`container wrapper ${s.info}`}>
-                    <p>{detailNewsPage.content}</p>
-                    <h2>{detailNewsPage.subtitle} </h2>
-                    <p>{detailNewsPage.subContent} </p>
-                    <div className={s.quoteWrapper}>
-                        <div className={s.vLine}/>
-                        <blockquote>{detailNewsPage.blockquote} </blockquote>
-                    </div>
-                    <p>{detailNewsPage.postContent} </p>
+                    {/*<p>{detailNewsPage.content}</p>*/}
+                    {
+                        detailNewsPage.content &&
+                        <div dangerouslySetInnerHTML={{__html: detailNewsPage.content}}/>
+                    }
+
+                    {
+                        detailNewsPage.subtitle &&
+                        <h2>{detailNewsPage.subtitle} </h2>
+                    }
+
+                    {
+                        detailNewsPage.subContent &&
+                        <p>{detailNewsPage.subContent} </p>
+                    }
+
+                    {
+                        detailNewsPage.blockquote &&
+                        <div className={s.quoteWrapper}>
+                            <div className={s.vLine}/>
+                            <blockquote>{detailNewsPage.blockquote} </blockquote>
+                        </div>
+                    }
+
+                    {
+                        detailNewsPage.postContent &&
+                        <p>{detailNewsPage.postContent} </p>
+                    }
+
                     <ul className="img-marked">
                         {markedList && markedList.map((item, index) => {
                             if (item) {
@@ -44,10 +77,20 @@ const DetailNewsPage = ({detailNewsPage}) => {
                             }
                         })} </ul>
                     <div className={s.imgNews}>
-                        <img src={detailNewsPage.lastImage} alt="news"/>
-                        <p>{detailNewsPage.altImage}</p>
+                        {
+                            detailNewsPage.lastImage &&
+                            <img src={detailNewsPage.lastImage} alt="news"/>
+                        }
+
+                        {
+                            detailNewsPage.altImage &&
+                            <p>{detailNewsPage.altImage}</p>
+                        }
                     </div>
-                    <p>{detailNewsPage.lastContent}</p>
+                    {
+                        detailNewsPage.lastContent &&
+                        <p>{detailNewsPage.lastContent}</p>
+                    }
                 </section>
                 <FollowUs/>
             </article>

@@ -75,3 +75,11 @@
         }
     }
 }
+
+@media only screen and (min-width: 1400px) {
+    .detail-game-container {
+        section:nth-of-type(1) div {
+            padding: 0;
+        }
+    }
+}

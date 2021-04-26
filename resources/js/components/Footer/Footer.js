@@ -57,10 +57,10 @@ const Footer = () => {
         <footer className={`container ${s.footer}`}>
 
             <div className={s.topRow}>
-                <div className={s.logo}>
+                <a className={s.logo} href={`/`}>
                     <img src={logo} alt="logo"/>
                     <h4>SOURCE<br/><span>BYTE</span></h4>
-                </div>
+                </a>
                 <div className={s.menuContact}>
                     <FooterMenu/>
                     {contact &&

@@ -1,12 +1,26 @@
 @import "../../../sass/variables";
 
 .fixedPos {
-    .purchaseBtn{
+    .purchaseBtn {
         width: 100% !important;
     }
 }
-.hide{
 
+.hide {
+
+}
+
+.hov {
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+
+    &:hover img {
+        opacity: .5;
+        cursor: pointer;
+    }
 }
 
 .purchaseCard {
@@ -59,11 +73,11 @@
         right: 0;
         animation: purchaseAnim 1s 1;
 
-        .purchaseBtn{
+        .purchaseBtn {
             width: 100% !important;
         }
     }
-    .hide{
+    .hide {
         //display: none;
     }
 }
