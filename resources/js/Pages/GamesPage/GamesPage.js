@@ -9,6 +9,7 @@ import imgCardTwo from '../../../assets/img/png/games2.png';
 import imgCardThree from '../../../assets/img/png/games3.png';
 import imgCardFour from '../../../assets/img/png/games4.png';
 import Pagination from "../../components/Pagination/Pagination";
+import GamePageList from "../../components/GamePageList/GamePageList";
 
 const GamesPage = ({gamesPage, games}) => {
     const [gameCard, setGameCard] = useState([
@@ -133,22 +134,12 @@ const GamesPage = ({gamesPage, games}) => {
                     </div>
                 </div>
 
-                <section className={s.cards}>
-                    {gameCard.map((item, index) => {
-                        return (
-                            <GamesCard
-                                key={index}
-                                item={item}
-                            />
-                        )
-                    })}
+                <section>
+                    {gameCard && <GamePageList games={gameCard}/>}
                 </section>
                 <br/>
                 <br/>
                 <br/>
-               {/* <div>
-                    <Pagination/>
-                </div>*/}
             </article>
         </Layout>
     );

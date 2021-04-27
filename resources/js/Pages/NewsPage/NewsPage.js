@@ -6,6 +6,7 @@ import InputSelect from "../../components/InputSelect/InputSelect";
 import InputGroup from "../../components/InputGroup/InputGroup";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import FollowUs from "../../components/FollowUs/FollowUs";
+import NewsPageList from "../../components/NewsPageList/NewsPageList";
 
 const NewsPage = ({newsPage, news}) => {
     const [newsCard, setNewsCard] = useState([]);
@@ -99,62 +100,11 @@ const NewsPage = ({newsPage, news}) => {
                         />
                     </div>
                 </div>
-
-                <section className={`container ${s.cardWrapper}`}>
-                    {newsCard.map((item, index) => {
-                        return (
-                            <NewsCard
-                                key={index}
-                                item={item}
-                            />
-                        );
-                    })}
-
-                    {/*                    <NewsCard
-                        img={imgTwo}
-                        title={`Jobs Available Now!`}
-                        content={`From the game design point of viev, virtual reality is a sea of ​​unique possibilities. The paths of player interaction with the game aren't yet fully fixed in VR`}
-                    />
-                    <NewsCard
-                        img={imgThree}
-                        title={`Looking for a Publisher?`}
-                        content={`Our new game Playground VR released on Steam! In this blog, we want to share the features of developing games in virtual reality (we already have two!), And also`}
-                    />
-                    <NewsCard
-                        img={imgOne}
-                        title={`Source Byte: Inside`}
-                        content={`In the previous parts, we wrote about how to get started developing a game in VR, and how game designers work when creating games in VR. In this article, we will`}
-                    />
-                    <NewsCard
-                        img={imgTwo}
-                        title={`Jobs Available Now!`}
-                        content={`From the game design point of viev, virtual reality is a sea of ​​unique possibilities. The paths of player interaction with the game aren't yet fully fixed in VR`}
-                    />
-                    <NewsCard
-                        img={imgThree}
-                        title={`Looking for a Publisher?`}
-                        content={`Our new game Playground VR released on Steam! In this blog, we want to share the features of developing games in virtual reality (we already have two!), And also`}
-                    />
-                    <NewsCard
-                        img={imgOne}
-                        title={`Source Byte: Inside`}
-                        content={`In the previous parts, we wrote about how to get started developing a game in VR, and how game designers work when creating games in VR. In this article, we will`}
-                    />
-                    <NewsCard
-                        img={imgTwo}
-                        title={`Jobs Available Now!`}
-                        content={`From the game design point of viev, virtual reality is a sea of ​​unique possibilities. The paths of player interaction with the game aren't yet fully fixed in VR`}
-                    />
-                    <NewsCard
-                        img={imgThree}
-                        title={`Looking for a Publisher?`}
-                        content={`Our new game Playground VR released on Steam! In this blog, we want to share the features of developing games in virtual reality (we already have two!), And also`}
-                    />*/}
+                <br/><br/>
+                <section>
+                    {newsCard && <NewsPageList news={newsCard} />}
                 </section>
-
-                <div className={s.paginationWrapper}>
-                    {/*<Pagination/>*/}
-                </div>
+                <br/><br/>
                 <FollowUs/>
             </article>
         </Layout>
