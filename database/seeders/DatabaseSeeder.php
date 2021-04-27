@@ -574,23 +574,23 @@ Visit villages, collect items, explore the world, fight enemies.',
 
         GameCarousel::factory()->create([
             'gameId' => '4',
-            'image' => '/images/royal1.png'
+            'image' => '/images/royal1.jpg'
         ]);
         GameCarousel::factory()->create([
             'gameId' => '4',
-            'image' => '/images/royal2.png'
+            'image' => '/images/royal2.jpg'
         ]);
         GameCarousel::factory()->create([
             'gameId' => '4',
-            'image' => '/images/royal3.png'
+            'image' => '/images/royal3.jpg'
         ]);
         GameCarousel::factory()->create([
             'gameId' => '4',
-            'image' => '/images/royal4.png'
+            'image' => '/images/royal4.jpg'
         ]);
         GameCarousel::factory()->create([
             'gameId' => '4',
-            'image' => '/images/royal5.png'
+            'image' => '/images/royal5.jpg'
         ]);
 
 

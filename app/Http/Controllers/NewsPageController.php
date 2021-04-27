@@ -14,7 +14,7 @@ class NewsPageController extends Controller
     public function index()
     {
         $newsPage = NewsPage::all();
-        $news = News::all();
+        $news = News::orderBy('id', 'desc')->get();
         return Inertia::render('NewsPage/NewsPage', [
             'newsPage' => $newsPage,
             'news' => $news

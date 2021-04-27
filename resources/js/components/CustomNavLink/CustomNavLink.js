@@ -17,14 +17,18 @@ const CustomNavLink = ({type, link = null}) => {
         case 'location':
             icon = `icMapPin`;
             title = 'Location';
-            href = `${link ?? 'http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003'}`;
+            // href = `${link ?? 'http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003'}`;
+            href = `${link ?
+                `http://maps.google.com/?q=1200 ${link}` :
+                'http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003'}`;
+            text = `${link ?? '3517 W. Gray St. Utica, Pennsylvania 57867'}`;
             break;
         default :
             icon = `icPhone`;
             title = 'Phone';
-            href = `tel: ${link?? '+380931731730'}`;
+            href = `tel: ${link ?? '+380931731730'}`;
             text = `${link ?
-                link.replace(/(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 ($2) $3 $4 $5'):
+                link.replace(/(\d{2})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 ($2) $3 $4 $5') :
                 '+380931731730'}`;
             break;
     }

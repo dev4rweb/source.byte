@@ -8,6 +8,7 @@ import imgCard from '../../../assets/img/png/games1.png';
 import imgCardTwo from '../../../assets/img/png/games2.png';
 import imgCardThree from '../../../assets/img/png/games3.png';
 import imgCardFour from '../../../assets/img/png/games4.png';
+import Pagination from "../../components/Pagination/Pagination";
 
 const GamesPage = ({gamesPage, games}) => {
     const [gameCard, setGameCard] = useState([
@@ -36,12 +37,18 @@ const GamesPage = ({gamesPage, games}) => {
     const [category, setCategory] = useState([]);
     const sorting = ['date', 'name'];
 
+    /*For Pagination*/
+    const [currentGames, setCurrentGames] = useState([]);
+    const [currentPage, setCurrentPage] = useState(null);
+    const [totalPages, setTotalPages] = useState(null);
+
     useEffect(() => {
-        // console.log(games);
+        // console.log(games.length);
         setGameCard(games);
         setOriginGame(games);
-        createCategory(games)
+        createCategory(games);
     }, [gamesPage]);
+
 
     function createCategory(games) {
         let cut = [];
@@ -92,8 +99,8 @@ const GamesPage = ({gamesPage, games}) => {
         }
         if (category === 'date') {
             const result = [...gameCard].sort(function (a, b) {
-                if(a.id > b.id) {return -1;}
-                if (a.id < b.id) {return 1;}
+                if(a.id < b.id) {return -1;}
+                if (a.id > b.id) {return 1;}
                 return 0;
             });
             setGameCard(result);
@@ -139,9 +146,9 @@ const GamesPage = ({gamesPage, games}) => {
                 <br/>
                 <br/>
                 <br/>
-                <div>
-                    {/*<Pagination/>*/}
-                </div>
+               {/* <div>
+                    <Pagination/>
+                </div>*/}
             </article>
         </Layout>
     );

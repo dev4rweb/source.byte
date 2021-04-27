@@ -14,7 +14,7 @@ class GamesPageController extends Controller
     public function index()
     {
         $gamesPage = GamesPage::all();
-        $games = Game::all();
+        $games = Game::orderBy('id', 'desc')->get();
         return Inertia::render('GamesPage/GamesPage', [
             'gamesPage' => $gamesPage,
             'games' => $games

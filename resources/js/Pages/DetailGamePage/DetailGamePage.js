@@ -18,16 +18,34 @@ const DetailGamePage = ({detailGamePage, gamesRequirements, gamePurchase}) => {
     return (
         <Layout>
             <article className="detail-game-container">
-                <YoutubeFrame pathUrl={detailGamePage.video} bg={detailGamePage.mainImage}/>
+                {
+                    detailGamePage.video &&
+                    <YoutubeFrame pathUrl={detailGamePage.video} bg={detailGamePage.mainImage}/>
+                }
 
                 <section className="container side-wrapper">
                     <div className="left-side">
-                        <h1 style={{marginTop: '50px'}}>{detailGamePage.title}</h1>
-                        <p>{detailGamePage.content}</p>
+                        {
+                            detailGamePage.title &&
+                            <h1 style={{marginTop: '50px'}}>{detailGamePage.title}</h1>
+                        }
+                        {
+                            detailGamePage.content &&
+                            <p>{detailGamePage.content}</p>
+                        }
                         <DetailGameSlider pageId={detailGamePage.id}/>
-                        <h2>{detailGamePage.subtitle}</h2>
-                        <p>{detailGamePage.subContent} </p>
-                        <h2>{detailGamePage.listTitle}</h2>
+                        {
+                            detailGamePage.subtitle &&
+                            <h2>{detailGamePage.subtitle}</h2>
+                        }
+                        {
+                            detailGamePage.subContent &&
+                            <p>{detailGamePage.subContent} </p>
+                        }
+                        {
+                            detailGamePage.listTitle &&
+                            <h2>{detailGamePage.listTitle}</h2>
+                        }
                         <ul className="img-marked">
                             {markedList && markedList.map((item, index) => {
                                 if (item) {
@@ -37,8 +55,14 @@ const DetailGamePage = ({detailGamePage, gamesRequirements, gamePurchase}) => {
                                 }
                             })}
                         </ul>
-                        <h2>{detailGamePage.subtitleTwo}</h2>
-                        <p>{detailGamePage.contentTwo}</p>
+                        {
+                            detailGamePage.subtitleTwo &&
+                            <h2>{detailGamePage.subtitleTwo}</h2>
+                        }
+                        {
+                            detailGamePage.contentTwo &&
+                            <p>{detailGamePage.contentTwo}</p>
+                        }
                         <h2>System requirements</h2>
                         <div className="system-wrapper">
                             <SystemCard
