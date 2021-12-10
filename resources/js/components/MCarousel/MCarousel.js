@@ -19,7 +19,7 @@ const MCarousel = () => {
         axios.get('/games-all')
             .then(res => {
                 setLoading(false);
-                console.log(res);
+                // console.log(res);
                 setState(res.data.models);
             })
             .catch(err => {

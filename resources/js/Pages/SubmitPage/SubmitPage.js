@@ -35,7 +35,7 @@ const SubmitPage = ({submitPage}) => {
                 [e.currentTarget.name]: Boolean(e.currentTarget.checked)
             });
         } else if (e.currentTarget.name === 'uploadFile') {
-            console.log('uploadFile', e.target.files[0].size);
+            // console.log('uploadFile', e.target.files[0].size);
             if (e.target.files[0].size < 10485760) {
                 setState({
                     ...state,

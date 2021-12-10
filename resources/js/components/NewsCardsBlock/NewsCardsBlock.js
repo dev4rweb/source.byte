@@ -30,7 +30,7 @@ const NewsCardsBlock = () => {
     const getThreeRecords = useCallback(async () => {
         try {
             const fetched = await request('/detailNewsPage/getThreeLast');
-            console.log('getThreeRecords', fetched);
+            // console.log('getThreeRecords', fetched);
             setNews(fetched.models)
         } catch (e) {
             console.log(e);

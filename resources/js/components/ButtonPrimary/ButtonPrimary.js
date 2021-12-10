@@ -6,7 +6,8 @@ const ButtonPrimary = ({
                            onClickHandle = null,
                             purchase = '',
                            btnUrl = null,
-                           btnType = 'button'
+                           btnType = 'button',
+                            target = ''
                        }) => {
     // console.log(text);
     const w = width ?? '';
@@ -26,6 +27,7 @@ const ButtonPrimary = ({
             style={{maxWidth: w, height, zIndex, borderRadius: "4px", display: "block"}}
             type={btnType}
             href={btnUrl}
+            target={target}
         >
             {title}
         </a>

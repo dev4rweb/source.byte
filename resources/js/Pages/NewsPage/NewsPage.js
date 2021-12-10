@@ -15,7 +15,7 @@ const NewsPage = ({newsPage, news}) => {
     const sorting = ['date', 'name'];
 
     useEffect(() => {
-        console.log(news);
+        // console.log(news);
         setNewsCard(news);
         setOriginNews(news);
         createCategory(news);

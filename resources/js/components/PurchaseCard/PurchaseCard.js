@@ -24,13 +24,20 @@ const PurchaseCard = ({isActive, data}) => {
             }
         });
     }
+
+    // console.log('PurchaseCard', data)
     return (
         data &&
         <div
             className={`${s.purchaseCard} ${fixPos}`}
             style={{opacity: opacity}}
         >
-            <ButtonPrimary text={`Purchase - ${data.price}`} width={`100%`} purchase={`purchaseBtn`}/>
+            <ButtonPrimary
+                text={`Purchase - ${data.price}`}
+                width={`100%`} purchase={`purchaseBtn`}
+                btnUrl={data.main_link}
+                target='_blank'
+            />
             <ul>
                 <li>
                     <p>Platforms</p>

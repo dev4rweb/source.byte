@@ -50,7 +50,7 @@ const CarouselForm = ({
 
         axios.post(`${editUrl}/${val.id}`, fd)
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 setLoading(false);
                 // const updateArray = [...mainCarouselItems];
                 // console.log('old', res.data.models);

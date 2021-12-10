@@ -32,6 +32,7 @@ class GamePurchaseFactory extends Factory
             'publisher' => 'Xion Studios',
             'rating' => 'ESRB',
             'fileSize' => '6.8 GB',
+            'main_link' => 'https://source-byte.com/'
         ];
     }
 }

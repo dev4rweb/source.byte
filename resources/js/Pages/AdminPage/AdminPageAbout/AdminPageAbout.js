@@ -12,7 +12,7 @@ const AdminPageAbout = () => {
     const fetchData = useCallback(async () => {
         try {
             const fetched = await request('/aboutPage/show');
-            console.log(fetched);
+            // console.log(fetched);
             setState(fetched.model[0]);
         } catch (e) {
             console.log(e)
@@ -50,7 +50,7 @@ const AdminPageAbout = () => {
     const submitHandler = async e => {
         setLoad(true);
         e.preventDefault();
-        console.log('submitHandler', state);
+        // console.log('submitHandler', state);
         const fd = new FormData();
         fd.set('title', state.title);
         fd.set('description', state.description);

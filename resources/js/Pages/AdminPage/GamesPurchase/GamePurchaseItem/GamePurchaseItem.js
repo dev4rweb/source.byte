@@ -231,6 +231,19 @@ const GamePurchaseItem = ({gameId}) => {
                     />
                 </div>
 
+                <div className="mb-3 container">
+                    <label className="text-light">
+                        <h6>Button Link</h6>
+                    </label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        name="main_link"
+                        value={purchase.main_link}
+                        onChange={changeHandler}
+                    />
+                </div>
+
                 <button
                     className="btn btn-primary w-50"
                     onClick={submitHandler}

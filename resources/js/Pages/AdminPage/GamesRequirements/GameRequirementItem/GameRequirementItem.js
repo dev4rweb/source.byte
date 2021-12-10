@@ -53,7 +53,7 @@ const GameRequirementItem = ({gameId}) => {
             .then(res => {
                 setLoading(false);
                 // setMinRequirements(res.data.model);
-                console.log(res);
+                // console.log(res);
             })
             .catch(err => {
                 setLoading(false);

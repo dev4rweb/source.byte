@@ -25,6 +25,7 @@ class CreateGamePurchasesTable extends Migration
             $table->string('publisher')->nullable();
             $table->string('rating')->nullable();
             $table->string('fileSize')->nullable();
+            $table->string('main_link')->nullable();
             $table->timestamps();
         });
     }
