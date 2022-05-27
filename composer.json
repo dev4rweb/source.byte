@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "spatie/laravel-model-cleanup": "^3.2",
-        "tightenco/ziggy": "^0.9.4"
+        "tightenco/ziggy": "^0.9.4",
+        "laravelium/sitemap": "8.*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

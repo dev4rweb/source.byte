@@ -30,7 +30,10 @@ use App\Http\Controllers\SocialsController;
 use App\Http\Controllers\SubmitGameFormController;
 use App\Http\Controllers\SubmitPageController;
 use App\Http\Controllers\WelcomeController;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -195,6 +198,29 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/press/update/{id}', [PressPageController::class, 'update'])->name('press.update');
 
     Route::post('/footer-links/update/{id}', [FooterLinksController::class, 'update'])->name('footer-links.update');
+});
+
+Route::get('/generate-sitemap', function () {
+    // https://youtu.be/6M4OsMcIgpI
+    // create new sitemap object
+    $sitemap = App::make('sitemap');
+
+    // add items to the sitemap (url, date, priority, freq)
+    $sitemap->add(URL::to('/'), Carbon::now(), '1.0', 'daily');
+    $sitemap->add(URL::to('/about'), Carbon::now(), '1.0', 'daily');
+    $sitemap->add(URL::to('/games'), Carbon::now(), '1.0', 'daily');
+    $sitemap->add(URL::to('/news'), Carbon::now(), '1.0', 'daily');
+    $sitemap->add(URL::to('/jobs'), Carbon::now(), '1.0', 'daily');
+    $sitemap->add(URL::to('/contacts'), Carbon::now(), '1.0', 'daily');
+    $sitemap->add(URL::to('/press'), Carbon::now(), '1.0', 'daily');
+    $sitemap->add(URL::to('/submit'), Carbon::now(), '1.0', 'daily');
+
+    // generate your sitemap (format, filename)
+    $sitemap->store('xml', 'sitemap');
+
+    // this will generate file sitemap.xml to public folder
+
+    return redirect(\url('sitemap.xml'));
 });
 
 // Error Page Start

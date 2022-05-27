@@ -5,17 +5,22 @@
       <webServer id="e3c77974-e946-4254-b84f-66ba42740630" name="dev4rweb" url="http://rudy.zzz.com.ua">
         <fileTransfer host="rudy.zzz.com.ua" port="21">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="21" />
         </fileTransfer>
       </webServer>
       <webServer id="5c1b9432-72f2-439f-b640-2b7de9e03074" name="nikodem" url="http://source-byte.com">
         <fileTransfer host="source-byte.com" port="21">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="8ad40dd0-f3a7-430c-9fc7-a47496d321c5" name="lion_max">
+        <fileTransfer accessType="SFTP" host="83.166.241.116" port="22" sshConfigId="8069c434-fb5b-4ce0-a2af-bcba09c12a89" sshConfig="root@83.166.241.116:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
         </fileTransfer>
       </webServer>
     </option>
